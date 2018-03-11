@@ -1,0 +1,7 @@
+{
+  "name": "kloster",
+  "version": "0.1.0",
+  "dependencies": {
+    "nodemon": "^1.17.1"
+  }
+}
