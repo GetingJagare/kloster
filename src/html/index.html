@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    ${require('./blocks/ga.html')}
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="yandex-verification" content="38cc4afedf7b051e"/>
+    <meta name="og:title" content="Мастерская Былых Дел Kloster (Монастырь)"/>
+    <meta name="twitter:title" content="Мастерская Былых Дел Kloster (Монастырь)"/>
+
+    <meta name="og:image" content="https://black-freak-society.ru/images/logo.png"/>
+    <meta name="keywords"
+          content="историческая реконструкция, русь, скандинавия, раннее средневековье, аутент, историчные ремесла"/>
+    <meta name="og:description"
+          content="Аутентичный крафт, историчные изделия из природных материалов. Бирка, Дания, Русь 9 - 11 вв."/>
+    <meta name="twitter:description"
+          content="Аутентичный крафт, историчные изделия из природных материалов. Бирка, Дания, Русь 9 - 11 вв."/>
+
+    <title>Мастерская Былых Дел "Монастырь"</title>
+
+    <link rel="stylesheet" href="dist/app.css?v=0.1.0"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+<div id="app" v-bind:style="{paddingTop: bodyPaddingTop}">
+    <header class="header">
+        <div class="container d-flex justify-content-between align-items-center header__wrapper">
+            ${require('./blocks/logo.html')}
+            ${require('./blocks/navbar.html')}
+            ${require('./blocks/socials.html')}
+        </div>
+    </header>
+
+    <main>
+        <h1 class="title text-center">Кто мы есть</h1>
+        <section id="about" class="section">
+            <div class="container d-md-flex justify-content-between">
+                <div class="section__image">
+                    <img src="images/main.jpg" class="image"/>
+                </div>
+                <div class="section__desc">
+                    <p>
+                        Русь, Скандинавия, IX-XI вв.<br>
+                        Да, реконструкция, да...бесполезная?!...Мы просто делаем, что должны делать.<br>
+                        Единство системы, индивидуальность личности.<br>
+                        Создаём, воссоздаём, осветляем, просветляем.<br>
+                        Есть цели и стремление в движении безумного вектора.<br>
+                        Ты знаешь Монастырь?! Ты не куёшь и, не куя, не знаешь Монастырь...
+                    </p>
+                    <p class="text-right">
+                        <cite>"Если душа просит, то надо открыть" </cite> (c)
+                    </p>
+                </div>
+            </div>
+        </section>
+        <section id="photo" class="section section_even gallery">
+            <div class="container d-md-flex flex-wrap align-items-start">
+                <h2 class="title title_smaller text-center">Несколько фотографий с мероприятий...</h2>
+                <vue-gallery :images="photoGallery" :index="galleryIndex" @close="galleryIndex = null"></vue-gallery>
+                <img class="gallery__image" v-for="(image, imageIndex) in photoGallery" @click="galleryIndex = imageIndex"
+                     :src="image" :key="imageIndex"/>
+            </div>
+        </section>
+
+        <section id="portfolio" class="section">
+            <div class="container">
+                <h3 class="title title_smaller text-center">Небольшая подборка фото с работами</h3>
+                <carousel autoHeight="true" :dots="false" :margin="10" class="carousel" :nav="false"
+                          :responsive="{0:{items:1},640:{items:2}, 768:{items:3}}">
+                    <img src="images/portfolio/1.jpg">
+                    <img src="images/portfolio/2.jpg">
+                    <img src="images/portfolio/3.jpg">
+                    <img src="images/portfolio/4.jpg">
+                    <img src="images/portfolio/5.jpg">
+                    <img src="images/portfolio/6.jpg">
+                    <img src="images/portfolio/7.jpg">
+                    <img src="images/portfolio/8.jpg">
+
+                    <template slot="prev"><span class="fa fa-angle-left carousel__nav-btn carousel__nav-btn_prev"></span></template>
+                    <template slot="next"><span class="fa fa-angle-right carousel__nav-btn carousel__nav-btn_next"></span></template>
+                </carousel>
+            </div>
+        </section>
+
+        <section id="contacts" class="section section_even">
+            <div class="container">
+                <h4 class="title title_smaller text-center">Контакты</h4>
+                <p>
+                    В данный момент располагаемся в Москве.
+                </p>
+                <p>
+                    Если у Вас возникли какие-либо вопросы, то смело можете написать нам на
+                    <a href="mailto:getingjagare91@yandex.ru" class="link link_dotted">почту</a> или в один из наших
+                    аккаунтов в социальных сетях.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="d-md-flex footer">
+        <div class="container d-md-flex justify-content-between">
+            ${require('./blocks/socials.html')}
+            <div class="footer__copyright">
+                Мастерская Былых Дел &copy;, {{ year }} г.
+            </div>
+        </div>
+    </footer>
+</div>
+
+${require('./blocks/ya.html')}
+<script src="dist/app.js?v=0.1.0"></script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+.section {
+  padding: 40px 0;
+
+  &__image {
+    max-width: 40%;
+  }
+
+  &__desc {
+    padding-left: 40px;
+  }
+
+  &_even {
+    background-color: $light-begie;
+  }
+  
+  @media screen and (max-width: 767.98px) {
+    &__image {
+      max-width: 50%;
+      float: left;
+      margin-right: 20px;
+    }
+
+    &__desc {
+      padding-left: 0;
+    }
+  }
+
+  @media screen and (max-width: 479.98px) {
+    &__image {
+      display: none;
+    }
+  }
+}

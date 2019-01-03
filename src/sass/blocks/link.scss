@@ -1,0 +1,17 @@
+.link {
+  &:link {
+    color: $brown;
+    text-decoration: none;
+  }
+
+  &:hover {
+    color: $light-brown;
+  }
+
+  &_dotted {
+    border-bottom: 1px dotted $brown;
+    &:hover {
+      border-bottom-color: $light-brown;
+    }
+  }
+}

@@ -1,0 +1,32 @@
+.carousel {
+  margin: 60px 0;
+  position: relative;
+
+  .owl-item {
+    cursor: pointer;
+  }
+
+  &__nav-btn {
+    position: absolute;
+    font-size: 3em !important;
+    top: 30%;
+    cursor: pointer;
+    color: $brown;
+
+    &:hover {
+      color: $light-brown;
+    }
+
+    &_prev {
+      left: -30px;
+    }
+
+    &_next {
+      right: -30px;
+    }
+
+    @media screen and (max-width: 479.98px) {
+      display: none !important;
+    }
+  }
+}

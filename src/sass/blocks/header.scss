@@ -1,0 +1,42 @@
+.header {
+  padding: 20px 0;
+  background-color: $begie;
+  border-radius: 0 0 8px 8px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  box-shadow: 0 5px 20px inset $brown;
+  transition: padding 0.4s ease-in-out;
+  z-index: 9999;
+
+  &_sticky {
+    padding: 0;
+  }
+
+  &__logo {
+    &:link {
+      color: $brown;
+      font-size: 3em;
+      letter-spacing: 4px;
+    }
+    &:hover, &:visited, &:visited {
+      color: $brown;
+      text-decoration: none;
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 1023.98px) {
+      &:link {
+        font-size: 2em;
+      }
+    }
+  }
+
+  @media screen and (max-width: 767.98px) {
+    .socials {
+      position: absolute;
+      right: 20px;
+      top: 20px;
+    }
+  }
+}
