@@ -66,7 +66,25 @@ module.exports = {
                     {
                         loader: 'image-webpack-loader',
                         options: {
-                            disable: true, // webpack@2.x and newer
+                            mozjpeg: {
+                                progressive: true,
+                                quality: 65
+                            },
+                            // optipng.enabled: false will disable optipng
+                            optipng: {
+                                enabled: true,
+                            },
+                            pngquant: {
+                                quality: '65-90',
+                                speed: 4
+                            },
+                            gifsicle: {
+                                interlaced: false,
+                            },
+                            // the webp option will enable WEBP
+                            webp: {
+                                quality: 75
+                            }
                         },
                     },
                 ],
