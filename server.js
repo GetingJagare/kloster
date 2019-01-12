@@ -42,7 +42,8 @@ app.post('/mail', function (req, res) {
 
     const info = transporter.sendMail(mailOptions);
 
-    res.end({success: 1, message: 'Сообщение отправлено'});
+    res.write(JSON.stringify({success: 1, message: 'Сообщение отправлено'}));
+    res.end();
 });
 
 app.listen(setup.port, function () {
