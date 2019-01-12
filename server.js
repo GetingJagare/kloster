@@ -1,11 +1,11 @@
-const setup = {port:8000}
+const setup = {port: 8000}
 
-const express = require ('express');
+const express = require('express');
 const bodyParser = require("body-parser");
 
-const app = express ();
+const app = express();
 
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
 app.post('/mail', function (req, res) {
@@ -25,8 +25,8 @@ app.post('/mail', function (req, res) {
     const from = 'noreply@black-freak-society.ru';
     const to = 'mbd.kloster@yandex.ru';
     const subject = 'Сообщение с сайта';
-    shell.exec(`echo -e "From: ${from}\r\nSubject: ${subject}\r\nTo: ${to}\r\n\r\n Имя: ${name}\r\n
-    Email: ${email}${text}"\r\rСообщение: ${text} | sendmail -f ${from} ${to}`);
+    shell.exec('echo "From: ' + from + '\r\nSubject: ' + subject + '\r\nTo: ' + to + '\r\n\r\nИмя: ' + name + '\r\n' +
+        'Email: ' + email + '\r\nСообщение: ' + text + '" | sendmail -f ' + from + ' ' + to);
 
     res.write(JSON.stringify({success: 1, message: 'Сообщение отправлено'}));
     res.end();
