@@ -6,7 +6,7 @@ const app = express ();
 
 app.post('/mail', function (req, res) {
     const nodemailer = require('nodemailer');
-    if (!!req.post['g-recaptcha-response']) {
+    if (!req.post['g-recaptcha-response'].length) {
         res.write(JSON.stringify({success: 0, message: 'Капча не пройдена!'}));
         res.end();
     }

@@ -59,7 +59,15 @@
 
                 const $vm = this;
 
-                axios.post('/mail', this.form)
+                var fields = this.form;
+
+                fields = Object.assign(
+                        {},
+                        fields,
+                        {'g-recaptcha-response': document.querySelector('.contact-form').querySelector('#g-recaptcha-response').value}
+                    );
+
+                axios.post('/mail', fields)
                     .then(function (response) {
                         $vm.showResult(response.data.success, response.data.message)
                     }, function (response) {
