@@ -43,6 +43,6 @@
   "dependencies": {
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
-    "nodemailer": "^5.1.1"
+    "shelljs": "^0.8.3"
   }
 }

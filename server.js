@@ -9,7 +9,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.post('/mail', function (req, res) {
-    const nodemailer = require('nodemailer');
+    const shell = require('shelljs');
 
     if (!req.body['g-recaptcha-response'].length) {
         res.write(JSON.stringify({success: 0, message: 'Капча не пройдена!'}));
@@ -22,25 +22,11 @@ app.post('/mail', function (req, res) {
         res.end();
     }
 
-    var transporter = nodemailer.createTransport({
-        host: "smtp.yandex.ru",
-        port: 465,
-        secure: true,
-        auth: {
-            user: 'noreply@black-freak-society.ru',
-            pass: 'R0PhACriLTATIC'
-        }
-    });
-
-    const mailOptions = {
-        from: 'noreply <noreply@black-freak-society.ru>',
-        to: email,
-        subject: "Сообщение с сайта",
-        text: text,
-        html: '<b>' + text + '</b>'
-    };
-
-    const info = transporter.sendMail(mailOptions);
+    const from = 'noreply@black-freak-society.ru';
+    const to = 'mbd.kloster@yandex.ru';
+    const subject = 'Сообщение с сайта';
+    shell.exec(`echo -e "From: ${from}\r\nSubject: ${subject}\r\nTo: ${to}\r\n\r\n Имя: ${name}\r\n
+    Email: ${email}${text}"\r\rСообщение: ${text} | sendmail -f ${from} ${to}`);
 
     res.write(JSON.stringify({success: 1, message: 'Сообщение отправлено'}));
     res.end();
