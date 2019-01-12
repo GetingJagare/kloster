@@ -5,7 +5,7 @@
             <p>
                 {{ message }}
             </p>
-            <b-progress :value="messageProgress" max="100" class="mb-3" :variant="success ? 'success' : 'danger'"
+            <b-progress :value="messageProgress" :max="maxProgress" class="mb-3" :variant="success ? 'success' : 'danger'"
                         height="3px"></b-progress>
         </div>
         <b-form-group class="contact-form__field">
@@ -43,6 +43,7 @@
                 submitted: false,
                 success: false,
                 messageProgress: 0,
+                maxProgress: 100,
                 message: '',
                 form: {
                     name: '',
