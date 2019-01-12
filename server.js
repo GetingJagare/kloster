@@ -4,7 +4,7 @@ const express = require ('express');
 
 const app = express ();
 
-app.get('/mail', function (req, res) {
+app.post('/mail', function (req, res) {
     const nodemailer = require('nodemailer');
     const isAjax = req.headers['x-requested-with'] && req.headers['x-requested-with'] === 'XMLHttpRequest';
     if (isAjax) {
