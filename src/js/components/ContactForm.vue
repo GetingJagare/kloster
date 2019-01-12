@@ -104,6 +104,8 @@
             },
 
             clean () {
+                this.resetCaptcha();
+
                 for (var key in this.form) {
                     this.form[key] = '';
                 }
