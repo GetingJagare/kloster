@@ -4,6 +4,10 @@
 @import "fonts";
 @import "colors";
 
+body {
+  user-select: none;
+}
+
 @import "blocks/nav";
 @import "blocks/header";
 @import "blocks/section";
@@ -16,7 +20,5 @@
 @import "blocks/gallery";
 @import "blocks/carousel";
 @import "blocks/link";
-
-body {
-  user-select: none;
-}
+@import "blocks/contact-form";
+@import "blocks/body";

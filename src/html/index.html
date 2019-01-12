@@ -15,7 +15,7 @@
     <meta name="og:title" content="Мастерская Былых Дел Kloster (Монастырь) | Москва"/>
     <meta name="twitter:title" content="Мастерская Былых Дел Kloster (Монастырь) | Москва"/>
 
-    <meta name="og:image" content="https://black-freak-society.ru/images/logo.png"/>
+    <meta name="og:image" content="https://black-freak-society.ru/images/logo.jpg"/>
     <meta name="keywords"
           content="историческая реконструкция, русь, скандинавия, раннее средневековье, аутент, историчные ремесла"/>
     <meta name="og:description"
@@ -30,12 +30,10 @@
 </head>
 <body>
 
-<div id="app" v-bind:style="{paddingTop: bodyPaddingTop}">
+<div id="app" v-bind:style="{paddingTop: bodyPaddingTop}" class="body">
     <header class="header">
         <div class="container d-flex justify-content-between align-items-center header__wrapper">
-            ${require('./blocks/logo.html')}
-            ${require('./blocks/navbar.html')}
-            ${require('./blocks/socials.html')}
+            <main-nav></main-nav>
         </div>
     </header>
 
@@ -97,17 +95,17 @@
                     В данный момент располагаемся в Москве.
                 </p>
                 <p>
-                    Если у Вас возникли какие-либо вопросы, то смело можете написать нам на
-                    <a href="mailto:getingjagare91@yandex.ru" class="link link_dotted">почту</a> или в один из наших
+                    Если у Вас возникли какие-либо вопросы, то смело можете их задать через форму ниже или в один из наших
                     аккаунтов в социальных сетях.
                 </p>
+                ${require('./blocks/contact-form.html')}
             </div>
         </section>
     </main>
 
     <footer class="d-md-flex footer">
         <div class="container d-md-flex justify-content-between">
-            ${require('./blocks/socials.html')}
+            <socials></socials>
             <div class="footer__copyright">
                 Мастерская Былых Дел &copy;, {{ year }} г.
             </div>

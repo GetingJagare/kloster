@@ -1,8 +1,13 @@
 window.Vue = require('vue/dist/vue');
 window.BootstrapVue = require('bootstrap-vue/dist/bootstrap-vue');
+window.axios = require('axios');
 
 import VueGallery from 'vue-gallery';
 import carousel from 'vue-owl-carousel';
+
+import ContactForm from './components/ContactForm.vue';
+import MainNav from './components/MainNav.vue';
+import Socials from './components/Socials.vue';
 
 Vue.use(BootstrapVue);
 
@@ -43,49 +48,11 @@ var app = new Vue({
     mounted() {
         const nowDate = new Date();
         this.year = nowDate.getFullYear();
-
-        const $vm = this;
-
-        window.onscroll = function () {
-            const header = document.querySelector('.header');
-            if (document.documentElement.scrollTop >= 100 && !hasElemClass(header, 'header_sticky')) {
-                header.className += ' header_sticky';
-            } else if (document.documentElement.scrollTop < 100) {
-                header.className = header.className.replace(/\s*header_sticky/g, '');
-            }
-        };
     },
 
     updated () {
         this.bodyPaddingTop = document.querySelector('.header').offsetHeight + 'px';
     },
 
-    methods: {
-        scrollWindow (event, index, fromNav) {
-            event.preventDefault();
-
-            const id = event.target.hash;
-            const headerHeight = document.querySelector('.header').offsetHeight;
-            const top = document.querySelector(id).offsetTop + (window.width >= 768 ? -headerHeight : 0);
-
-            this.setNavItemActive(event.target, fromNav);
-
-            window.scrollTo({
-                top: index > 0 ? top : index,
-                behavior: 'smooth'
-            });
-        },
-
-        setNavItemActive (navItem, fromNav) {
-            if (fromNav) {
-                document.querySelectorAll('.nav-link_active').forEach(function (elem) {
-                    deleteClassName(elem, 'nav-link_active');
-                });
-
-                navItem.className += ' nav-link_active';
-            }
-        }
-    },
-
-    components: { VueGallery, carousel }
+    components: { VueGallery, carousel, MainNav, ContactForm, Socials }
 });

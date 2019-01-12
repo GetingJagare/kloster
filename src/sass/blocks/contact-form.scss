@@ -1,0 +1,36 @@
+.contact-form {
+  text-align: center;
+  margin: 60px auto;
+  width: 768px;
+
+  &__field {
+    padding: 8px 0;
+  }
+
+  & &__input {
+    &:focus {
+      box-shadow: 0 0 10px $light-brown;
+      border-color: $light-brown;
+    }
+  }
+
+  & &__submit {
+    background-color: $brown;
+    border-color: $brown;
+    position: relative;
+    text-align: center;
+
+    &:hover {
+      background-color: $light-brown;
+      border-color: $light-brown;
+    }
+  }
+
+  &__submit {
+    &-text {
+      &_pale {
+        opacity: 0.6;
+      }
+    }
+  }
+}

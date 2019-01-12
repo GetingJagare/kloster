@@ -7,8 +7,8 @@
       color: $nav-color;
       position: relative;
 
-      &:hover, &:active {
-        color: $brown;
+      &:hover, &:active, &:visited, &:link {
+        color: $nav-color;
       }
 
       &:after {
