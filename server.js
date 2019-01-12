@@ -5,26 +5,42 @@ const express = require ('express');
 const app = express ();
 
 app.get('/mail', function (req, res) {
+    const nodemailer = require('nodemailer');
     const isAjax = req.headers['x-requested-with'] && req.headers['x-requested-with'] === 'XMLHttpRequest';
     if (isAjax) {
-        const striptags = require('striptags');
-        const shell = require('shelljs');
-        const {name, email, text} = req.post;
-        if (!name || !email || !phone || !message || !req.post['g-recaptcha-response'] || !shell.which('sendmail')) {
-            res.write(JSON.stringify({result: 0}));
+        if (!!req.post['g-recaptcha-response']) {
+            res.write(JSON.stringify({success: 0, message: 'Капча не пройдена!'}));
             res.end();
         }
 
-        const from = 'robot@black-freak-society.ru';
-        const to = 'mbd.kloster@yandex.ru';
-        const subject = `Заявка: ${striptags(name)}`;
-        const fullMessage = `You have received a new message from your website contact form.\nHere are the details:\nName: ${striptags(name)}\nEmail: ${striptags(email)}\nPhone: ${striptags(phone)}\nMessage:\n${striptags(message)}`;
-        shell.exec(`echo -e "From: ${from}\r\nSubject: ${subject}\r\nTo: ${to}\r\n\r\n ${fullMessage}" | sendmail -f ${from} ${to}`);
-        res.write(JSON.stringify({result: 1}));
-        res.end();
-    }
+        const {name, email, text} = req.post;
+        if (!name || !email || !text) {
+            res.write(JSON.stringify({success: 0, message: 'Не все поля заполнены'}));
+            res.end();
+        }
 
-    res.send({success: 1});
+        var transporter = nodemailer.createTransport({
+            host: "smtp.yandex.ru",
+            port: 465,
+            secure: true,
+            auth: {
+                user: 'noreply@black-freak-society.ru',
+                pass: 'R0PhACriLTATIC'
+            }
+        });
+
+        const mailOptions = {
+            from: 'noreply <noreply@black-freak-society.ru>',
+            to: email,
+            subject: "Сообщение с сайта",
+            text: text,
+            html: '<b>' + text + '</b>'
+        };
+
+        const info = transporter.sendMail(mailOptions);
+
+        res.send({success: 1, message: 'Сообщение отправлено'});
+    }
 });
 
 app.listen(setup.port, function () {

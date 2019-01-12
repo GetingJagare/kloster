@@ -1,5 +1,13 @@
 <template>
     <b-form class="contact-form" @submit.prevent="submit">
+        <div class="message" v-bind:class="{'message_error': !success, 'message_success': success}"
+             v-if="message.length && messageProgress > 0">
+            <p>
+                {{ message }}
+            </p>
+            <b-progress :value="messageProgress" max="100" class="mb-3" :variant="success ? 'success' : 'danger'"
+                        height="3px"></b-progress>
+        </div>
         <b-form-group class="contact-form__field">
             <b-form-input placeholder="Имя" required v-model="form.name" class="contact-form__input"
                           autocomplete="off"></b-form-input>
@@ -34,6 +42,8 @@
             return {
                 submitted: false,
                 success: false,
+                messageProgress: 0,
+                message: '',
                 form: {
                     name: '',
                     text: '',
@@ -46,12 +56,36 @@
             submit() {
                 this.submitted = true;
 
-                axios.post('/mail', form)
-                    .then(function(response) {
+                const $vm = this;
 
+                axios.post('/mail', this.form)
+                    .then(function (response) {
+                        $vm.showResult(response.data.success, response.data.message)
                     }, function (response) {
-
+                        $vm.showResult(false, 'Произошла ошибка при отправке');
                     });
+            },
+
+            showResult(success, message) {
+                this.submitted = false;
+                this.success = success;
+                this.message = message;
+
+                this.messageProgress = 100;
+                this.startProgress();
+            },
+
+            startProgress() {
+                const $vm = this;
+
+                const progress = function () {
+                    $vm.messageProgress -= 2;
+                    if ($vm.messageProgress > 0) {
+                        setTimeout(progress, 100);
+                    }
+                };
+
+                setTimeout(progress, 100);
             }
         },
 
