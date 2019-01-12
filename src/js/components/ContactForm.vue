@@ -85,7 +85,7 @@
                 this.startProgress();
 
                 window.scrollTo({
-                   top: document.querySelector('.message').offsetTop,
+                   top: document.querySelector('#contacts').offsetTop,
                    behavior: 'smooth'
                 });
             },

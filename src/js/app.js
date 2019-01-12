@@ -1,4 +1,4 @@
-window.Vue = require('vue/dist/vue');
+window.Vue = require('vue/dist/vue.min.js');
 window.BootstrapVue = require('bootstrap-vue/dist/bootstrap-vue');
 window.axios = require('axios');
 
