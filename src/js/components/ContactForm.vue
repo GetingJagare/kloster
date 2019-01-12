@@ -69,6 +69,7 @@
 
                 axios.post('/mail', fields)
                     .then(function (response) {
+                        $vm.clean();
                         $vm.showResult(response.data.success, response.data.message)
                     }, function (response) {
                         $vm.showResult(false, 'Произошла ошибка при отправке');
@@ -83,9 +84,10 @@
                 this.messageProgress = 100;
                 this.startProgress();
 
-                for (var key in this.form) {
-                    this.form[key] = '';
-                }
+                window.scrollTo({
+                   top: document.querySelector('.message'),
+                   behavior: 'smoothly'
+                });
             },
 
             startProgress() {
@@ -99,6 +101,12 @@
                 };
 
                 setTimeout(progress, 100);
+            },
+
+            clean () {
+                for (var key in this.form) {
+                    this.form[key] = '';
+                }
             }
         },
 
