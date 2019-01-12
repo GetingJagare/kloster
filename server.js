@@ -1,13 +1,16 @@
 const setup = {port:8000}
 
 const express = require ('express');
+const bodyParser = require("body-parser");
 
 const app = express ();
 
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
 app.post('/mail', function (req, res) {
     const nodemailer = require('nodemailer');
-    res.write(JSON.stringify(req));
-    res.end();
+
     if (!req.body['g-recaptcha-response'].length) {
         res.write(JSON.stringify({success: 0, message: 'Капча не пройдена!'}));
         res.end();
