@@ -114,7 +114,8 @@ module.exports = {
         new htmlWebpackPlugin({
             filename: '../index.html',
             template: './src/html/index.html',
-            inject: false,
+            inject: true,
+            hash: true,
             minify: devMode ? false : {
                 collapseWhitespace: true,
                 removeComments: true,

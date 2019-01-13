@@ -25,12 +25,11 @@
 
     <title>Мастерская Былых Дел "Монастырь"</title>
 
-    <link rel="stylesheet" href="dist/app.css?v=0.1.0"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 
-<div id="app" v-bind:style="{paddingTop: bodyPaddingTop}" class="body">
+<div id="app" v-bind:style="{paddingTop: bodyPaddingTop + 'px'}" class="body">
     <header class="header">
         <div class="container d-flex justify-content-between align-items-center header__wrapper">
             <main-nav></main-nav>
@@ -114,7 +113,6 @@
 </div>
 
 ${require('./blocks/ya.html')}
-<script src="dist/app.js?v=0.1.0" async defer></script>
 <script src="https://www.google.com/recaptcha/api.js?onload=vueRecaptchaApiLoaded&render=explicit" async defer></script>
 </body>
 </html>

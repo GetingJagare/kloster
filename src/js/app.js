@@ -1,4 +1,4 @@
-window.Vue = require('vue/dist/vue.min.js');
+window.Vue = process.env.NODE_ENV === 'production' ? require('vue/dist/vue.min.js') : require('vue/dist/vue.js');
 window.BootstrapVue = require('bootstrap-vue/dist/bootstrap-vue');
 window.axios = require('axios');
 
@@ -40,18 +40,12 @@ var app = new Vue({
 
             ],
             mainImageIndex: null,
-            galleryIndex: null,
-            workIndex: null,
+            galleryIndex: null
         };
     },
 
     mounted() {
-        const nowDate = new Date();
-        this.year = nowDate.getFullYear();
-    },
-
-    updated () {
-        this.bodyPaddingTop = document.querySelector('.header').offsetHeight + 'px';
+        this.year = (new Date()).getFullYear();
     },
 
     components: { VueGallery, carousel, MainNav, ContactForm, Socials }

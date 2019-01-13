@@ -20,7 +20,7 @@
             <b-form-textarea v-model="form.text" placeholder="Ваш вопрос" :rows="3" :max-rows="6" required
                              class="contact-form__input" autocomplete="off"></b-form-textarea>
         </b-form-group>
-        <b-form-group class="contact-form__field">
+        <b-form-group class="contact-form__field contact-form__field_left">
             <vue-recaptcha sitekey="6LfoGIkUAAAAABynlLPkWxTcUj1X9dpYWYGtF6FA" size="compact" @expired="resetCaptcha">
                 <button type="submit" class="btn btn-secondary contact-form__submit">
                     <span v-bind:class="{'contact-form__submit-text': true, 'contact-form__submit-text_pale': submitted}">Отправить</span>
