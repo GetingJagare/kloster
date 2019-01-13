@@ -1,6 +1,11 @@
 @font-face {
   font-family: 'Futhark';
-  src: url('../fonts/FutharkRegular.ttf') format('ttf');
+  src: url("./fonts/FutharkRegular.eot");
+  src: url("./fonts/FutharkRegular.eot?#iefix") format("embedded-opentype"),
+  url("./fonts/FutharkRegular.otf") format("opentype"),
+  url("./fonts/FutharkRegular.ttf") format("truetype"),
+  url("./fonts/FutharkRegular.woff") format("woff"),
+  url("./fonts/FutharkRegular.woff2") format("woff2");
   font-weight: 600;
   font-display: swap;
 }
