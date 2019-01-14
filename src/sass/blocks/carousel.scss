@@ -6,10 +6,38 @@
     cursor: pointer;
   }
 
+  &__item {
+    position: relative;
+
+    &-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      height: 0;
+      opacity: 0;
+      transition: height 0.4s ease-in-out, opacity 0.2s ease-in-out;
+      overflow: hidden;
+      background-color: rgba(0, 0, 0, 0.3);
+
+      > span {
+        display: inline-block;
+        padding: 10px;
+        color: $light-begie;
+      }
+    }
+
+    &:hover &-caption {
+      opacity: 1;
+      height: auto;
+    }
+  }
+
   &__nav-btn {
     position: absolute;
     font-size: 3em !important;
-    top: 30%;
+    top: 35%;
     cursor: pointer;
     color: $brown;
 
