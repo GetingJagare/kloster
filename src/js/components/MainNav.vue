@@ -1,6 +1,7 @@
 <template>
     <div class="container d-flex justify-content-between align-items-center header__wrapper">
-        <a href="#about" class="header__logo text text_futhark d-none d-md-inline-block" @click="scrollWindow($event, 0);">
+        <a href="#about" class="header__logo text text_futhark d-none d-md-inline-block" @click="scrollWindow($event, 0);"
+            title="Мастерская былых дел Монастырь">
             KLOSTER
         </a>
 
