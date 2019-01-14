@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="yandex-verification" content="471675e354f357bc"/>
-    <meta name="google-site-verification" content="prOntO91fYE0omPl_SC7iQSMVFhy0UaJmDwZN39woJE" />
+    <meta name="google-site-verification" content="prOntO91fYE0omPl_SC7iQSMVFhy0UaJmDwZN39woJE"/>
 
     <meta name="title" content="Мастерская Былых Дел Kloster (Монастырь) | Москва"/>
     <meta name="description"
@@ -40,8 +40,8 @@
         <h1 class="title text-center">Кто мы есть</h1>
         <section id="about" class="section">
             <div class="container d-md-flex justify-content-between">
-                <div class="section__image">
-                    <img src="images/main.jpg" class="image"/>
+                <div class="section__image" data-image-src="images/main.jpg"
+                     data-image-alt="Фотография исторического лагеря">
                 </div>
                 <div class="section__desc">
                     <p>
@@ -62,7 +62,8 @@
             <div class="container d-md-flex flex-wrap align-items-start">
                 <h2 class="title title_smaller text-center">Несколько фотографий с мероприятий...</h2>
                 <vue-gallery :images="photoGallery" :index="galleryIndex" @close="galleryIndex = null"></vue-gallery>
-                <img class="gallery__image" v-for="(image, imageIndex) in photoGallery" @click="galleryIndex = imageIndex"
+                <img class="gallery__image" v-for="(image, imageIndex) in photoGallery"
+                     @click="galleryIndex = imageIndex"
                      :src="image" :key="imageIndex"/>
             </div>
         </section>
@@ -70,28 +71,28 @@
         <section id="portfolio" class="section">
             <div class="container">
                 <h3 class="title title_smaller text-center">Небольшая подборка фото с работами</h3>
-                <carousel autoHeight="true" :dots="false" :margin="10" class="carousel" :nav="false"
+                <carousel :autoHeight="true" :dots="false" :margin="10" class="carousel" :nav="false"
                           :responsive="{0:{items:1},640:{items:2}, 768:{items:3}}">
                     <div class="carousel__item">
-                        <img src="images/portfolio/1.jpg" alt="">
+                        <div data-image-src="images/portfolio/1.jpg" data-image-alt=""></div>
                         <div class="carousel__item-caption">
                             <span>Скандинавская игра "Дальдоза"</span>
                         </div>
                     </div>
                     <div class="carousel__item">
-                        <img src="images/portfolio/3.jpg" alt="">
+                        <div data-image-src="images/portfolio/3.jpg" data-image-alt=""></div>
                         <div class="carousel__item-caption">
                             <span>Обложка для паспорта. Сделана из натуральной кожи. <br>Выжигание лазером.</span>
                         </div>
                     </div>
                     <div class="carousel__item">
-                        <img src="images/portfolio/4.jpg" alt="">
+                        <div data-image-src="images/portfolio/4.jpg" data-image-alt=""></div>
                         <div class="carousel__item-caption">
                             <span>Обложка для паспорта. Сделана из натуральной кожи. <br>Выжигание лазером.</span>
                         </div>
                     </div>
                     <div class="carousel__item">
-                        <img src="images/portfolio/2.jpg" alt="">
+                        <div data-image-src="images/portfolio/2.jpg" data-image-alt=""></div>
                         <div class="carousel__item-caption">
                             <span>
                                 Скандинавская игра "Хнафатафл".<br>
@@ -100,7 +101,7 @@
                         </div>
                     </div>
                     <div class="carousel__item">
-                        <img src="images/portfolio/5.jpg" alt="">
+                        <div data-image-src="images/portfolio/5.jpg" data-image-alt=""></div>
                         <div class="carousel__item-caption">
                             <span>
                                 Мешочек из натуральной кожи.
@@ -108,13 +109,13 @@
                         </div>
                     </div>
                     <div class="carousel__item">
-                        <img src="images/portfolio/6.jpg" alt="">
+                        <div data-image-src="images/portfolio/6.jpg" data-image-alt=""></div>
                         <div class="carousel__item-caption">
                             <span>Обложки для паспорта. Материал - кожа. <br>Выжигание лазером.</span>
                         </div>
                     </div>
                     <div class="carousel__item">
-                        <img src="images/portfolio/7.jpg" alt="">
+                        <div data-image-src="images/portfolio/7.jpg" data-image-alt=""></div>
                         <div class="carousel__item-caption">
                             <span>
                                 Магниты на холодильник.
@@ -122,7 +123,7 @@
                         </div>
                     </div>
                     <div class="carousel__item">
-                        <img src="images/portfolio/8.jpg" alt="">
+                        <div data-image-src="images/portfolio/8.jpg" data-image-alt=""></div>
                         <div class="carousel__item-caption">
                             <span>
                                 Ташка из кожи на Скандинавию.<br>
@@ -131,8 +132,10 @@
                         </div>
                     </div>
 
-                    <template slot="prev"><span class="fa fa-angle-left carousel__nav-btn carousel__nav-btn_prev"></span></template>
-                    <template slot="next"><span class="fa fa-angle-right carousel__nav-btn carousel__nav-btn_next"></span></template>
+                    <template slot="prev"><span
+                            class="fa fa-angle-left carousel__nav-btn carousel__nav-btn_prev"></span></template>
+                    <template slot="next"><span
+                            class="fa fa-angle-right carousel__nav-btn carousel__nav-btn_next"></span></template>
                 </carousel>
             </div>
         </section>
@@ -144,7 +147,8 @@
                     В данный момент располагаемся в Москве.
                 </p>
                 <p>
-                    Если у Вас возникли какие-либо вопросы, то смело можете их задать через форму ниже или в один из наших
+                    Если у Вас возникли какие-либо вопросы, то смело можете их задать через форму ниже или в один из
+                    наших
                     аккаунтов в социальных сетях.
                 </p>
                 ${require('./blocks/contact-form.html')}

@@ -5,7 +5,6 @@ const compress_images = require('compress-images');
 const optimizeImage = function (dir, file) {
     console.log(dir + '/' + file);
     if (/\.(jpe?g|png|svg|gif)$/.test(file)) {
-        console.log(dir + '/' + file);
         compress_images(dir + '/' + file, dir + '/', {compress_force: true, statistic: false, autoupdate: true}, false,
             {jpg: {engine: 'jpegoptim', command: ['-quality', '60']}},
             {png: {engine: 'pngquant', command: ['--quality=20-50']}},

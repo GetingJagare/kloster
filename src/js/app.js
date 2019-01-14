@@ -46,6 +46,23 @@ var app = new Vue({
 
     mounted() {
         this.year = (new Date()).getFullYear();
+
+        const $vm = this;
+
+        document.addEventListener("DOMContentLoaded", function() {
+            setTimeout($vm.loadImages, 500);
+        });
+    },
+
+    methods: {
+        loadImages () {
+            document.querySelectorAll('[data-image-src').forEach(function (el) {
+                var image = document.createElement('img');
+                image.src = el.dataset.imageSrc;
+                image.alt = el.dataset.imageAlt;
+                el.appendChild(image);
+            });
+        }
     },
 
     components: { VueGallery, carousel, MainNav, ContactForm, Socials }
