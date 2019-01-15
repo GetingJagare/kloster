@@ -70,8 +70,8 @@ var app = new Vue({
                 image.alt = el.dataset.imageAlt;
 
                 for (var width in dimensions) {
-                    srcSet += (srcSet.length ? ', ' : '') + image.src.replace(/\.(.+)$/, '-' + dimensions[width] + '.$1') +
-                        ' ' + width + 'w';
+                    srcSet += (srcSet.length ? ', ' : '') + el.dataset.imageSrc.src.replace(/\.(.+)$/, '-' +
+                        dimensions[width] + '.$1') + ' ' + width + 'w';
                     imageSizes += (imageSizes.length ? ', ' : '') + '(max-width: ' + width  + 'px)' + ' ' +
                         dimensions[width] + 'px';
                 }
