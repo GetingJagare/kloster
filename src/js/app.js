@@ -1,6 +1,7 @@
 window.Vue = process.env.NODE_ENV === 'production' ? require('vue/dist/vue.min.js') : require('vue/dist/vue.js');
 window.BootstrapVue = require('bootstrap-vue/dist/bootstrap-vue');
 window.axios = require('axios');
+window.appVersion = require('../../package.json').version;
 
 import VueGallery from 'vue-gallery';
 import carousel from 'vue-owl-carousel';
@@ -28,13 +29,13 @@ var app = new Vue({
             bodyPaddingTop: 0,
             mainImageList: ['images/main.jpg'],
             photoGallery: [
-                'images/photo/1.jpg',
-                'images/photo/2.jpg',
-                'images/photo/3.jpg',
-                'images/photo/4.jpg',
-                'images/photo/5.jpg',
-                'images/photo/6.jpg',
-                'images/photo/7.jpg',
+                'images/photo/1-1280.jpg?v=' + appVersion,
+                'images/photo/2-1280.jpg?v=' + appVersion,
+                'images/photo/3-1280.jpg?v=' + appVersion,
+                'images/photo/4-1280.jpg?v=' + appVersion,
+                'images/photo/5-1280.jpg?v=' + appVersion,
+                'images/photo/6-1280.jpg?v=' + appVersion,
+                'images/photo/7-1280.jpg?v=' + appVersion,
             ],
             workGallery: [
 
@@ -56,12 +57,35 @@ var app = new Vue({
 
     methods: {
         loadImages () {
-            document.querySelectorAll('[data-image-src').forEach(function (el) {
-                var image = document.createElement('img');
-                image.src = el.dataset.imageSrc;
+            const $vm = this;
+
+            document.querySelectorAll('[data-image-src]').forEach(function (el) {
+                var image = document.createElement('img'),
+                    srcSet = '',
+                    imageSizes = '';
+
+                const dimensions = el.dataset.dimensions ? JSON.parse($vm.htmlDecode(el.dataset.dimensions)) : {};
+
+                image.src = el.dataset.imageSrc + '?v=' + appVersion;
                 image.alt = el.dataset.imageAlt;
+
+                for (var width in dimensions) {
+                    srcSet += (srcSet.length ? ', ' : '') + image.src.replace(/\.(.+)$/, '-' + dimensions[width] + '.$1') +
+                        ' ' + width + 'w';
+                    imageSizes += (imageSizes.length ? ', ' : '') + '(max-width: ' + width  + 'px)' + ' ' +
+                        dimensions[width] + 'px';
+                }
+
+                image.srcset = srcSet;
+                image.sizes = imageSizes;
+                image.className = el.dataset.class && el.dataset.class.length ? el.dataset.class : '';
+
                 el.appendChild(image);
             });
+        },
+
+        htmlDecode (str) {
+            return str.replace('&amp;', '&').replace('&lt;', '<').replace('&gt;', '>').replace('&quot;', "\"");
         }
     },
 

@@ -39,9 +39,10 @@
     <main>
         <h1 class="title text-center">Кто мы есть</h1>
         <section id="about" class="section">
-            <div class="container d-md-flex justify-content-between">
+            <div class="container d-md-flex justify-content-between align-items-start">
                 <div class="section__image" data-image-src="images/main.jpg"
-                     data-image-alt="Фотография исторического лагеря">
+                     data-image-alt="Фотография исторического лагеря"
+                     data-dimensions="{&quot;1024&quot;: 1024, &quot;1280&quot;: 1280}">
                 </div>
                 <div class="section__desc">
                     <p>
@@ -61,38 +62,89 @@
         <section id="photo" class="section section_even gallery">
             <div class="container d-md-flex flex-wrap align-items-start">
                 <h2 class="title title_smaller text-center">Несколько фотографий с мероприятий...</h2>
-                <vue-gallery :images="photoGallery" :index="galleryIndex" @close="galleryIndex = null"></vue-gallery>
-                <img class="gallery__image" v-for="(image, imageIndex) in photoGallery"
-                     @click="galleryIndex = imageIndex"
-                     :src="image" :key="imageIndex"/>
+                <vue-gallery :images="photoGallery" :index="galleryIndex" :options="{startSlideshow: true}"
+                             @close="galleryIndex = null"></vue-gallery>
+                <carousel :autoHeight="true" :autoWidth="true" :dots="false" :margin="10" class="carousel" :nav="false"
+                          :mouseDrag="false" :touchDrag="false" :responsive="{0:{items:1, margin: 0}, 768:{items:2}}">
+                    <div class="carousel__item">
+                        <div data-image-src="images/photo/1.jpg" data-image-alt="" data-class="gallery__image"
+                             data-dimensions="{&quot;1024&quot;: 1024, &quot;1280&quot;: 1280}"
+                             @click="galleryIndex = 0" :key="0">
+                        </div>
+                    </div>
+                    <div class="carousel__item">
+                        <div data-image-src="images/photo/2.jpg" data-image-alt="" data-class="gallery__image"
+                             data-dimensions="{&quot;1024&quot;: 1024, &quot;1280&quot;: 1280}"
+                             @click="galleryIndex = 1" :key="1">
+                        </div>
+                    </div>
+                    <div class="carousel__item">
+                        <div data-image-src="images/photo/3.jpg" data-image-alt="" data-class="gallery__image"
+                             data-dimensions="{&quot;1024&quot;: 1024, &quot;1280&quot;: 1280}"
+                             @click="galleryIndex = 2" :key="2">
+                        </div>
+                    </div>
+                    <div class="carousel__item">
+                        <div data-image-src="images/photo/4.jpg" data-image-alt="" data-class="gallery__image"
+                             data-dimensions="{&quot;1024&quot;: 1024, &quot;1280&quot;: 1280}"
+                             @click="galleryIndex = 3" :key="3">
+                        </div>
+                    </div>
+                    <div class="carousel__item">
+                        <div data-image-src="images/photo/5.jpg" data-image-alt="" data-class="gallery__image"
+                             data-dimensions="{&quot;1024&quot;: 1024, &quot;1280&quot;: 1280}"
+                             @click="galleryIndex = 4" :key="4">
+                        </div>
+                    </div>
+                    <div class="carousel__item">
+                        <div data-image-src="images/photo/6.jpg" data-image-alt="" data-class="gallery__image"
+                             data-dimensions="{&quot;1024&quot;: 1024, &quot;1280&quot;: 1280}"
+                             @click="galleryIndex = 5" :key="5">
+                        </div>
+                    </div>
+                    <div class="carousel__item">
+                        <div data-image-src="images/photo/7.jpg" data-image-alt="" data-class="gallery__image"
+                             data-dimensions="{&quot;1024&quot;: 1024, &quot;1280&quot;: 1280}"
+                             @click="galleryIndex = 6" :key="6">
+                        </div>
+                    </div>
+                    <template slot="prev"><span
+                            class="fa fa-angle-left carousel__nav-btn carousel__nav-btn_prev"></span></template>
+                    <template slot="next"><span
+                            class="fa fa-angle-right carousel__nav-btn carousel__nav-btn_next"></span></template>
+                </carousel>
             </div>
         </section>
 
         <section id="portfolio" class="section">
             <div class="container">
                 <h3 class="title title_smaller text-center">Небольшая подборка фото с работами</h3>
-                <carousel :autoHeight="true" :dots="false" :margin="10" class="carousel" :nav="false"
-                          :responsive="{0:{items:1},640:{items:2}, 768:{items:3}}">
+                <carousel :autoHeight="true" :dots="false" :margin="10" class="carousel carousel_works" :nav="false"
+                          :responsive="{0:{items:1, margin: 0},640:{items:2}, 768:{items:3}}">
                     <div class="carousel__item">
-                        <div data-image-src="images/portfolio/1.jpg" data-image-alt=""></div>
+                        <div data-image-src="images/portfolio/1.jpg" data-image-alt=""
+                             data-dimensions="{&quot;768&quot;: 768, &quot;1024&quot;: 1024}"></div>
                         <div class="carousel__item-caption">
                             <span>Скандинавская игра "Дальдоза"</span>
                         </div>
                     </div>
                     <div class="carousel__item">
-                        <div data-image-src="images/portfolio/3.jpg" data-image-alt=""></div>
+                        <div data-image-src="images/portfolio/3.jpg" data-image-alt=""
+                             data-dimensions="{&quot;768&quot;: 768, &quot;1024&quot;: 1024}"></div>
                         <div class="carousel__item-caption">
                             <span>Обложка для паспорта. Сделана из натуральной кожи. <br>Выжигание лазером.</span>
                         </div>
                     </div>
                     <div class="carousel__item">
-                        <div data-image-src="images/portfolio/4.jpg" data-image-alt=""></div>
+                        <div data-image-src="images/portfolio/4.jpg" data-image-alt=""
+                             data-dimensions="{&quot;768&quot;: 768, &quot;1024&quot;: 1024}"></div>
                         <div class="carousel__item-caption">
                             <span>Обложка для паспорта. Сделана из натуральной кожи. <br>Выжигание лазером.</span>
                         </div>
                     </div>
                     <div class="carousel__item">
-                        <div data-image-src="images/portfolio/2.jpg" data-image-alt=""></div>
+                        <div data-image-src="images/portfolio/2.jpg" data-image-alt=""
+                             data-dimensions="{&quot;768&quot;: 768, &quot;1024&quot;: 1024}"></div>
                         <div class="carousel__item-caption">
                             <span>
                                 Скандинавская игра "Хнафатафл".<br>
@@ -101,7 +153,8 @@
                         </div>
                     </div>
                     <div class="carousel__item">
-                        <div data-image-src="images/portfolio/5.jpg" data-image-alt=""></div>
+                        <div data-image-src="images/portfolio/5.jpg" data-image-alt=""
+                             data-dimensions="{&quot;768&quot;: 768, &quot;1024&quot;: 1024}"></div>
                         <div class="carousel__item-caption">
                             <span>
                                 Мешочек из натуральной кожи.
@@ -109,13 +162,15 @@
                         </div>
                     </div>
                     <div class="carousel__item">
-                        <div data-image-src="images/portfolio/6.jpg" data-image-alt=""></div>
+                        <div data-image-src="images/portfolio/6.jpg" data-image-alt=""
+                             data-dimensions="{&quot;768&quot;: 768, &quot;1024&quot;: 1024}"></div>
                         <div class="carousel__item-caption">
                             <span>Обложки для паспорта. Материал - кожа. <br>Выжигание лазером.</span>
                         </div>
                     </div>
                     <div class="carousel__item">
-                        <div data-image-src="images/portfolio/7.jpg" data-image-alt=""></div>
+                        <div data-image-src="images/portfolio/7.jpg" data-image-alt=""
+                             data-dimensions="{&quot;768&quot;: 768, &quot;1024&quot;: 1024}"></div>
                         <div class="carousel__item-caption">
                             <span>
                                 Магниты на холодильник.
@@ -123,7 +178,8 @@
                         </div>
                     </div>
                     <div class="carousel__item">
-                        <div data-image-src="images/portfolio/8.jpg" data-image-alt=""></div>
+                        <div data-image-src="images/portfolio/8.jpg" data-image-alt=""
+                             data-dimensions="{&quot;768&quot;: 768, &quot;1024&quot;: 1024}"></div>
                         <div class="carousel__item-caption">
                             <span>
                                 Ташка из кожи на Скандинавию.<br>
