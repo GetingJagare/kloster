@@ -30,6 +30,7 @@ var app = new Vue({
             mainImageList: ['images/main.jpg'],
             photoGallery: [
                 'images/photo/1-1280.jpg?v=' + appVersion,
+                'images/photo/11-1280.jpg?v=' + appVersion,
                 'images/photo/2-1280.jpg?v=' + appVersion,
                 'images/photo/3-1280.jpg?v=' + appVersion,
                 'images/photo/4-1280.jpg?v=' + appVersion,
