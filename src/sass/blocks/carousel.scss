@@ -47,6 +47,13 @@
     }
   }
 
+  &_photo &__item-caption {
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    width: auto;
+  }
+
   &__nav-btn {
     position: absolute;
     font-size: 3em !important;

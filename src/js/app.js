@@ -36,6 +36,9 @@ var app = new Vue({
                 'images/photo/5-1280.jpg?v=' + appVersion,
                 'images/photo/6-1280.jpg?v=' + appVersion,
                 'images/photo/7-1280.jpg?v=' + appVersion,
+                'images/photo/8-1280.jpg?v=' + appVersion,
+                'images/photo/9-1280.jpg?v=' + appVersion,
+                'images/photo/10-1280.jpg?v=' + appVersion,
             ],
             workGallery: [
 
