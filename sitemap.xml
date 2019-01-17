@@ -3,5 +3,7 @@
     <url>
         <loc>https://black-freak-society.ru</loc>
         <lastmod>2019-01-18</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1</priority>
     </url>
 </urlset>
