@@ -35,4 +35,16 @@
       display: none;
     }
   }
+
+  .blueimp-gallery {
+    .prev, .next, .close {
+      color: $brown;
+      border-color: $brown;
+
+      &:hover {
+        color: $light-brown;
+        border-color: $light-brown;
+      }
+    }
+  }
 }

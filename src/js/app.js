@@ -28,24 +28,11 @@ var app = new Vue({
             year: '',
             bodyPaddingTop: 0,
             mainImageList: ['images/main.jpg'],
-            photoGallery: [
-                'images/photo/1-1280.jpg?v=' + appVersion,
-                'images/photo/11-1280.jpg?v=' + appVersion,
-                'images/photo/2-1280.jpg?v=' + appVersion,
-                'images/photo/3-1280.jpg?v=' + appVersion,
-                'images/photo/4-1280.jpg?v=' + appVersion,
-                'images/photo/5-1280.jpg?v=' + appVersion,
-                'images/photo/6-1280.jpg?v=' + appVersion,
-                'images/photo/7-1280.jpg?v=' + appVersion,
-                'images/photo/8-1280.jpg?v=' + appVersion,
-                'images/photo/9-1280.jpg?v=' + appVersion,
-                'images/photo/10-1280.jpg?v=' + appVersion,
-            ],
-            workGallery: [
-
-            ],
-            mainImageIndex: null,
-            galleryIndex: null
+            photoGallery: [],
+            photoGalleryIndex: null,
+            workGalleryAllImages: [],
+            workGallery: [],
+            workGalleryIndex: null
         };
     },
 
@@ -54,28 +41,38 @@ var app = new Vue({
 
         const $vm = this;
 
+        window.$vm = $vm;
+
         document.addEventListener("DOMContentLoaded", function() {
             setTimeout($vm.loadImages, 500);
         });
+
+        this.photoGallery = require('./src/photos').images;
+        this.workGalleryAllImages = require('./src/works').images;
     },
 
     methods: {
-        loadImages () {
+        loadImages (container) {
             const $vm = this;
 
-            document.querySelectorAll('[data-image-src]').forEach(function (el) {
+            container = container || document;
+
+            container.querySelectorAll('[data-image-src]').forEach(function (el) {
+                if (el.dataset.notImageLoading) {
+                    return;
+                }
+
                 var image = document.createElement('img'),
                     srcSet = '',
                     imageSizes = '';
 
                 const dimensions = el.dataset.dimensions ? JSON.parse($vm.htmlDecode(el.dataset.dimensions)) : {};
 
-                image.src = el.dataset.imageSrc + '?v=' + appVersion;
+                image.src = el.dataset.imageSrc;
                 image.alt = el.dataset.imageAlt;
 
                 for (var width in dimensions) {
-                    srcSet += (srcSet.length ? ', ' : '') + el.dataset.imageSrc.replace(/\.(.+)$/, '-' +
-                        dimensions[width] + '.$1') + ' ' + width + 'w';
+                    srcSet += (srcSet.length ? ', ' : '') + el.dataset.imageSrc + ' ' + width + 'w';
                     imageSizes += (imageSizes.length ? ', ' : '') + '(max-width: ' + width  + 'px)' + ' ' +
                         dimensions[width] + 'px';
                 }
@@ -89,8 +86,28 @@ var app = new Vue({
         },
 
         htmlDecode (str) {
-            return str.replace('&amp;', '&').replace('&lt;', '<').replace('&gt;', '>').replace('&quot;', "\"");
+            return str.replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"');
+        },
+
+        showWorkGallery (event) {
+            const carouselItem = event.target.closest('.carousel__item');
+
+            const index = Array.prototype.indexOf.call(carouselItem.closest('.carousel').querySelectorAll('.carousel__item'), carouselItem);
+
+            this.workGallery = JSON.parse(this.htmlDecode(this.workGalleryAllImages[index]));
+
+            function showGallery() {
+                const gallery = document.querySelector('.gallery_hidden');
+                if (gallery) {
+                    gallery.querySelectorAll('.gallery__image')[0].click();
+                } else {
+                    setTimeout(showGallery, 100);
+                }
+            }
+
+            setTimeout(showGallery, 100);
         }
+
     },
 
     components: { VueGallery, carousel, MainNav, ContactForm, Socials }

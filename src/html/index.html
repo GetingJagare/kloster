@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    ${require('./blocks/ga.html')}
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -40,10 +39,10 @@
         <h1 class="title text-center">Кто мы есть</h1>
         <section id="about" class="section">
             <div class="container d-md-flex justify-content-between align-items-start">
-                <div class="section__image" data-image-src="images/main.jpg"
-                     data-image-alt="Фотография исторического лагеря"
+                <div class="section__image" data-image-src="images/main.jpg" data-image-alt="Фотография исторического лагеря"
                      data-dimensions="{&quot;1024&quot;: 1024, &quot;1280&quot;: 1280}">
                 </div>
+
                 <div class="section__desc">
                     <p>
                         Русь, Скандинавия, IX-XI вв.<br>
@@ -62,216 +61,20 @@
         <section id="photo" class="section section_even gallery">
             <div class="container d-md-flex flex-wrap align-items-start">
                 <h2 class="title title_smaller text-center">Несколько фотографий с мероприятий...</h2>
-                <vue-gallery :images="photoGallery" :index="galleryIndex" :options="{startSlideshow: true}"
-                             @close="galleryIndex = null"></vue-gallery>
-                <carousel :autoHeight="true" :autoWidth="true" :dots="false" :margin="10" class="carousel carousel_photo"
-                          :nav="false" :mouseDrag="false" :touchDrag="false"
-                          :responsive="{0:{items:1, margin: 0}, 768:{items:2}}">
-                    <div class="carousel__item">
-                        <div data-image-src="images/photo/1.jpg" data-image-alt="" data-class="gallery__image"
-                             data-dimensions="{&quot;1024&quot;: 1024, &quot;1280&quot;: 1280}"
-                             @click="galleryIndex = 0" :key="0">
-                        </div>
-                        <div class="carousel__item-caption">
-                            <span>Воиново Поле, 2018 г.</span>
-                        </div>
-                    </div>
-                    <div class="carousel__item">
-                        <div data-image-src="images/photo/11.jpg" data-image-alt="" data-class="gallery__image"
-                             data-dimensions="{&quot;1024&quot;: 1024, &quot;1280&quot;: 1280}"
-                             @click="galleryIndex = 1" :key="1">
-                        </div>
-                        <div class="carousel__item-caption">
-                            <span>Монастырские маневры, 2017 г.</span>
-                        </div>
-                    </div>
-                    <div class="carousel__item">
-                        <div data-image-src="images/photo/2.jpg" data-image-alt="" data-class="gallery__image"
-                             data-dimensions="{&quot;1024&quot;: 1024, &quot;1280&quot;: 1280}"
-                             @click="galleryIndex = 2" :key="2">
-                        </div>
-                        <div class="carousel__item-caption">
-                            <span>Воиново Поле, 2018 г.</span>
-                        </div>
-                    </div>
-                    <div class="carousel__item">
-                        <div data-image-src="images/photo/3.jpg" data-image-alt="" data-class="gallery__image"
-                             data-dimensions="{&quot;1024&quot;: 1024, &quot;1280&quot;: 1280}"
-                             @click="galleryIndex = 3" :key="3">
-                        </div>
-                        <div class="carousel__item-caption">
-                            <span>Воиново Поле, 2018 г.</span>
-                        </div>
-                    </div>
-                    <div class="carousel__item">
-                        <div data-image-src="images/photo/4.jpg" data-image-alt="" data-class="gallery__image"
-                             data-dimensions="{&quot;1024&quot;: 1024, &quot;1280&quot;: 1280}"
-                             @click="galleryIndex = 4" :key="4">
-                        </div>
-                        <div class="carousel__item-caption">
-                            <span>Воиново Поле, 2018 г.</span>
-                        </div>
-                    </div>
-                    <div class="carousel__item">
-                        <div data-image-src="images/photo/5.jpg" data-image-alt="" data-class="gallery__image"
-                             data-dimensions="{&quot;1024&quot;: 1024, &quot;1280&quot;: 1280}"
-                             @click="galleryIndex = 5" :key="5">
-                        </div>
-                        <div class="carousel__item-caption">
-                            <span>Воиново Поле, 2018 г.</span>
-                        </div>
-                    </div>
-                    <div class="carousel__item">
-                        <div data-image-src="images/photo/6.jpg" data-image-alt="" data-class="gallery__image"
-                             data-dimensions="{&quot;1024&quot;: 1024, &quot;1280&quot;: 1280}"
-                             @click="galleryIndex = 6" :key="6">
-                        </div>
-                        <div class="carousel__item-caption">
-                            <span>Воиново Поле, 2018 г.</span>
-                        </div>
-                    </div>
-                    <div class="carousel__item">
-                        <div data-image-src="images/photo/7.jpg" data-image-alt="" data-class="gallery__image"
-                             data-dimensions="{&quot;1024&quot;: 1024, &quot;1280&quot;: 1280}"
-                             @click="galleryIndex = 7" :key="7">
-                        </div>
-                        <div class="carousel__item-caption">
-                            <span>Воиново Поле, 2018 г.</span>
-                        </div>
-                    </div>
-                    <div class="carousel__item">
-                        <div data-image-src="images/photo/8.jpg" data-image-alt="" data-class="gallery__image"
-                             data-dimensions="{&quot;1024&quot;: 1024, &quot;1280&quot;: 1280}"
-                             @click="galleryIndex = 8" :key="8">
-                        </div>
-                        <div class="carousel__item-caption">
-                            <span>Наследие предков, 2017 г.</span>
-                        </div>
-                    </div>
-                    <div class="carousel__item">
-                        <div data-image-src="images/photo/9.jpg" data-image-alt="" data-class="gallery__image"
-                             data-dimensions="{&quot;1024&quot;: 1024, &quot;1280&quot;: 1280}"
-                             @click="galleryIndex = 9" :key="9">
-                        </div>
-                        <div class="carousel__item-caption">
-                            <span>Наследие предков, 2017 г.</span>
-                        </div>
-                    </div>
-                    <div class="carousel__item">
-                        <div data-image-src="images/photo/10.jpg" data-image-alt="" data-class="gallery__image"
-                             data-dimensions="{&quot;1024&quot;: 1024, &quot;1280&quot;: 1280}"
-                             @click="galleryIndex = 10" :key="10">
-                        </div>
-                        <div class="carousel__item-caption">
-                            <span>Наследие предков, 2017 г.</span>
-                        </div>
-                    </div>
-                    <template slot="prev"><span
-                            class="fa fa-angle-left carousel__nav-btn carousel__nav-btn_prev"></span></template>
-                    <template slot="next"><span
-                            class="fa fa-angle-right carousel__nav-btn carousel__nav-btn_next"></span></template>
-                </carousel>
+
+                <div class="section__content"></div>
+
+                ${require('./blocks/photos.html')}
             </div>
         </section>
 
         <section id="portfolio" class="section">
             <div class="container">
                 <h3 class="title title_smaller text-center">Небольшая подборка фото с работами</h3>
-                <carousel :autoHeight="true" :dots="false" :margin="10" class="carousel carousel_works" :nav="false"
-                          :responsive="{0:{items:1, margin: 0},640:{items:2}, 768:{items:3}}">
-                    <div class="carousel__item">
-                        <div data-image-src="images/portfolio/1.jpg" data-image-alt=""
-                             data-dimensions="{&quot;768&quot;: 768, &quot;1024&quot;: 1024}"></div>
-                        <div class="carousel__item-caption">
-                            <span>Скандинавская игра "Дальдоза"</span>
-                        </div>
-                    </div>
-                    <div class="carousel__item">
-                        <div data-image-src="images/portfolio/3.jpg" data-image-alt=""
-                             data-dimensions="{&quot;768&quot;: 768, &quot;1024&quot;: 1024}"></div>
-                        <div class="carousel__item-caption">
-                            <span>Обложка для паспорта. Сделана из натуральной кожи. <br>Пирография.</span>
-                        </div>
-                    </div>
-                    <div class="carousel__item">
-                        <div data-image-src="images/portfolio/4.jpg" data-image-alt=""
-                             data-dimensions="{&quot;768&quot;: 768, &quot;1024&quot;: 1024}"></div>
-                        <div class="carousel__item-caption">
-                            <span>Обложка для паспорта. Сделана из натуральной кожи. <br>Пирография.</span>
-                        </div>
-                    </div>
-                    <div class="carousel__item">
-                        <div data-image-src="images/portfolio/2.jpg" data-image-alt=""
-                             data-dimensions="{&quot;768&quot;: 768, &quot;1024&quot;: 1024}"></div>
-                        <div class="carousel__item-caption">
-                            <span>
-                                Скандинавская игра "Хнефатафл".<br>
-                                Материалы - кожа, дубовый желудь, каштан. Пирография.
-                            </span>
-                        </div>
-                    </div>
-                    <div class="carousel__item">
-                        <div data-image-src="images/portfolio/6.jpg" data-image-alt=""
-                             data-dimensions="{&quot;768&quot;: 768, &quot;1024&quot;: 1024}"></div>
-                        <div class="carousel__item-caption">
-                            <span>Обложки для паспорта. Материал - кожа. <br>Пирография.</span>
-                        </div>
-                    </div>
-                    <div class="carousel__item">
-                        <div data-image-src="images/portfolio/7.jpg" data-image-alt=""
-                             data-dimensions="{&quot;768&quot;: 768, &quot;1024&quot;: 1024}"></div>
-                        <div class="carousel__item-caption">
-                            <span>
-                                Магниты на холодильник. Пирография
-                            </span>
-                        </div>
-                    </div>
-                    <div class="carousel__item">
-                        <div data-image-src="images/portfolio/8.jpg" data-image-alt=""
-                             data-dimensions="{&quot;768&quot;: 768, &quot;1024&quot;: 1024}"></div>
-                        <div class="carousel__item-caption">
-                            <span>
-                                Ташка из кожи на Скандинавию.<br>
-                                Литье - латунь.
-                            </span>
-                        </div>
-                    </div>
-                    <div class="carousel__item">
-                        <div data-image-src="images/portfolio/9.jpg" data-image-alt=""
-                             data-dimensions="{&quot;768&quot;: 768, &quot;1024&quot;: 1024}"></div>
-                        <div class="carousel__item-caption">
-                            <span>
-                                Ботинки из натуральной кожи на Скандинавию, 9 - 11 вв.<br>
-                                Пропитаны воско-жировым составом.
-                            </span>
-                        </div>
-                    </div>
-                    <div class="carousel__item">
-                        <div data-image-src="images/portfolio/10.jpg" data-image-alt=""
-                             data-dimensions="{&quot;768&quot;: 768, &quot;1024&quot;: 1024}"></div>
-                        <div class="carousel__item-caption">
-                            <span>
-                                Нож кованый, сталь 65-Г. Рукоять - бук.<br>
-                                Пропитка рукояти льняным маслом.
-                            </span>
-                        </div>
-                    </div>
-                    <div class="carousel__item">
-                        <div data-image-src="images/portfolio/11.jpg" data-image-alt=""
-                             data-dimensions="{&quot;768&quot;: 768, &quot;1024&quot;: 1024}"></div>
-                        <div class="carousel__item-caption">
-                            <span>
-                                Нож кованый, сталь 65-Г. Рукоять - бук.<br>
-                                Пропитка рукояти льняным маслом.
-                            </span>
-                        </div>
-                    </div>
 
-                    <template slot="prev"><span
-                            class="fa fa-angle-left carousel__nav-btn carousel__nav-btn_prev"></span></template>
-                    <template slot="next"><span
-                            class="fa fa-angle-right carousel__nav-btn carousel__nav-btn_next"></span></template>
-                </carousel>
+                <div class="section__content"></div>
+
+                ${require('./blocks/works.html')}
             </div>
         </section>
 
@@ -286,7 +89,8 @@
                     наших
                     аккаунтов в социальных сетях.
                 </p>
-                ${require('./blocks/contact-form.html')}
+
+                <contact-form></contact-form>
             </div>
         </section>
     </main>
@@ -301,7 +105,6 @@
     </footer>
 </div>
 
-${require('./blocks/ya.html')}
 <script src="https://www.google.com/recaptcha/api.js?onload=vueRecaptchaApiLoaded&render=explicit" async defer></script>
 </body>
 </html>

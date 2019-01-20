@@ -1,4 +1,8 @@
 .gallery {
+  &_hidden {
+    display: none;
+  }
+
   &__image {
     width: 25%;
     padding: 10px;
@@ -19,18 +23,6 @@
 
     @media screen and (min-width: 768px) and (max-width: 1023.98px) {
       width: 50%;
-    }
-  }
-
-  .blueimp-gallery {
-    .prev, .next, .close {
-      color: $brown;
-      border-color: $brown;
-
-      &:hover {
-        color: $light-brown;
-        border-color: $light-brown;
-      }
     }
   }
 }

@@ -10,7 +10,7 @@ const devMode = process.env.NODE_ENV === 'development';
 
 module.exports = {
     mode: !devMode ? 'production' : 'development',
-    entry: ['./src/js/app.js', './src/sass/app.scss'],
+    entry: ['./src/js/counters.js', './src/js/app.js', './src/sass/app.scss'],
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'app.js'
@@ -95,7 +95,7 @@ module.exports = {
             },
             {
                 test: /\.html$/,
-                include: path.join(__dirname, 'src/html/blocks'),
+                include: [path.join(__dirname, 'src/html/counters'), path.join(__dirname, 'src/html/blocks')],
                 use: {
                     loader: 'html-loader',
                     options: {
