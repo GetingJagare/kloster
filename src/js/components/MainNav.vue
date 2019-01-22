@@ -94,7 +94,6 @@
             },
 
             checkInWhatSection () {
-                const $vm = this;
 
                 const sections = document.querySelectorAll('.section');
 
@@ -102,10 +101,10 @@
                     var section = sections[i];
 
                     const scrollTop = document.documentElement.scrollTop;
-                    const minScrollTop = index > 0 ? section.offsetTop : 0;
+                    const minScrollTop = i > 0 ? section.offsetTop : 0;
 
                     if (scrollTop >= minScrollTop && scrollTop < section.offsetTop + section.offsetHeight) {
-                        $vm.setNavItemActive(document.querySelector('.header__nav').querySelector('[href="#' + section.id + '"]'));
+                        this.setNavItemActive(document.querySelector('.header__nav').querySelector('[href="#' + section.id + '"]'));
                     }
                 }
             },

@@ -53,7 +53,6 @@ var app = new Vue({
 
     methods: {
         loadImages (container) {
-            const $vm = this;
 
             container = container || document;
 
@@ -70,7 +69,7 @@ var app = new Vue({
                     srcSet = '',
                     imageSizes = '';
 
-                const dimensions = el.dataset.dimensions ? JSON.parse($vm.htmlDecode(el.dataset.dimensions)) : {};
+                const dimensions = el.dataset.dimensions ? JSON.parse(this.htmlDecode(el.dataset.dimensions)) : {};
 
                 image.src = el.dataset.imageSrc;
                 image.alt = el.dataset.imageAlt;
