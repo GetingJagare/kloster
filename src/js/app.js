@@ -12,6 +12,18 @@ import Socials from './components/Socials.vue';
 
 Vue.use(BootstrapVue);
 
+(function(e){
+    e.closest = e.closest || function(css){
+        var node = this;
+
+        while (node) {
+            if (node.matches(css)) return node;
+            else node = node.parentElement;
+        }
+        return null;
+    }
+})(Element.prototype);
+
 window.hasElemClass = function (elem, className) {
     return elem.className.indexOf(className) > -1;
 };
