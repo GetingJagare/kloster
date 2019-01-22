@@ -86,9 +86,11 @@
             },
 
             setNavItemActive (navItem) {
-                document.querySelectorAll('.nav-link_active').forEach(function (elem) {
-                    deleteClassName(elem, 'nav-link_active');
-                });
+                const activeItems = document.querySelectorAll('.nav-link_active');
+
+                for (var i = 0; i < activeItems.length; i++) {
+                    deleteClassName(activeItems[i], 'nav-link_active');
+                }
 
                 navItem.className += ' nav-link_active';
             },
