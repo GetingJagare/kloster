@@ -12,17 +12,17 @@ import Socials from './components/Socials.vue';
 
 Vue.use(BootstrapVue);
 
-(function(e){
-    e.closest = e.closest || function(css){
-        var node = this;
-
-        while (node) {
-            if (node.matches(css)) return node;
-            else node = node.parentElement;
+(function (ELEMENT) {
+    ELEMENT.matches = ELEMENT.matches || ELEMENT.mozMatchesSelector || ELEMENT.msMatchesSelector || ELEMENT.oMatchesSelector || ELEMENT.webkitMatchesSelector;
+    ELEMENT.closest = ELEMENT.closest || function closest(selector) {
+        if (!this) return null;
+        if (this.matches(selector)) return this;
+        if (!this.parentElement) {
+            return null
         }
-        return null;
-    }
-})(Element.prototype);
+        else return this.parentElement.closest(selector)
+    };
+}(Element.prototype));
 
 window.hasElemClass = function (elem, className) {
     return elem.className.indexOf(className) > -1;
@@ -35,7 +35,7 @@ window.deleteClassName = function (elem, className) {
 
 var app = new Vue({
     el: '#app',
-    data () {
+    data() {
         return {
             year: '',
             bodyPaddingTop: 0,
@@ -55,7 +55,7 @@ var app = new Vue({
 
         window.$vm = $vm;
 
-        document.addEventListener("DOMContentLoaded", function() {
+        document.addEventListener("DOMContentLoaded", function () {
             setTimeout($vm.loadImages, 500);
         });
 
@@ -64,7 +64,7 @@ var app = new Vue({
     },
 
     methods: {
-        loadImages (container) {
+        loadImages(container) {
 
             container = container || document;
 
@@ -88,7 +88,7 @@ var app = new Vue({
 
                 for (var width in dimensions) {
                     srcSet += (srcSet.length ? ', ' : '') + el.dataset.imageSrc + ' ' + width + 'w';
-                    imageSizes += (imageSizes.length ? ', ' : '') + '(max-width: ' + width  + 'px)' + ' ' +
+                    imageSizes += (imageSizes.length ? ', ' : '') + '(max-width: ' + width + 'px)' + ' ' +
                         dimensions[width] + 'px';
                 }
 
@@ -100,11 +100,11 @@ var app = new Vue({
             }
         },
 
-        htmlDecode (str) {
+        htmlDecode(str) {
             return str.replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"');
         },
 
-        showWorkGallery (event) {
+        showWorkGallery(event) {
             const carouselItem = event.target.closest('.carousel__item');
 
             const index = Array.prototype.indexOf.call(carouselItem.closest('.carousel').querySelectorAll('.carousel__item'), carouselItem);
@@ -125,5 +125,5 @@ var app = new Vue({
 
     },
 
-    components: { VueGallery, carousel, MainNav, ContactForm, Socials }
+    components: {VueGallery, carousel, MainNav, ContactForm, Socials}
 });
