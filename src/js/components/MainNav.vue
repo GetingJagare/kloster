@@ -96,14 +96,18 @@
             checkInWhatSection () {
                 const $vm = this;
 
-                document.querySelectorAll('.section').forEach(function (section, index) {
+                const sections = document.querySelectorAll('.section');
+
+                for (var i = 0; i < sections.length; i++) {
+                    var section = sections[i];
+
                     const scrollTop = document.documentElement.scrollTop;
                     const minScrollTop = index > 0 ? section.offsetTop : 0;
 
                     if (scrollTop >= minScrollTop && scrollTop < section.offsetTop + section.offsetHeight) {
                         $vm.setNavItemActive(document.querySelector('.header__nav').querySelector('[href="#' + section.id + '"]'));
                     }
-                });
+                }
             },
 
         },

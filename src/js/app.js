@@ -57,7 +57,11 @@ var app = new Vue({
 
             container = container || document;
 
-            container.querySelectorAll('[data-image-src]').forEach(function (el) {
+            const imageContainers = container.querySelectorAll('[data-image-src]');
+
+            for (var i = 0; i < imageContainers.length; i++) {
+                var el = imageContainers[i];
+
                 if (el.dataset.notImageLoading) {
                     return;
                 }
@@ -82,7 +86,7 @@ var app = new Vue({
                 image.className = el.dataset.class && el.dataset.class.length ? el.dataset.class : '';
 
                 el.appendChild(image);
-            });
+            }
         },
 
         htmlDecode (str) {
