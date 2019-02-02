@@ -44,4 +44,18 @@
       top: 10px;
     }
   }
+
+  &__langs {
+    a {
+
+      display: inline-block;
+      margin: 0 4px;
+
+      span {
+        width: 1.5em;
+        line-height: 1.5em;
+      }
+
+    }
+  }
 }

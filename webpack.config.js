@@ -1,4 +1,5 @@
-let path = require('path');
+const path = require('path');
+const fs = require('fs');
 
 const cleanWebpackPlugin = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
@@ -7,6 +8,57 @@ const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const htmlWebpackPlugin = require('html-webpack-plugin');
 const devMode = process.env.NODE_ENV === 'development';
+
+const config = require('./config');
+
+const langPath = path.resolve(__dirname, 'translations');
+const htmlPluginOptions = {
+    inject: true,
+    hash: true,
+    minify: devMode ? false : {
+        collapseWhitespace: true,
+        removeComments: true,
+        removeRedundantAttributes: true,
+        removeScriptTypeAttributes: true,
+        removeStyleLinkTypeAttributes: true,
+        useShortDoctype: true,
+        //removeEmptyElements: true,
+        removeTagWhitespace: true,
+        //ignoreCustomFragments: [/<a[^>]*>.*<\/a>/]
+    }
+};
+let langHtmlPlugins = [];
+
+let htmlDecode = str => {
+    return str.replace(/&quot;/g, '"').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&')
+};
+
+let __t = (phrase) => {
+    return htmlDecode(phrase);
+};
+
+fs.readdirSync(langPath).forEach(file => {
+    let langTranslations = require(langPath + '/' + file);
+    let langName = file.match(/^(.+)\..+$/)[1];
+
+    let langDir = __dirname + '/' + langName;
+
+    if (!fs.existsSync(langDir)) {
+        fs.mkdirSync(langDir, 0755);
+    }
+
+    let __t = (phrase) => {
+        phrase = htmlDecode(phrase);
+        return langTranslations && langTranslations[phrase] ? langTranslations[phrase] : phrase;
+    };
+
+    langHtmlPlugins.push(new htmlWebpackPlugin(Object.assign({}, {
+        filename: langDir + '/index.html',
+        template: './src/html/index.html',
+        t: __t,
+        lang: langName
+    }, htmlPluginOptions)));
+});
 
 module.exports = {
     mode: !devMode ? 'production' : 'development',
@@ -95,7 +147,7 @@ module.exports = {
             },
             {
                 test: /\.html$/,
-                include: [path.join(__dirname, 'src/html/counters'), path.join(__dirname, 'src/html/blocks')],
+                include: [],
                 use: {
                     loader: 'html-loader',
                     options: {
@@ -111,24 +163,13 @@ module.exports = {
             filename: 'app.css',
         }),
         new VueLoaderPlugin(),
-        new htmlWebpackPlugin({
+        new htmlWebpackPlugin(Object.assign({}, {
             filename: '../index.html',
             template: './src/html/index.html',
-            inject: true,
-            hash: true,
-            minify: devMode ? false : {
-                collapseWhitespace: true,
-                removeComments: true,
-                removeRedundantAttributes: true,
-                removeScriptTypeAttributes: true,
-                removeStyleLinkTypeAttributes: true,
-                useShortDoctype: true,
-                //removeEmptyElements: true,
-                removeTagWhitespace: true,
-                //ignoreCustomFragments: [/<a[^>]*>.*<\/a>/]
-            }
-        })
-    ],
+            t: __t,
+            lang: config.defaultLanguage
+        }, htmlPluginOptions))
+    ].concat(langHtmlPlugins),
     optimization: {
         minimizer: [
             new OptimizeCSSAssetsPlugin({}),

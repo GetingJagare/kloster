@@ -7,7 +7,6 @@ import VueGallery from 'vue-gallery';
 import carousel from 'vue-owl-carousel';
 
 import ContactForm from './components/ContactForm.vue';
-import MainNav from './components/MainNav.vue';
 import Socials from './components/Socials.vue';
 
 Vue.use(BootstrapVue);
@@ -44,7 +43,9 @@ var app = new Vue({
             photoGalleryIndex: null,
             workGalleryAllImages: [],
             workGallery: [],
-            workGalleryIndex: null
+            workGalleryIndex: null,
+            scrollTop: 0,
+            scrollTopMax: 100
         };
     },
 
@@ -55,12 +56,23 @@ var app = new Vue({
 
         window.$vm = $vm;
 
+        $vm.bodyPaddingTop = document.querySelector('.header').offsetHeight;
+
+        window.onscroll = function () {
+            $vm.checkWindowScrollTop();
+            $vm.checkInWhatSection();
+        };
+
         document.addEventListener("DOMContentLoaded", function () {
             setTimeout($vm.loadImages, 500);
         });
 
         this.photoGallery = require('./src/photos').images;
         this.workGalleryAllImages = require('./src/works').images;
+    },
+
+    updated () {
+        this.checkWindowScrollTop();
     },
 
     methods: {
@@ -121,9 +133,59 @@ var app = new Vue({
             }
 
             setTimeout(showGallery, 100);
+        },
+
+        checkWindowScrollTop () {
+            const header = document.querySelector('.header');
+
+            if (document.documentElement.scrollTop >= this.scrollTopMax && !hasElemClass(header, 'header_sticky')) {
+                header.className += ' header_sticky';
+            } else if (document.documentElement.scrollTop < this.scrollTopMax) {
+                header.className = header.className.replace(/\s*header_sticky/g, '');
+            }
+        },
+
+        scrollWindow (event, index) {
+            event.preventDefault();
+
+            const $vm = this;
+            const id = event.target.hash;
+
+            this.scrollTop = document.querySelector(id).offsetTop + (window.width >= 768 ? -$vm.$root.bodyPaddingTop : 0);
+
+            window.scrollTo({
+                top: index > 0 ? this.scrollTop : index,
+                behavior: 'smooth'
+            });
+        },
+
+        setNavItemActive (navItem) {
+            const activeItems = document.querySelectorAll('.nav-link_active');
+
+            for (var i = 0; i < activeItems.length; i++) {
+                deleteClassName(activeItems[i], 'nav-link_active');
+            }
+
+            navItem.className += ' nav-link_active';
+        },
+
+        checkInWhatSection () {
+
+            const sections = document.querySelectorAll('.section');
+
+            for (var i = 0; i < sections.length; i++) {
+                var section = sections[i];
+
+                const scrollTop = document.documentElement.scrollTop;
+                const minScrollTop = i > 0 ? section.offsetTop : 0;
+
+                if (scrollTop >= minScrollTop && scrollTop < section.offsetTop + section.offsetHeight) {
+                    this.setNavItemActive(document.querySelector('.header__nav').querySelector('[href="#' + section.id + '"]'));
+                }
+            }
         }
 
     },
 
-    components: {VueGallery, carousel, MainNav, ContactForm, Socials}
+    components: {VueGallery, carousel, ContactForm, Socials}
 });
