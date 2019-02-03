@@ -67,12 +67,17 @@
                     </b-collapse>
                 </b-navbar>
 
-                <div class="langs header__langs">
-                    <a href="/" title="<%= htmlWebpackPlugin.options.t('Русский') %>"><span class="flag-icon flag-icon-ru"></span></a>
-                    <a href="/en" title="<%= htmlWebpackPlugin.options.t('Английский') %>"><span class="flag-icon flag-icon-gb-eng"></span></a>
-                </div>
+                <div class="header__socials">
 
-                <socials></socials>
+                    <socials></socials>
+
+                    <div class="langs header__langs text-center">
+                        <a href="/" title="<%= htmlWebpackPlugin.options.t('Русский') %>"><span
+                                class="flag-icon flag-icon-ru"></span></a>
+                        <a href="/en" title="<%= htmlWebpackPlugin.options.t('Английский') %>"><span
+                                class="flag-icon flag-icon-gb-eng"></span></a>
+                    </div>
+                </div>
             </div>
         </div>
     </header>
@@ -88,12 +93,12 @@
 
                 <div class="section__desc">
                     <p>
-                        Русь, Скандинавия, IX-XI вв.<br>
-                        Да, реконструкция, да...бесполезная?!...Мы просто делаем, что должны делать.<br>
-                        Единство системы, индивидуальность личности.<br>
-                        Создаём, воссоздаём, осветляем, просветляем.<br>
-                        Есть цели и стремление в движении безумного вектора.<br>
-                        Ты знаешь Монастырь?! Ты не куёшь и, не куя, не знаешь Монастырь...
+                        <%= htmlWebpackPlugin.options.t('Русь, Скандинавия, IX-XI вв.') %><br>
+                        <%= htmlWebpackPlugin.options.t('Да, реконструкция, да...бесполезная?!...Мы просто делаем, что должны делать.') %><br>
+                        <%= htmlWebpackPlugin.options.t('Единство системы, индивидуальность личности.') %><br>
+                        <%= htmlWebpackPlugin.options.t('Создаём, воссоздаём, осветляем, просветляем.') %><br>
+                        <%= htmlWebpackPlugin.options.t('Есть цели и стремление в движении безумного вектора.') %><br>
+                        <%= htmlWebpackPlugin.options.t('Ты знаешь Монастырь?! Ты не куёшь и, не куя, не знаешь Монастырь...') %>
                     </p>
                     <p class="text-right">
                         <cite><%= htmlWebpackPlugin.options.t('Если душа просит, то надо открыть') %> </cite> (c)
@@ -103,13 +108,16 @@
         </section>
         <section id="photo" class="section section_even gallery">
             <div class="container d-md-flex flex-wrap align-items-start">
-                <h2 class="title title_smaller text-center">Несколько фотографий с мероприятий...</h2>
+                <h2 class="title title_smaller text-center">
+                    <%= htmlWebpackPlugin.options.t('Несколько фотографий с мероприятий...') %>
+                </h2>
 
                 <div class="section__content"></div>
 
                 <vue-gallery :images="photoGallery" :index="photoGalleryIndex" :options="{startSlideshow: true}"
                              @close="photoGalleryIndex = null"></vue-gallery>
-                <carousel :autoHeight="true" :autoWidth="true" :dots="false" :margin="10" class="carousel carousel_photo"
+                <carousel :autoHeight="true" :autoWidth="true" :dots="false" :margin="10"
+                          class="carousel carousel_photo"
                           :nav="false" :mouseDrag="false" :touchDrag="false"
                           :responsive="{0:{items:1, margin: 0}, 768:{items:2}}">
                     <div class="carousel__item">
@@ -118,7 +126,7 @@
                              @click="photoGalleryIndex = 0" :key="0">
                         </div>
                         <div class="carousel__item-caption">
-                            <span>Воиново Поле, 2018 г.</span>
+                            <span><%= htmlWebpackPlugin.options.t('Воиново Поле') %>, 2018</span>
                         </div>
                     </div>
                     <div class="carousel__item">
@@ -127,7 +135,7 @@
                              @click="photoGalleryIndex = 1" :key="1">
                         </div>
                         <div class="carousel__item-caption">
-                            <span>Монастырские маневры, 2017 г.</span>
+                            <span><%= htmlWebpackPlugin.options.t('Монастырские маневры') %>, 2017</span>
                         </div>
                     </div>
                     <div class="carousel__item">
@@ -136,7 +144,7 @@
                              @click="photoGalleryIndex = 2" :key="2">
                         </div>
                         <div class="carousel__item-caption">
-                            <span>Воиново Поле, 2018 г.</span>
+                            <span><%= htmlWebpackPlugin.options.t('Воиново Поле') %>, 2018</span>
                         </div>
                     </div>
                     <div class="carousel__item">
@@ -145,7 +153,7 @@
                              @click="photoGalleryIndex = 3" :key="3">
                         </div>
                         <div class="carousel__item-caption">
-                            <span>Воиново Поле, 2018 г.</span>
+                            <span><%= htmlWebpackPlugin.options.t('Воиново Поле') %>, 2018</span>
                         </div>
                     </div>
                     <div class="carousel__item">
@@ -154,7 +162,7 @@
                              @click="photoGalleryIndex = 4" :key="4">
                         </div>
                         <div class="carousel__item-caption">
-                            <span>Воиново Поле, 2018 г.</span>
+                            <span><%= htmlWebpackPlugin.options.t('Воиново Поле') %>, 2018</span>
                         </div>
                     </div>
                     <div class="carousel__item">
@@ -163,7 +171,7 @@
                              @click="photoGalleryIndex = 5" :key="5">
                         </div>
                         <div class="carousel__item-caption">
-                            <span>Воиново Поле, 2018 г.</span>
+                            <span><%= htmlWebpackPlugin.options.t('Воиново Поле') %>, 2018</span>
                         </div>
                     </div>
                     <div class="carousel__item">
@@ -172,7 +180,7 @@
                              @click="photoGalleryIndex = 6" :key="6">
                         </div>
                         <div class="carousel__item-caption">
-                            <span>Воиново Поле, 2018 г.</span>
+                            <span><%= htmlWebpackPlugin.options.t('Воиново Поле') %>, 2018</span>
                         </div>
                     </div>
                     <div class="carousel__item">
@@ -181,7 +189,7 @@
                              @click="photoGalleryIndex = 7" :key="7">
                         </div>
                         <div class="carousel__item-caption">
-                            <span>Воиново Поле, 2018 г.</span>
+                            <span><%= htmlWebpackPlugin.options.t('Воиново Поле') %>, 2018</span>
                         </div>
                     </div>
                     <div class="carousel__item">
@@ -190,7 +198,7 @@
                              @click="photoGalleryIndex = 8" :key="8">
                         </div>
                         <div class="carousel__item-caption">
-                            <span>Наследие предков, 2017 г.</span>
+                            <span><%= htmlWebpackPlugin.options.t('Наследие предков') %>, 2017</span>
                         </div>
                     </div>
                     <div class="carousel__item">
@@ -199,7 +207,7 @@
                              @click="photoGalleryIndex = 9" :key="9">
                         </div>
                         <div class="carousel__item-caption">
-                            <span>Наследие предков, 2017 г.</span>
+                            <span><%= htmlWebpackPlugin.options.t('Наследие предков') %>, 2017</span>
                         </div>
                     </div>
                     <div class="carousel__item">
@@ -208,7 +216,7 @@
                              @click="photoGalleryIndex = 10" :key="10">
                         </div>
                         <div class="carousel__item-caption">
-                            <span>Наследие предков, 2017 г.</span>
+                            <span><%= htmlWebpackPlugin.options.t('Наследие предков') %>, 2017</span>
                         </div>
                     </div>
                     <template slot="prev"><span
@@ -221,72 +229,81 @@
 
         <section id="portfolio" class="section">
             <div class="container">
-                <h3 class="title title_smaller text-center">Небольшая подборка фото с работами</h3>
+                <h3 class="title title_smaller text-center">
+                    <%= htmlWebpackPlugin.options.t('Небольшая подборка фото с работами') %></h3>
 
                 <div class="section__content"></div>
 
                 <carousel :autoHeight="true" :dots="false" :margin="10" class="carousel carousel_works" :nav="false"
                           :responsive="{0:{items:1, margin: 0},640:{items:2}, 768:{items:3}}">
-                    <div class="carousel__item" @click.stop="showWorkGallery" title="Кликните, чтобы посмотреть все фотографии">
+                    <div class="carousel__item" @click.stop="showWorkGallery"
+                         title="<%= htmlWebpackPlugin.options.t('Кликните, чтобы посмотреть все фотографии') %>">
                         <div data-image-src="/images/portfolio/1-1024.jpg" data-image-alt=""
                              data-dimensions="{&quot;768&quot;: 768, &quot;1024&quot;: 1024}"></div>
                         <div class="carousel__item-caption">
-                            <span>Скандинавская игра "Дальдоза"</span>
+                            <span><%= htmlWebpackPlugin.options.t('Скандинавская игра "Дальдоза"') %></span>
                         </div>
                     </div>
-                    <div class="carousel__item" @click.stop="showWorkGallery" title="Кликните, чтобы посмотреть все фотографии">
+                    <div class="carousel__item" @click.stop="showWorkGallery"
+                         title="<%= htmlWebpackPlugin.options.t('Кликните, чтобы посмотреть все фотографии') %>">
                         <div data-image-src="/images/portfolio/3-1024.jpg" data-image-alt=""
                              data-dimensions="{&quot;768&quot;: 768, &quot;1024&quot;: 1024}"></div>
                         <div class="carousel__item-caption">
-                            <span>Обложка для паспорта. Сделана из натуральной кожи. <br>Пирография.</span>
+                            <span><%= htmlWebpackPlugin.options.t('Обложка для паспорта. Сделана из натуральной кожи.') %>
+                                <br><%= htmlWebpackPlugin.options.t('Пирография.') %></span>
                         </div>
                     </div>
-                    <div class="carousel__item" @click.stop="showWorkGallery" title="Кликните, чтобы посмотреть все фотографии">
+                    <div class="carousel__item" @click.stop="showWorkGallery"
+                         title="<%= htmlWebpackPlugin.options.t('Кликните, чтобы посмотреть все фотографии') %>">
                         <div data-image-src="/images/portfolio/2-1024.jpg" data-image-alt=""
                              data-dimensions="{&quot;768&quot;: 768, &quot;1024&quot;: 1024}"></div>
                         <div class="carousel__item-caption">
             <span>
-                Скандинавская игра "Хнефатафл".<br>
-                Материалы - кожа, дубовый желудь, каштан. Пирография.
+                <%= htmlWebpackPlugin.options.t('Скандинавская игра "Хнефатафл".') %><br>
+                <%= htmlWebpackPlugin.options.t('Материалы - кожа, дубовый желудь, каштан. Пирография.') %>
             </span>
                         </div>
                     </div>
-                    <div class="carousel__item" @click.stop="showWorkGallery" title="Кликните, чтобы посмотреть все фотографии">
+                    <div class="carousel__item" @click.stop="showWorkGallery"
+                         title="<%= htmlWebpackPlugin.options.t('Кликните, чтобы посмотреть все фотографии') %>">
                         <div data-image-src="/images/portfolio/7-1024.jpg" data-image-alt=""
                              data-dimensions="{&quot;768&quot;: 768, &quot;1024&quot;: 1024}"></div>
                         <div class="carousel__item-caption">
             <span>
-                Магниты на холодильник. Пирография
+                <%= htmlWebpackPlugin.options.t('Магниты на холодильник. Пирография') %>
             </span>
                         </div>
                     </div>
-                    <div class="carousel__item" @click.stop="showWorkGallery" title="Кликните, чтобы посмотреть все фотографии">
+                    <div class="carousel__item" @click.stop="showWorkGallery"
+                         title="<%= htmlWebpackPlugin.options.t('Кликните, чтобы посмотреть все фотографии') %>">
                         <div data-image-src="/images/portfolio/8-1024.jpg" data-image-alt=""
                              data-dimensions="{&quot;768&quot;: 768, &quot;1024&quot;: 1024}"></div>
                         <div class="carousel__item-caption">
             <span>
-                Ташка из кожи на Скандинавию.<br>
-                Литье - латунь.
+                <%= htmlWebpackPlugin.options.t('Ташка из кожи на Скандинавию.') %><br>
+                <%= htmlWebpackPlugin.options.t('Литье - латунь.') %>
             </span>
                         </div>
                     </div>
-                    <div class="carousel__item" @click.stop="showWorkGallery" title="Кликните, чтобы посмотреть все фотографии">
+                    <div class="carousel__item" @click.stop="showWorkGallery"
+                         title="<%= htmlWebpackPlugin.options.t('Кликните, чтобы посмотреть все фотографии') %>">
                         <div data-image-src="/images/portfolio/9-1024.jpg" data-image-alt=""
                              data-dimensions="{&quot;768&quot;: 768, &quot;1024&quot;: 1024}"></div>
                         <div class="carousel__item-caption">
             <span>
-                Ботинки из натуральной кожи на Скандинавию, 9 - 11 вв.<br>
-                Пропитаны воско-жировым составом.
+                <%= htmlWebpackPlugin.options.t('Ботинки из натуральной кожи на Скандинавию, 9 - 11 вв.') %><br>
+                <%= htmlWebpackPlugin.options.t('Пропитаны воско-жировым составом.') %>
             </span>
                         </div>
                     </div>
-                    <div class="carousel__item" @click.stop="showWorkGallery" title="Кликните, чтобы посмотреть все фотографии">
+                    <div class="carousel__item" @click.stop="showWorkGallery"
+                         title="<%= htmlWebpackPlugin.options.t('Кликните, чтобы посмотреть все фотографии') %>">
                         <div data-image-src="/images/portfolio/10-1024.jpg" data-image-alt=""
                              data-dimensions="{&quot;768&quot;: 768, &quot;1024&quot;: 1024}"></div>
                         <div class="carousel__item-caption">
             <span>
-                Нож кованый, сталь 65-Г. Рукоять - бук.<br>
-                Пропитка рукояти льняным маслом.
+                <%= htmlWebpackPlugin.options.t('Нож кованый, сталь 65-Г. Рукоять - бук.') %><br>
+                <%= htmlWebpackPlugin.options.t('Пропитка рукояти льняным маслом.') %>
             </span>
                         </div>
                     </div>
@@ -298,34 +315,49 @@
                 </carousel>
 
                 <div class="gallery gallery_hidden" v-if="workGallery.length">
-                    <img class="gallery__image" v-for="(workImage, imageIndex) in workGallery" @click="workGalleryIndex = imageIndex"
-                         :src="workImage" />
+                    <img class="gallery__image" v-for="(workImage, imageIndex) in workGallery"
+                         @click="workGalleryIndex = imageIndex"
+                         :src="workImage"/>
                 </div>
-                <vue-gallery :images="workGallery" :index="workGalleryIndex" :options="{container: '#work-gallery'}" id="work-gallery"
+                <vue-gallery :images="workGallery" :index="workGalleryIndex" :options="{container: '#work-gallery'}"
+                             id="work-gallery"
                              @close="workGalleryIndex = null"></vue-gallery>
             </div>
         </section>
 
         <section id="contacts" class="section section_even">
             <div class="container">
-                <h4 class="title title_smaller text-center">Контакты</h4>
+                <h4 class="title title_smaller text-center"><%= htmlWebpackPlugin.options.t('Контакты') %></h4>
                 <p>
-                    В данный момент располагаемся в Москве.
+                    <%= htmlWebpackPlugin.options.t('В данный момент располагаемся в Москве.') %>
                 </p>
                 <p>
-                    Если у Вас возникли какие-либо вопросы, то смело можете их задать через форму ниже или в один из
-                    наших
-                    аккаунтов в социальных сетях.
+                    <%= htmlWebpackPlugin.options.t('Если у Вас возникли какие-либо вопросы, то можете написать напрямую на наш электронный адрес') %>
+                    <a href="mailto:mbd.kloster@yandex.ru" class="link link_dotted">mbd.kloster@yandex.ru</a>,
+                    <%= htmlWebpackPlugin.options.t('задать их через форму ниже или в один из наших аккаунтов в социальных сетях.') %>
                 </p>
 
-                <contact-form></contact-form>
+                <contact-form name-text="<%= htmlWebpackPlugin.options.t('Имя') %>"
+                              message-text="<%= htmlWebpackPlugin.options.t('Ваш вопрос') %>"
+                              send-text="<%= htmlWebpackPlugin.options.t('Отправить') %>"
+                              fill-text="<%= htmlWebpackPlugin.options.t('Заполните это поле') %>"></contact-form>
+
             </div>
         </section>
     </main>
 
     <footer class="d-md-flex footer">
-        <div class="container d-md-flex justify-content-between">
-            <socials></socials>
+        <div class="container d-md-flex justify-content-between align-items-center">
+            <div class="footer__socials">
+                <socials></socials>
+
+                <div class="langs footer__langs text-left text-md-center">
+                    <a href="/" title="<%= htmlWebpackPlugin.options.t('Русский') %>"><span
+                            class="flag-icon flag-icon-ru"></span></a>
+                    <a href="/en" title="<%= htmlWebpackPlugin.options.t('Английский') %>"><span
+                            class="flag-icon flag-icon-gb-eng"></span></a>
+                </div>
+            </div>
 
             <div class="footer__copyright">
                 <%= htmlWebpackPlugin.options.t('Мастерская Былых Дел') %> &copy;, {{ year }}
@@ -334,6 +366,7 @@
     </footer>
 </div>
 
-<script src="https://www.google.com/recaptcha/api.js?onload=vueRecaptchaApiLoaded&render=explicit" async defer></script>
+<script src="https://www.google.com/recaptcha/api.js?hl=<%= htmlWebpackPlugin.options.lang %>&onload=vueRecaptchaApiLoaded&render=explicit"
+        async defer></script>
 </body>
 </html>
