@@ -18,7 +18,7 @@ app.post('/mail', function (req, res) {
         } else {
             const shell = require('shelljs');
             const from = 'noreply@black-freak-society.ru';
-            const to = 'mbd.kloster@yandex.ru';
+            const to = 'mbd.kloster@yandex.ru,getingjagare@gmail.com';
             const subject = 'Сообщение с сайта';
             shell.exec('echo "From: ' + from + '\r\nSubject: ' + subject + '\r\nTo: ' + to + '\r\n\r\nИмя: ' + name + '\r\n' +
                 'Email: ' + email + '\r\nСообщение: ' + text + '" | sendmail -f ' + from + ' ' + to);

@@ -48,5 +48,6 @@
   "Заполните это поле": "Fill this field",
   "Капча не пройдена!": "Captcha not passed!",
   "Не все поля заполнены!": "Not all required fields are filled!",
-  "Сообщение отправлено": "Message sent"
+  "Сообщение отправлено": "Message sent",
+  "Произошла ошибка при отправке!": "Message sending error has occured!"
 }
