@@ -46,16 +46,14 @@
   }
 
   &__langs {
-    a {
 
+    &-link {
       display: inline-block;
       margin: 0 4px;
+    }
 
-      span {
-        width: 1.5em;
-        line-height: 1.5em;
-      }
-
+    &-icon {
+      line-height: 1.5em;
     }
   }
 }

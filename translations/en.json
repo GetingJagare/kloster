@@ -19,11 +19,11 @@
   "Наследие предков": "Nasledie predkov",
   "Монастырские маневры": "Cloister maneuvers",
   "Несколько фотографий с мероприятий...": "Some photos from fests...",
-  "Русь, Скандинавия, IX-XI вв.": "Russia, Scandinavia, IX-XI centuries.",
+  "Русь, Скандинавия, IX-XI вв.": "Gardarika, Scandinavia, IX-XI centuries.",
   "Да, реконструкция, да...бесполезная?!...Мы просто делаем, что должны делать.": "Yes, it's recontruction, yes, it's not usual. We just do what we must do.",
   "Единство системы, индивидуальность личности.": "Unity of system, individuality of person.",
   "Создаём, воссоздаём, осветляем, просветляем.": "We create and recreate, lighten and enlighten.",
-  "Есть цели и стремление в движении безумного вектора.": "We have targets and aspiration in moving to unusual direction.",
+  "Есть цели и стремление в движении безумного вектора.": "We have targets and aspiration in moving towards unusual direction.",
   "Ты знаешь Монастырь?! Ты не куёшь и, не куя, не знаешь Монастырь...": "D'you know Cloister? D'you do the best? Not doing the best you don't know Cloister...",
   "Небольшая подборка фото с работами": "Some pull of photos with works",
   "Кликните, чтобы посмотреть все фотографии": "Click to watch all photos",
@@ -45,5 +45,8 @@
   "Имя": "Name",
   "Ваш вопрос": "Your message",
   "Отправить": "Send",
-  "Заполните это поле": "Fill this field"
+  "Заполните это поле": "Fill this field",
+  "Капча не пройдена!": "Captcha not passed!",
+  "Не все поля заполнены!": "Not all required fields are filled!",
+  "Сообщение отправлено": "Message sent"
 }

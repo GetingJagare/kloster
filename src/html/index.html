@@ -27,6 +27,17 @@
     <title><%= htmlWebpackPlugin.options.t("Мастерская Былых Дел &quot;Монастырь&quot; (Kloster)") %></title>
 
     <link rel="canonical" href="https://black-freak-society.ru"/>
+    <% if (process.env.NODE_ENV == 'production') { %>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-131260750-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-131260750-1');
+    </script>
+    <% } %>
 </head>
 <body>
 
@@ -72,10 +83,14 @@
                     <socials></socials>
 
                     <div class="langs header__langs text-center">
-                        <a href="/" title="<%= htmlWebpackPlugin.options.t('Русский') %>"><span
-                                class="flag-icon flag-icon-ru"></span></a>
-                        <a href="/en" title="<%= htmlWebpackPlugin.options.t('Английский') %>"><span
-                                class="flag-icon flag-icon-gb-eng"></span></a>
+                        <% if (htmlWebpackPlugin.options.lang !== 'ru') { %>
+                        <a href="/" title="<%= htmlWebpackPlugin.options.t('Русский') %>" class="langs__link header__langs-link"><span
+                                class="flag-icon flag-icon-ru langs__icon header__langs-icon"></span></a>
+                        <% } %>
+                        <% if (htmlWebpackPlugin.options.lang !== 'en') { %>
+                        <a href="/en" title="<%= htmlWebpackPlugin.options.t('Английский') %>" class="langs__link header__langs-link"><span
+                                class="flag-icon flag-icon-gb-eng langs__icon header__langs-icon"></span></a>
+                        <% } %>
                     </div>
                 </div>
             </div>
@@ -340,7 +355,11 @@
                 <contact-form name-text="<%= htmlWebpackPlugin.options.t('Имя') %>"
                               message-text="<%= htmlWebpackPlugin.options.t('Ваш вопрос') %>"
                               send-text="<%= htmlWebpackPlugin.options.t('Отправить') %>"
-                              fill-text="<%= htmlWebpackPlugin.options.t('Заполните это поле') %>"></contact-form>
+                              fill-text="<%= htmlWebpackPlugin.options.t('Заполните это поле') %>"
+                              captcha-not-passed="<%= htmlWebpackPlugin.options.t('Капча не пройдена!') %>"
+                              fields-not-filled="<%= htmlWebpackPlugin.options.t('Не все поля заполнены!') %>"
+                              message-sent="<%= htmlWebpackPlugin.options.t('Сообщение отправлено') %>"
+                              sending-error="<%= htmlWebpackPlugin.options.t('Произошла ошибка при отправке!') %>"></contact-form>
 
             </div>
         </section>
@@ -351,11 +370,15 @@
             <div class="footer__socials">
                 <socials></socials>
 
-                <div class="langs footer__langs text-left text-md-center">
+                <div class="langs text-left text-md-center">
+                    <% if (htmlWebpackPlugin.options.lang !== 'ru') { %>
                     <a href="/" title="<%= htmlWebpackPlugin.options.t('Русский') %>"><span
-                            class="flag-icon flag-icon-ru"></span></a>
+                            class="flag-icon flag-icon-ru langs__icon"></span></a>
+                    <% } %>
+                    <% if (htmlWebpackPlugin.options.lang !== 'en') { %>
                     <a href="/en" title="<%= htmlWebpackPlugin.options.t('Английский') %>"><span
-                            class="flag-icon flag-icon-gb-eng"></span></a>
+                            class="flag-icon flag-icon-gb-eng langs__icon"></span></a>
+                    <% } %>
                 </div>
             </div>
 
@@ -368,5 +391,22 @@
 
 <script src="https://www.google.com/recaptcha/api.js?hl=<%= htmlWebpackPlugin.options.lang %>&onload=vueRecaptchaApiLoaded&render=explicit"
         async defer></script>
+<% if (process.env.NODE_ENV == 'production') { %>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+    ym(51660419, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true
+    });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/51660419" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+<% } %>
 </body>
 </html>

@@ -9,15 +9,15 @@
                         height="3px"></b-progress>
         </div>
         <b-form-group class="contact-form__field">
-            <b-form-input :placeholder="nameText" required v-model="form.name" class="contact-form__input"
+            <b-form-input :placeholder="nameText" v-model="form.name" class="contact-form__input"
                           autocomplete="off" :title="fillText"></b-form-input>
         </b-form-group>
         <b-form-group class="contact-form__field">
-            <b-form-input placeholder="E-mail" type="email" required v-model="form.email"
+            <b-form-input placeholder="E-mail" type="email" v-model="form.email"
                           class="contact-form__input" autocomplete="off" :title="fillText"></b-form-input>
         </b-form-group>
         <b-form-group class="contact-form__field">
-            <b-form-textarea v-model="form.text" :placeholder="messageText" :rows="3" :max-rows="6" required
+            <b-form-textarea v-model="form.text" :placeholder="messageText" :rows="3" :max-rows="6"
                              class="contact-form__input" autocomplete="off" :title="fillText"></b-form-textarea>
         </b-form-group>
         <b-form-group class="contact-form__field contact-form__field_left">
@@ -44,6 +44,7 @@
                 success: false,
                 messageProgress: 0,
                 maxProgress: 100,
+                requiredFields: ['name', 'text', 'email'],
                 message: '',
                 form: {
                     name: '',
@@ -53,36 +54,64 @@
             }
         },
 
-        props: ['nameText', 'messageText', 'sendText', 'fillText'],
-
-        mounted () {
-            var requiredFields = this.$el.querySelectorAll('input[required], textarea[required]');
-
-            for (var i = 0; i < requiredFields.length; i++) {
-                requiredFields[i].setCustomValidity(this.fillText);
-            }
-        },
+        props: ['nameText', 'messageText', 'sendText', 'fillText', 'captchaNotPassed', 'fieldsNotFilled', 'messageSent', 'sendingError'],
 
         methods: {
+            checkFields (fields) {
+                for (var i = 0; i < this.requiredFields; i++) {
+                    if (!fields[this.requiredFields[i]]) {
+                        return false;
+                    }
+                }
+
+                return true;
+            },
+
             submit() {
                 this.submitted = true;
 
                 const $vm = this;
 
-                var fields = this.form;
+                var fields = this.form,
+                    gRecaptchaValue = document.querySelector('.contact-form').querySelector('#g-recaptcha-response').value;
+
+                if (!this.checkFields(fields)) {
+                    this.showResult(0, this.fieldsNotFilled);
+                    return;
+                }
+
+                if (!gRecaptchaValue) {
+                    this.showResult(0, this.captchaNotPassed);
+                    return;
+                }
 
                 fields = Object.assign(
                         {},
                         fields,
-                        {'g-recaptcha-response': document.querySelector('.contact-form').querySelector('#g-recaptcha-response').value}
+                        {'g-recaptcha-response': gRecaptchaValue}
                     );
 
                 axios.post('/mail', fields)
                     .then(function (response) {
                         $vm.clean();
-                        $vm.showResult(response.data.success, response.data.message)
+
+                        var message = '';
+                        if (response.data.errorCode) {
+                            switch (response.data.errorCode) {
+                                case 1:
+                                    message = this.captchaNotPassed;
+                                    break;
+                                case 2:
+                                    message = this.fieldsNotFilled;
+                                    break;
+                            }
+                        } else {
+                            message = this.messageSent;
+                        }
+
+                        $vm.showResult(response.data.success, message);
                     }, function (response) {
-                        $vm.showResult(false, 'Произошла ошибка при отправке');
+                        $vm.showResult(false, this.sendingError);
                     });
             },
 

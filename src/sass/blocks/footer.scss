@@ -2,14 +2,6 @@
   padding: 40px 0;
   background-color: #f7ebc5;
 
-  &__langs {
-    a {
-      span {
-        width: 1.5em;
-      }
-    }
-  }
-
   &__socials {
     @media screen and (max-width: 767px) {
       margin-bottom: 10px;

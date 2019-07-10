@@ -62,7 +62,7 @@ fs.readdirSync(langPath).forEach(file => {
 
 module.exports = {
     mode: !devMode ? 'production' : 'development',
-    entry: ['./src/js/counters.js', './src/js/app.js', './src/sass/app.scss'],
+    entry: ['./src/js/app.js', './src/sass/app.scss'],
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'app.js'
