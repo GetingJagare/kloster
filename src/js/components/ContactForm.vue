@@ -59,7 +59,7 @@
         methods: {
             checkFields (fields) {
                 for (var i = 0; i < this.requiredFields; i++) {
-                    if (!fields[this.requiredFields[i]]) {
+                    if (!fields[this.requiredFields[i]].trim().length) {
                         return false;
                     }
                 }
