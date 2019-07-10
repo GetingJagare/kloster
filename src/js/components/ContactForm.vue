@@ -58,8 +58,8 @@
 
         methods: {
             checkFields (fields) {
-                for (var i = 0; i < this.requiredFields; i++) {
-                    if (!fields[this.requiredFields[i]].trim().length) {
+                for (var i = 0; i < this.requiredFields.length; i++) {
+                    if (!fields[this.requiredFields[i]].trim()) {
                         return false;
                     }
                 }
