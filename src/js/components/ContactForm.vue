@@ -99,19 +99,19 @@
                         if (response.data.errorCode) {
                             switch (response.data.errorCode) {
                                 case 1:
-                                    message = this.captchaNotPassed;
+                                    message = $vm.captchaNotPassed;
                                     break;
                                 case 2:
-                                    message = this.fieldsNotFilled;
+                                    message = $vm.fieldsNotFilled;
                                     break;
                             }
                         } else {
-                            message = this.messageSent;
+                            message = $vm.messageSent;
                         }
 
                         $vm.showResult(response.data.success, message);
                     }, function (response) {
-                        $vm.showResult(false, this.sendingError);
+                        $vm.showResult(false, $vm.sendingError);
                     });
             },
 
