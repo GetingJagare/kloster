@@ -6,4 +6,4 @@ git fetch
 git merge origin/master
 
 pm2 stop server.js
-pm2 start server.js
+pm2 start server.js --watch
