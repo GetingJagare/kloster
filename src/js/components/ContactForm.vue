@@ -21,7 +21,7 @@
                              class="contact-form__input" autocomplete="off" :title="fillText"></b-form-textarea>
         </b-form-group>
         <b-form-group class="contact-form__field contact-form__field_left">
-            <vue-recaptcha sitekey="6LfoGIkUAAAAABynlLPkWxTcUj1X9dpYWYGtF6FA" size="compact" @expired="resetCaptcha">
+            <vue-recaptcha sitekey="6LchQq4ZAAAAAKmc01JdA5bBWaQ3Fa1CqHJBCxR_" size="compact" @expired="resetCaptcha">
                 <button type="submit" class="btn btn-secondary contact-form__submit">
                     <span v-bind:class="{'contact-form__submit-text': true, 'contact-form__submit-text_pale': submitted}">{{ sendText }}</span>
                     <vue-loading :active="submitted" color="#fff" spinner="ring"></vue-loading>

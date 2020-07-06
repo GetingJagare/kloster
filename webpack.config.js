@@ -1,7 +1,7 @@
 const path = require('path');
 const fs = require('fs');
 
-const cleanWebpackPlugin = require('clean-webpack-plugin');
+//const cleanWebpackPlugin = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
@@ -158,7 +158,7 @@ module.exports = {
         ]
     },
     plugins: [
-        new cleanWebpackPlugin(['dist']),
+        //new cleanWebpackPlugin(['dist']),
         new MiniCssExtractPlugin({
             filename: 'app.css',
         }),
