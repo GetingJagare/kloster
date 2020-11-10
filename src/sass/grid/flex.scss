@@ -1,0 +1,17 @@
+.d-flex {
+  display: flex;
+}
+
+.justify-content-between {
+  justify-content: space-between;
+}
+
+.align-center {
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .d-md-flex {
+    display: flex;
+  }
+}

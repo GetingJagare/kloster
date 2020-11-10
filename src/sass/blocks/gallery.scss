@@ -1,0 +1,28 @@
+.gallery {
+  &_hidden {
+    display: none;
+  }
+
+  &__image {
+    width: 25%;
+    padding: 10px;
+    cursor: pointer;
+    transition: box-shadow 0.4s ease-in-out;
+
+    &:hover {
+      box-shadow: 0 0 30px inset $brown;
+    }
+
+    @media screen and (max-width: 479.98px) {
+      width: 100%;
+    }
+
+    @media screen and (min-width: 480px) and (max-width: 767.98px) {
+      width: 33.333333%;
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 1023.98px) {
+      width: 50%;
+    }
+  }
+}

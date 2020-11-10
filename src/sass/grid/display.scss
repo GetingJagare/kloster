@@ -1,0 +1,9 @@
+.d-none {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .d-md-ib {
+    display: inline-block;
+  }
+}

@@ -1,0 +1,13 @@
+.message {
+  padding: 10px;
+  text-align: left;
+  border-radius: 6px;
+
+  &_error {
+    background-color: rgba(255, 0, 0, 0.2);
+  }
+
+  &_success {
+    background-color: rgba(0, 255, 0, 0.2);
+  }
+}
