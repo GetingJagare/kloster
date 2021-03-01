@@ -1,15 +1,26 @@
 <template>
-    <section :id="id" class="section" :class="classes">
-        <div class="title text-center">{{ title }}</div>
+  <section
+    :id="id"
+    class="section"
+    :class="classes"
+  >
+    <div class="title text-center">
+      {{ title }}
+    </div>
 
-        <slot></slot>
-    </section>
+    <slot />
+  </section>
 </template>
 
 <script>
     export default {
-        props: ['id', 'classes', 'title', 'titleClass'],
-        name: "Section"
+        name: "Section",
+        props: {
+            'id': String,
+            'classes': [String, Array],
+            'title': String,
+            'titleClass': [String, Array]
+        }
     };
 </script>
 
