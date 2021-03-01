@@ -2,7 +2,7 @@ const fs = require('fs');
 
 const langPath = `${__dirname}/translations`;
 const defaultLang = 'ru';
-const t = require('./src/helpers/t');
+const t = require(`${__dirname}/src/helpers/t`);
 
 const defaultPageOptions = {
     entry: 'src/main.js',

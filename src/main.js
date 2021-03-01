@@ -8,5 +8,8 @@ import axios from 'axios';
 window.axios = axios;
 
 new Vue({
-    render: h => h(App)
+    render: h => h(App),
+    methods: {
+        t: require('@/helpers/t')
+    }
 }).$mount('#app');

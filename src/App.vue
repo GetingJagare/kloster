@@ -47,10 +47,6 @@
 
                 });
 
-        },
-
-        methods: {
-            t: require('@/helpers/t')
         }
     };
 </script>
