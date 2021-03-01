@@ -32,5 +32,8 @@ fs.readdirSync(langPath).forEach(file => {
 });
 
 module.exports = {
+    transpileDependencies: [
+        'vuetify'
+    ],
     pages
 };

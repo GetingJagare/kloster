@@ -1,21 +1,30 @@
 <template>
-    <main style="padding-top: 112px;">
-        <Section id="about" :title="t('Кто мы есть')">
-            <first-section></first-section>
-        </Section>
+  <main style="padding-top: 112px;">
+    <Section
+      id="about"
+      :title="t('Кто мы есть')"
+    >
+      <first-section />
+    </Section>
 
-        <Section id="photo" classes="section_even gallery">
-            <div></div>
-        </Section>
+    <Section
+      id="photo"
+      classes="section_even gallery"
+    >
+      <div />
+    </Section>
 
-        <Section id="portfolio">
-            <div></div>
-        </Section>
+    <Section id="portfolio">
+      <div />
+    </Section>
 
-        <Section id="contacts" classes="section_even">
-            <div></div>
-        </Section>
-    </main>
+    <Section
+      id="contacts"
+      classes="section_even"
+    >
+      <div />
+    </Section>
+  </main>
 </template>
 
 <script>

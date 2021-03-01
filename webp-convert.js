@@ -45,7 +45,7 @@ imagePaths.forEach((path) => {
                 convert(`${targetPath}/${path}`);
             }
 
-        })
+        });
 
     }
 

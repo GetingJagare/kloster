@@ -1,13 +1,19 @@
 <template>
-    <div class="container d-md-flex justify-content-between align-items-start">
-        <div class="section__image" data-image-src="/images/main.jpg"
-             data-image-alt="<%= htmlWebpackPlugin.options.t('Фотография исторического лагеря') %>"
-             data-dimensions="{&quot;1024&quot;: 1024, &quot;1280&quot;: 1280}">
-            <img src="/images/main.jpg" alt="<%= htmlWebpackPlugin.options.t('Фотография исторического лагеря') %>" />
-        </div>
+  <div class="container d-md-flex justify-content-between align-items-start">
+    <div
+      class="section__image"
+      data-image-src="/images/main.jpg"
+      data-image-alt="<%= htmlWebpackPlugin.options.t('Фотография исторического лагеря') %>"
+      data-dimensions="{&quot;1024&quot;: 1024, &quot;1280&quot;: 1280}"
+    >
+      <img
+        src="/images/main.jpg"
+        alt="<%= htmlWebpackPlugin.options.t('Фотография исторического лагеря') %>"
+      >
+    </div>
 
-        <div class="section__desc">
-            <!--<p>
+    <div class="section__desc">
+      <!--<p>
                 <%= htmlWebpackPlugin.options.t('Русь, Скандинавия, IX-XI вв.') %><br>
                 <%= htmlWebpackPlugin.options.t('Да, реконструкция, да...бесполезная?!...Мы просто делаем, что должны делать.') %><br>
                 <%= htmlWebpackPlugin.options.t('Единство системы, индивидуальность личности.') %><br>
@@ -18,8 +24,8 @@
             <p class="text-right">
                 <cite><%= htmlWebpackPlugin.options.t('Если душа просит, то надо открыть') %> </cite> (c)
             </p>-->
-        </div>
     </div>
+  </div>
 </template>
 
 <script>
