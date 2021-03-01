@@ -16,10 +16,22 @@
     export default {
         name: "Section",
         props: {
-            'id': String,
-            'classes': [String, Array],
-            'title': String,
-            'titleClass': [String, Array]
+            'id': {
+                type: String,
+                default: ''
+            },
+            'classes': {
+                type: [String, Array],
+                default: ''
+            },
+            'title': {
+                type: String,
+                default: ''
+            },
+            'titleClass': {
+                type: [String, Array],
+                default: ''
+            }
         }
     };
 </script>
