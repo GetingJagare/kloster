@@ -1,15 +1,12 @@
-const path = require('path');
-const fs = require('fs');
+import path from 'path';
+import fs from 'fs';
 
-//const cleanWebpackPlugin = require('clean-webpack-plugin');
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const VueLoaderPlugin = require('vue-loader/lib/plugin');
-const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
-const htmlWebpackPlugin = require('html-webpack-plugin');
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import {VueLoaderPlugin} from 'vue-loader';
+import htmlWebpackPlugin from 'html-webpack-plugin';
+import TerserPlugin from 'terser-webpack-plugin';
+import config from './config/index.json';
 const devMode = process.env.NODE_ENV === 'development';
-
-const config = require('./config');
 
 const langPath = path.resolve(__dirname, 'translations');
 const htmlPluginOptions = {
@@ -67,6 +64,20 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),
         filename: 'app.js'
     },
+    optimization: {
+        minimize: true,
+        minimizer: [
+            new TerserPlugin({
+                parallel: 4,
+                terserOptions: {
+                    format: {
+                        comments: false,
+                    },
+                },
+                extractComments: false,
+            }),
+        ],
+    },
     module: {
         rules: [
             {
@@ -77,9 +88,6 @@ module.exports = {
                     },
                     {
                         loader: 'css-loader'
-                    },
-                    {
-                        loader: 'postcss-loader'
                     },
                     {
                         loader: 'sass-loader'
@@ -107,9 +115,6 @@ module.exports = {
             {
                 test: /\.js$/,
                 loader: 'babel-loader',
-                query: {
-                    presets: ['@babel/preset-env']
-                }
             },
             {
                 test: /\.(gif|png|jpe?g|svg)$/i,
@@ -158,7 +163,6 @@ module.exports = {
         ]
     },
     plugins: [
-        //new cleanWebpackPlugin(['dist']),
         new MiniCssExtractPlugin({
             filename: 'app.css',
         }),
@@ -170,10 +174,4 @@ module.exports = {
             lang: config.defaultLanguage
         }, htmlPluginOptions))
     ].concat(langHtmlPlugins),
-    optimization: {
-        minimizer: [
-            new OptimizeCSSAssetsPlugin({}),
-            new UglifyJsPlugin({test: /\.js$/i})
-        ]
-    }
 };
