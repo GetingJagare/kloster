@@ -5,10 +5,10 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import {VueLoaderPlugin} from 'vue-loader';
 import htmlWebpackPlugin from 'html-webpack-plugin';
 import TerserPlugin from 'terser-webpack-plugin';
-import config from './config/index.json';
+import config from './config/index.json' assert {type: 'json'};
 const devMode = process.env.NODE_ENV === 'development';
 
-const langPath = path.resolve(__dirname, 'translations');
+const langPath = path.resolve(process.env.PWD, 'translations');
 const htmlPluginOptions = {
     inject: true,
     hash: true,
@@ -34,14 +34,14 @@ let __t = (phrase) => {
     return htmlDecode(phrase);
 };
 
-fs.readdirSync(langPath).forEach(file => {
-    let langTranslations = require(langPath + '/' + file);
+fs.readdirSync(langPath).forEach(async (file) => {
+    let langTranslations = await import(`${langPath}/${file}`) assert {type: 'json'};
     let langName = file.match(/^(.+)\..+$/)[1];
 
-    let langDir = __dirname + '/' + langName;
+    let langDir = `${process.env.PWD}/${langName}`;
 
     if (!fs.existsSync(langDir)) {
-        fs.mkdirSync(langDir, 0755);
+        fs.mkdirSync(langDir, 0o755);
     }
 
     let __t = (phrase) => {
@@ -57,11 +57,11 @@ fs.readdirSync(langPath).forEach(file => {
     }, htmlPluginOptions)));
 });
 
-module.exports = {
+export default {
     mode: !devMode ? 'production' : 'development',
     entry: ['./src/js/app.js', './src/sass/app.scss'],
     output: {
-        path: path.resolve(__dirname, 'dist'),
+        path: `${process.env.PWD}/dist`,
         filename: 'app.js'
     },
     optimization: {
