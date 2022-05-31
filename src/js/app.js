@@ -1,17 +1,16 @@
-window.Vue = process.env.NODE_ENV === 'production' ? require('vue/dist/vue.min.js') : require('vue/dist/vue.js');
-window.BootstrapVue = require('bootstrap-vue/dist/bootstrap-vue');
-window.axios = require('axios');
-window.appVersion = require('../../package.json').version;
+import '@scss/app.scss';
+import Vue from 'vue/dist/vue.js';
+import App from "./App.vue";
 
-import VueGallery from 'vue-gallery';
-import carousel from 'vue-owl-carousel';
+//import VueGallery from 'vue-gallery';
+//import carousel from 'vue-owl-carousel2';
 
-import ContactForm from './components/ContactForm.vue';
-import Socials from './components/Socials.vue';
+//import ContactForm from './components/ContactForm.vue';
+//import Socials from '@js/components/Socials.vue';
 
-Vue.use(BootstrapVue);
+//Vue.use(BootstrapVue);
 
-(function (ELEMENT) {
+/*(function (ELEMENT) {
     ELEMENT.matches = ELEMENT.matches || ELEMENT.mozMatchesSelector || ELEMENT.msMatchesSelector || ELEMENT.oMatchesSelector || ELEMENT.webkitMatchesSelector;
     ELEMENT.closest = ELEMENT.closest || function closest(selector) {
         if (!this) return null;
@@ -21,18 +20,18 @@ Vue.use(BootstrapVue);
         }
         else return this.parentElement.closest(selector)
     };
-}(Element.prototype));
+}(Element.prototype));*/
 
-window.hasElemClass = function (elem, className) {
+/*window.hasElemClass = function (elem, className) {
     return elem.className.indexOf(className) > -1;
 };
 
 window.deleteClassName = function (elem, className) {
     const regExp = new RegExp('\\s*' + className + '\\s*');
     elem.className = elem.className.replace(regExp, '');
-};
+};*/
 
-var app = new Vue({
+new Vue({
     el: '#app',
     data() {
         return {
@@ -49,8 +48,8 @@ var app = new Vue({
         };
     },
 
-    mounted() {
-        this.year = (new Date()).getFullYear();
+    async mounted() {
+        /*this.year = (new Date()).getFullYear();
 
         const $vm = this;
 
@@ -60,15 +59,17 @@ var app = new Vue({
 
         window.onscroll = function () {
             $vm.checkWindowScrollTop();
-            $vm.checkInWhatSection();
+            //$vm.checkInWhatSection();
         };
 
         document.addEventListener("DOMContentLoaded", function () {
             setTimeout($vm.loadImages, 500);
         });
 
-        this.photoGallery = require('./src/photos').images;
-        this.workGalleryAllImages = require('./src/works').images;
+        const photos = await import('./src/photos.json'),
+            workPhotos = await import('./src/works.json');
+        this.photoGallery = photos.images;
+        this.workGalleryAllImages = workPhotos.images;*/
     },
 
     updated () {
@@ -76,7 +77,7 @@ var app = new Vue({
     },
 
     methods: {
-        loadImages(container) {
+        /*loadImages(container) {
 
             container = container || document;
 
@@ -167,9 +168,9 @@ var app = new Vue({
             }
 
             navItem.className += ' nav-link_active';
-        },
+        },*/
 
-        checkInWhatSection () {
+        /*checkInWhatSection () {
 
             const sections = document.querySelectorAll('.section');
 
@@ -183,9 +184,10 @@ var app = new Vue({
                     this.setNavItemActive(document.querySelector('.header__nav').querySelector('[href="#' + section.id + '"]'));
                 }
             }
-        }
+        }*/
 
     },
 
-    components: {VueGallery, carousel, ContactForm, Socials}
+    components: {App},
+    //components: {VueGallery, carousel, ContactForm, Socials}
 });

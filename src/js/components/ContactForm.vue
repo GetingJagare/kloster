@@ -21,19 +21,20 @@
                              class="contact-form__input" autocomplete="off" :title="fillText"></b-form-textarea>
         </b-form-group>
         <b-form-group class="contact-form__field contact-form__field_left">
-            <vue-recaptcha sitekey="6LdVSq4ZAAAAABiCNnPDs5ZsSz_F68BpDfilV8Rt" size="compact" @expired="resetCaptcha">
+<!--            <vue-recaptcha sitekey="6LdVSq4ZAAAAABiCNnPDs5ZsSz_F68BpDfilV8Rt" size="compact" @expired="resetCaptcha">
                 <button type="submit" class="btn btn-secondary contact-form__submit">
                     <span v-bind:class="{'contact-form__submit-text': true, 'contact-form__submit-text_pale': submitted}">{{ sendText }}</span>
                     <vue-loading :active="submitted" color="#fff" spinner="ring"></vue-loading>
                 </button>
-            </vue-recaptcha>
+            </vue-recaptcha>-->
         </b-form-group>
     </b-form>
 </template>
 
 <script>
-    import VueLoading from 'vue-element-loading';
-    import VueRecaptcha from 'vue-recaptcha';
+    //import VueLoading from 'vue-element-loading';
+    //import {VueRecaptcha} from 'vue-recaptcha/dist/vue-recaptcha.es';
+    import axios from 'axios';
 
     export default {
         name: "ContactForm",
@@ -155,7 +156,7 @@
             }
         },
 
-        components: {VueLoading, VueRecaptcha}
+        //components: {VueLoading, VueRecaptcha}
     }
 </script>
 

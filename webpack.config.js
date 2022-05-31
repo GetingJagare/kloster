@@ -5,7 +5,7 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import {VueLoaderPlugin} from 'vue-loader';
 import htmlWebpackPlugin from 'html-webpack-plugin';
 import TerserPlugin from 'terser-webpack-plugin';
-import config from './config/index.json' assert {type: 'json'};
+import config from './config/index.js';
 const devMode = process.env.NODE_ENV === 'development';
 
 const langPath = path.resolve(process.env.PWD, 'translations');
@@ -35,7 +35,7 @@ let __t = (phrase) => {
 };
 
 fs.readdirSync(langPath).forEach(async (file) => {
-    let langTranslations = await import(`${langPath}/${file}`) assert {type: 'json'};
+    let langTranslations = await import(`${langPath}/${file}`);
     let langName = file.match(/^(.+)\..+$/)[1];
 
     let langDir = `${process.env.PWD}/${langName}`;
@@ -58,8 +58,14 @@ fs.readdirSync(langPath).forEach(async (file) => {
 });
 
 export default {
+    resolve: {
+        alias: {
+            '@js': `${process.env.PWD}/src/js`,
+            '@scss': `${process.env.PWD}/src/scss`
+        },
+    },
     mode: !devMode ? 'production' : 'development',
-    entry: ['./src/js/app.js', './src/sass/app.scss'],
+    entry: ['./src/js/app.js'],
     output: {
         path: `${process.env.PWD}/dist`,
         filename: 'app.js'

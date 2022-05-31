@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="yandex-verification" content="63e14b14dff3814e"/>
@@ -34,60 +33,14 @@
 
     <link rel="canonical" href="https://vsv-kloster.ru"/>
     
-<script defer src="dist/app.js?06c96a61bda9ef2b394c"></script><link href="dist/app.css?06c96a61bda9ef2b394c" rel="stylesheet"></head>
-<body>
+<script defer src="dist/app.js?83fb3d7b8997caaf3c27"></script><link href="dist/app.css?83fb3d7b8997caaf3c27" rel="stylesheet"></head>
+<body class="body">
 
-<div id="app" v-bind:style="{paddingTop: bodyPaddingTop + 'px'}" class="body">
-    <header class="header">
-        <div class="container d-flex justify-content-between align-items-center header__wrapper">
-            <div class="container d-flex justify-content-between align-items-center header__wrapper">
-                <a href="#about" class="header__logo text text_futhark d-none d-md-inline-block"
-                   @click="scrollWindow($event, 0)"
-                   title="Мастерская Былых Дел Монастырь">
-                    KLOSTER
-                </a>
+<div id="app">
+    <app />
+</div>
 
-                <b-navbar toggleable="md" class="nav header__nav">
-                    <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
-                    <b-navbar-brand href="#"></b-navbar-brand>
-
-                    <b-collapse is-nav id="nav_collapse">
-                        <b-navbar-nav pills class="d-md-inline-flex">
-                            <b-nav-item href="#about" active active-class="nav-link_active"
-                                        class="nav__item header__nav-item"
-                                        @click="scrollWindow($event, 0)">О нас
-                            </b-nav-item>
-                            <b-nav-item href="#photo" active-class="nav-link_active" class="nav__item header__nav-item"
-                                        @click="scrollWindow($event, 1)">Фотогалерея
-                            </b-nav-item>
-                            <b-nav-item href="#portfolio" active-class="nav-link_active"
-                                        class="nav__item header__nav-item"
-                                        @click="scrollWindow($event, 2)">Что делаем
-                            </b-nav-item>
-                            <b-nav-item href="#contacts" active-class="nav-link_active"
-                                        class="nav__item header__nav-item"
-                                        @click="scrollWindow($event, 3)">Контакты
-                            </b-nav-item>
-                        </b-navbar-nav>
-                    </b-collapse>
-                </b-navbar>
-
-                <div class="header__socials">
-
-                    <socials></socials>
-
-                    <div class="langs header__langs text-center">
-                        
-                        
-                        <a href="/en" title="Английский" class="langs__link header__langs-link"><span
-                                class="flag-icon flag-icon-gb-eng langs__icon header__langs-icon"></span></a>
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-
+<div>
     <main>
         <h1 class="title text-center">Кто мы есть</h1>
         <section id="about" class="section">

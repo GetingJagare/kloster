@@ -1,4 +1,4 @@
-{
+export default {
   "Мастерская Былых Дел \"Монастырь\" (Kloster)": "Ancient Deals Workshop \"Cloister\"",
   "Мастерская Былых Дел Kloster (Монастырь)": "Ancient Deals Workshop Cloister",
   "Мастерская Былых Дел": "Ancient Deals Workshop",
@@ -50,4 +50,4 @@
   "Не все поля заполнены!": "Not all required fields are filled!",
   "Сообщение отправлено": "Message sent",
   "Произошла ошибка при отправке!": "Message sending error has occured!"
-}
+};
