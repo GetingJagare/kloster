@@ -4,7 +4,7 @@
       <div class="container d-flex justify-content-between align-items-center header__wrapper">
         <a href="#about" class="header__logo text text_futhark d-none d-md-inline-block"
            @click="scrollWindow($event, 0)"
-           title="<%= htmlWebpackPlugin.options.t('Мастерская Былых Дел Монастырь') %>">
+           :title="$parent.__t('Мастерская Былых Дел Монастырь')">
           KLOSTER
         </a>
 
@@ -40,14 +40,14 @@
           <socials></socials>
 
           <div class="langs header__langs text-center">
-            <% if (htmlWebpackPlugin.options.lang !== 'ru') { %>
-            <a href="/" title="<%= htmlWebpackPlugin.options.t('Русский') %>" class="langs__link header__langs-link"><span
-                class="flag-icon flag-icon-ru langs__icon header__langs-icon"></span></a>
-            <% } %>
-            <% if (htmlWebpackPlugin.options.lang !== 'en') { %>
-            <a href="/en" title="<%= htmlWebpackPlugin.options.t('Английский') %>" class="langs__link header__langs-link"><span
-                class="flag-icon flag-icon-gb-eng langs__icon header__langs-icon"></span></a>
-            <% } %>
+            <a href="/" :title="$parent.__t('Русский')" class="langs__link header__langs-link"
+              v-if="$parent.lang !== 'ru'">
+              <span class="flag-icon flag-icon-ru langs__icon header__langs-icon"></span>
+            </a>
+            <a href="/en" :title="$parent.__t('Английский')" class="langs__link header__langs-link"
+              v-if="$parent.lang !== 'en'">
+              <span class="flag-icon flag-icon-gb-eng langs__icon header__langs-icon"></span>
+            </a>
           </div>
         </div>
       </div>

@@ -5,10 +5,12 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import {VueLoaderPlugin} from 'vue-loader';
 import htmlWebpackPlugin from 'html-webpack-plugin';
 import TerserPlugin from 'terser-webpack-plugin';
-import config from './config/index.js';
+
+const config = JSON.parse(fs.readFileSync('./config/index.json'));
 const devMode = process.env.NODE_ENV === 'development';
 
-const langPath = path.resolve(process.env.PWD, 'translations');
+const langPath = path.resolve(process.env.PWD, 'translations'),
+    translationFiles = fs.readdirSync(langPath);
 const htmlPluginOptions = {
     inject: true,
     hash: true,
@@ -24,38 +26,48 @@ const htmlPluginOptions = {
         //ignoreCustomFragments: [/<a[^>]*>.*<\/a>/]
     }
 };
-let langHtmlPlugins = [];
 
 let htmlDecode = str => {
-    return str.replace(/&quot;/g, '"').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&')
+    return str.replace(/&quot;/g, '"').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&');
 };
 
 let __t = (phrase) => {
     return htmlDecode(phrase);
 };
 
-fs.readdirSync(langPath).forEach(async (file) => {
-    let langTranslations = await import(`${langPath}/${file}`);
-    let langName = file.match(/^(.+)\..+$/)[1];
+/**
+ * @returns {*[]}
+ */
+const getLangHTMLPlugins = () => {
+    const langHtmlPlugins = [];
 
-    let langDir = `${process.env.PWD}/${langName}`;
+    translationFiles.forEach((file) => {
+        let langTranslations = JSON.parse(fs.readFileSync(`${langPath}/${file}`));
+        let langName = file.match(/^(.+)\..+$/)[1];
 
-    if (!fs.existsSync(langDir)) {
-        fs.mkdirSync(langDir, 0o755);
-    }
+        let langDir = `${process.env.PWD}/${langName}`;
 
-    let __t = (phrase) => {
-        phrase = htmlDecode(phrase);
-        return langTranslations && langTranslations[phrase] ? langTranslations[phrase] : phrase;
-    };
+        if (!fs.existsSync(langDir)) {
+            fs.mkdirSync(langDir, 0o755);
+        }
 
-    langHtmlPlugins.push(new htmlWebpackPlugin(Object.assign({}, {
-        filename: langDir + '/index.html',
-        template: './src/html/index.html',
-        t: __t,
-        lang: langName
-    }, htmlPluginOptions)));
-});
+        let __t = (phrase) => {
+            phrase = htmlDecode(phrase);
+            return langTranslations && langTranslations[phrase] ? langTranslations[phrase] : phrase;
+        };
+
+        langHtmlPlugins.push(new htmlWebpackPlugin(Object.assign({}, {
+            filename: langDir + '/index.html',
+            template: './src/html/index.html',
+            t: __t,
+            lang: langName
+        }, htmlPluginOptions)));
+    });
+
+    return langHtmlPlugins;
+}
+
+getLangHTMLPlugins();
 
 export default {
     resolve: {
@@ -179,5 +191,5 @@ export default {
             t: __t,
             lang: config.defaultLanguage
         }, htmlPluginOptions))
-    ].concat(langHtmlPlugins),
+    ].concat(getLangHTMLPlugins()),
 };
