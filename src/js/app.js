@@ -1,5 +1,4 @@
-import Vue from "vue";
-import BootstrapVue from "bootstrap-vue";
+import {createApp} from 'vue'
 import VueGallery from 'vue-gallery';
 import carousel from 'vue-owl-carousel';
 
@@ -8,8 +7,6 @@ import Socials from './components/Socials.vue';
 import {hasElemClass, deleteClassName} from "./helpers/class-name.js";
 import "../sass/app.scss";
 
-Vue.use(BootstrapVue);
-
 (function (ELEMENT) {
     ELEMENT.matches = ELEMENT.matches || ELEMENT.mozMatchesSelector || ELEMENT.msMatchesSelector || ELEMENT.oMatchesSelector || ELEMENT.webkitMatchesSelector;
     ELEMENT.closest = ELEMENT.closest || function closest(selector) {
@@ -17,13 +14,11 @@ Vue.use(BootstrapVue);
         if (this.matches(selector)) return this;
         if (!this.parentElement) {
             return null
-        }
-        else return this.parentElement.closest(selector)
+        } else return this.parentElement.closest(selector)
     };
 }(Element.prototype));
 
-new Vue({
-    el: '#app',
+createApp({
     data() {
         return {
             year: '',
@@ -61,7 +56,7 @@ new Vue({
         this.workGalleryAllImages = require('./src/works').images;
     },
 
-    updated () {
+    updated() {
         this.checkWindowScrollTop();
     },
 
@@ -125,7 +120,7 @@ new Vue({
             setTimeout(showGallery, 100);
         },
 
-        checkWindowScrollTop () {
+        checkWindowScrollTop() {
             const header = document.querySelector('.header');
 
             if (document.documentElement.scrollTop >= this.scrollTopMax && !hasElemClass(header, 'header_sticky')) {
@@ -135,7 +130,7 @@ new Vue({
             }
         },
 
-        scrollWindow (event, index) {
+        scrollWindow(event, index) {
             event.preventDefault();
 
             const $vm = this;
@@ -149,7 +144,7 @@ new Vue({
             });
         },
 
-        setNavItemActive (navItem) {
+        setNavItemActive(navItem) {
             const activeItems = document.querySelectorAll('.nav-link_active');
 
             for (let i = 0; i < activeItems.length; i++) {
@@ -159,7 +154,7 @@ new Vue({
             navItem.className += ' nav-link_active';
         },
 
-        checkInWhatSection () {
+        checkInWhatSection() {
 
             const sections = document.querySelectorAll('.section');
 
@@ -178,4 +173,4 @@ new Vue({
     },
 
     components: {VueGallery, carousel, ContactForm, Socials}
-});
+}).mount('#app');

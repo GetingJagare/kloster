@@ -7,9 +7,10 @@
     "prod": "NODE_ENV=production webpack"
   },
   "devDependencies": {
+    "@vue/compiler-sfc": "^3.2.38",
     "axios": "^0.27.2",
     "babel-loader": "^8.2.5",
-    "bootstrap-vue": "^2.22.0",
+    "bootstrap": "^5.2.0",
     "clean-webpack-plugin": "^4.0.0",
     "css-loader": "^5.2.7",
     "file-loader": "^6.2.0",
@@ -24,13 +25,12 @@
     "sass-loader": "^10.3.1",
     "style-loader": "^2.0.0",
     "terser-webpack-plugin": "^4.2.3",
-    "vue": "^2.7.10",
+    "vue": "^3.2.38",
     "vue-element-loading": "^2.0.2",
     "vue-gallery": "^2.0.1",
     "vue-loader": "^17.0.0",
+    "vue-recaptcha-v3": "^2.0.1",
     "vue-owl-carousel": "^2.0.3",
-    "vue-recaptcha": "^2.0.2",
-    "vue-template-compiler": "^2.7.10",
     "webpack": "^5.74.0",
     "webpack-cli": "^4.10.0"
   },
