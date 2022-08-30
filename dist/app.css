@@ -1,3 +1,7 @@
+/*!************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-1.use[1]!./node_modules/sass-loader/dist/cjs.js!./src/scss/app.scss ***!
+  \************************************************************************************************************************************/
+@import url(https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap);
 /*!***************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-1.use[1]!./node_modules/sass-loader/dist/cjs.js!./node_modules/blueimp-gallery/css/blueimp-gallery.min.css ***!
   \***************************************************************************************************************************************************************************/
@@ -15256,9 +15260,9 @@ textarea.form-control-lg {
   clip: auto;
 }
 
-/*!************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-1.use[1]!./node_modules/sass-loader/dist/cjs.js!./src/sass/app.scss ***!
-  \************************************************************************************************************************************/
+/*!****************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-1.use[1]!./node_modules/sass-loader/dist/cjs.js!./src/scss/app.scss (1) ***!
+  \****************************************************************************************************************************************/
 @font-face {
   font-family: "Futhark";
   src: url("./fonts/FutharkRegular.eot");
@@ -15281,18 +15285,19 @@ body {
   color: #5e480c;
 }
 .nav .nav__item a.nav-link:after {
-  transition: width 0.4s ease-in-out;
+  transition: transform 0.4s ease-in-out;
   content: "";
   height: 3px;
-  width: 0;
-  left: 0;
   bottom: 0;
+  left: 0;
+  width: 100%;
   background-color: #895e29;
   position: absolute;
   display: inline-block;
+  transform: scaleX(0);
 }
 .nav .nav__item a.nav-link_active:after {
-  width: 100%;
+  transform: scaleX(1);
 }
 @media screen and (min-width: 768px) and (max-width: 1023.98px) {
   .nav .nav__item a.nav-link {
@@ -15606,7 +15611,9 @@ body {
 }
 
 .body {
+  font-family: "Montserrat", sans-serif;
   transition: all 0.4s ease-in-out;
+  user-select: none;
 }
 
 .message {

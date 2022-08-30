@@ -5,18 +5,9 @@ import carousel from 'vue-owl-carousel';
 import ContactForm from './components/ContactForm.vue';
 import Socials from './components/Socials.vue';
 import {hasElemClass, deleteClassName} from "./helpers/class-name.js";
-import "../sass/app.scss";
-
-(function (ELEMENT) {
-    ELEMENT.matches = ELEMENT.matches || ELEMENT.mozMatchesSelector || ELEMENT.msMatchesSelector || ELEMENT.oMatchesSelector || ELEMENT.webkitMatchesSelector;
-    ELEMENT.closest = ELEMENT.closest || function closest(selector) {
-        if (!this) return null;
-        if (this.matches(selector)) return this;
-        if (!this.parentElement) {
-            return null
-        } else return this.parentElement.closest(selector)
-    };
-}(Element.prototype));
+import photos from './src/photos.js';
+import works from './src/works.js';
+import "../scss/app.scss";
 
 createApp({
     data() {
@@ -52,8 +43,8 @@ createApp({
             setTimeout($vm.loadImages, 500);
         });
 
-        this.photoGallery = require('./src/photos').images;
-        this.workGalleryAllImages = require('./src/works').images;
+        this.photoGallery = photos;
+        this.workGalleryAllImages = works;
     },
 
     updated() {
@@ -67,14 +58,14 @@ createApp({
 
             const imageContainers = container.querySelectorAll('[data-image-src]');
 
-            for (var i = 0; i < imageContainers.length; i++) {
-                var el = imageContainers[i];
+            for (let i = 0; i < imageContainers.length; i++) {
+                const el = imageContainers[i];
 
                 if (el.dataset.notImageLoading) {
                     return;
                 }
 
-                var image = document.createElement('img'),
+                let image = document.createElement('img'),
                     srcSet = '',
                     imageSizes = '';
 

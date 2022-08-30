@@ -12,20 +12,21 @@
       }
 
       &:after {
-        transition: width 0.4s ease-in-out;
+        transition: transform 0.4s ease-in-out;
         content: '';
         height: 3px;
-        width: 0;
-        left: 0;
         bottom: 0;
+        left: 0;
+        width: 100%;
         background-color: $brown;
         position: absolute;
         display: inline-block;
+        transform: scaleX(0);
       }
 
       &_active {
         &:after {
-          width: 100%;
+          transform: scaleX(1);
         }
       }
 
