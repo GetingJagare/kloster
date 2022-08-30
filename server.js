@@ -1,7 +1,8 @@
-const setup = {port: 8000}
+import fs from 'fs';
+import express from 'express';
+import bodyParser from 'body-parser';
 
-const express = require('express');
-const bodyParser = require("body-parser");
+const serverConfig = JSON.parse(fs.readFileSync('.server_config.json'));
 
 const app = express();
 
@@ -29,6 +30,6 @@ app.post('/mail', function (req, res) {
     res.end();
 });
 
-app.listen(setup.port, function () {
-    console.log('Server running at 127.0.0.1:%s', setup.port);
+app.listen(serverConfig.port, function () {
+    console.log('Server running at 127.0.0.1:%s', serverConfig.port);
 });

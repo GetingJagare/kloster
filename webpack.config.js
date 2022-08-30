@@ -1,134 +1,99 @@
 import path from 'path';
 import fs from 'fs';
 
-import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-import {VueLoaderPlugin} from 'vue-loader';
+import MiniCssExtractPlugin from "mini-css-extract-plugin";
+import TerserPlugin from "terser-webpack-plugin";
 import htmlWebpackPlugin from 'html-webpack-plugin';
-import TerserPlugin from 'terser-webpack-plugin';
+import {VueLoaderPlugin} from 'vue-loader';
+import {CleanWebpackPlugin} from "clean-webpack-plugin";
 
-const config = JSON.parse(fs.readFileSync('./config/index.json'));
 const devMode = process.env.NODE_ENV === 'development';
 
-const langPath = path.resolve(process.env.PWD, 'translations'),
-    translationFiles = fs.readdirSync(langPath);
+const config = JSON.parse(fs.readFileSync('./config/index.json'));
+
+const langPath = path.resolve(process.env.PWD, 'translations');
 const htmlPluginOptions = {
-    inject: true,
+    inject: 'body',
     hash: true,
+    scriptLoading: 'defer',
     minify: devMode ? false : {
         collapseWhitespace: true,
+        keepClosingSlash: true,
         removeComments: true,
         removeRedundantAttributes: true,
         removeScriptTypeAttributes: true,
         removeStyleLinkTypeAttributes: true,
         useShortDoctype: true,
-        //removeEmptyElements: true,
-        removeTagWhitespace: true,
-        //ignoreCustomFragments: [/<a[^>]*>.*<\/a>/]
     }
 };
+let langHtmlPlugins = [];
 
 let htmlDecode = str => {
-    return str.replace(/&quot;/g, '"').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&');
+    return str.replace(/&quot;/g, '"').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&')
 };
 
 let __t = (phrase) => {
     return htmlDecode(phrase);
 };
 
-/**
- * @returns {*[]}
- */
-const getLangHTMLPlugins = () => {
-    const langHtmlPlugins = [];
+fs.readdirSync(langPath).forEach(file => {
+    let langTranslations = JSON.parse(fs.readFileSync(langPath + '/' + file));
+    let langName = file.match(/^(.+)\..+$/)[1];
 
-    translationFiles.forEach((file) => {
-        let langTranslations = JSON.parse(fs.readFileSync(`${langPath}/${file}`));
-        let langName = file.match(/^(.+)\..+$/)[1];
+    let langDir = process.env.PWD + '/' + langName;
 
-        let langDir = `${process.env.PWD}/${langName}`;
+    if (!fs.existsSync(langDir)) {
+        fs.mkdirSync(langDir, 755);
+    }
 
-        if (!fs.existsSync(langDir)) {
-            fs.mkdirSync(langDir, 0o755);
-        }
+    let __t = (phrase) => {
+        phrase = htmlDecode(phrase);
+        return langTranslations && langTranslations[phrase] ? langTranslations[phrase] : phrase;
+    };
 
-        let __t = (phrase) => {
-            phrase = htmlDecode(phrase);
-            return langTranslations && langTranslations[phrase] ? langTranslations[phrase] : phrase;
-        };
-
-        langHtmlPlugins.push(new htmlWebpackPlugin(Object.assign({}, {
-            filename: langDir + '/index.html',
-            template: './src/html/index.html',
-            t: __t,
-            lang: langName
-        }, htmlPluginOptions)));
-    });
-
-    return langHtmlPlugins;
-}
-
-getLangHTMLPlugins();
+    langHtmlPlugins.push(new htmlWebpackPlugin(Object.assign({}, {
+        filename: langDir + '/index.html',
+        template: './src/html/index.html',
+        t: __t,
+        lang: langName
+    }, htmlPluginOptions)));
+});
 
 export default {
-    resolve: {
-        alias: {
-            '@js': `${process.env.PWD}/src/js`,
-            '@scss': `${process.env.PWD}/src/scss`
-        },
-    },
-    mode: !devMode ? 'production' : 'development',
-    entry: ['./src/js/app.js'],
+    mode: process.env.NODE_ENV,
+    entry: './src/js/app.js',
     output: {
-        path: `${process.env.PWD}/dist`,
+        path: path.resolve(process.env.PWD, 'dist'),
         filename: 'app.js'
-    },
-    optimization: {
-        minimize: true,
-        minimizer: [
-            new TerserPlugin({
-                parallel: 4,
-                terserOptions: {
-                    format: {
-                        comments: false,
-                    },
-                },
-                extractComments: false,
-            }),
-        ],
     },
     module: {
         rules: [
             {
-                test: /\.scss$/,
+                test: /\.(s*)css$/i,
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    {
+                        loader: "css-loader",
+                        options: {
+                            url: false,
+                            sourceMap: true,
+                        },
+                    },
+                    "sass-loader",
+                ],
+            },
+            {
+                test: /\.(woff|woff2|eot|ttf|otf)(.*)$/,
                 use: [
                     {
-                        loader: MiniCssExtractPlugin.loader,
-                    },
-                    {
-                        loader: 'css-loader'
-                    },
-                    {
-                        loader: 'sass-loader'
+                        loader: 'file-loader',
+                        options: {
+                            name: 'fonts/[hash].[ext]',
+                            emitFile: true,
+                            esModule: false,
+                        }
                     }
-                ]
-            },
-            {
-                test: /\.css$/,
-                use: [
-                    {
-                        loader: MiniCssExtractPlugin.loader,
-                    },
-                    {
-                        loader: 'css-loader'
-                    },
-                ]
-            },
-
-            {
-                test: /\.(woff|woff2|eot|ttf|otf)$/,
-                use: [
-                    'file-loader'
-                ]
+                ],
             },
             {
                 test: /\.js$/,
@@ -145,18 +110,16 @@ export default {
                                 progressive: true,
                                 quality: 65
                             },
-                            // optipng.enabled: false will disable optipng
                             optipng: {
                                 enabled: true,
                             },
                             pngquant: {
-                                quality: '65-90',
+                                quality: [0.65, 0.9],
                                 speed: 4
                             },
                             gifsicle: {
                                 interlaced: false,
                             },
-                            // the webp option will enable WEBP
                             webp: {
                                 quality: 75
                             }
@@ -181,15 +144,30 @@ export default {
         ]
     },
     plugins: [
+        new VueLoaderPlugin(),
+        new CleanWebpackPlugin(),
         new MiniCssExtractPlugin({
             filename: 'app.css',
         }),
-        new VueLoaderPlugin(),
         new htmlWebpackPlugin(Object.assign({}, {
             filename: '../index.html',
             template: './src/html/index.html',
             t: __t,
             lang: config.defaultLanguage
         }, htmlPluginOptions))
-    ].concat(getLangHTMLPlugins()),
+    ].concat(langHtmlPlugins),
+    optimization: {
+        minimize: true,
+        minimizer: [
+            new TerserPlugin({
+                parallel: 4,
+                terserOptions: {
+                    format: {
+                        comments: false,
+                    },
+                },
+                extractComments: false,
+            }),
+        ],
+    },
 };

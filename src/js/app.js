@@ -1,38 +1,24 @@
-import '@scss/app.scss';
-import Vue from 'vue/dist/vue.js';
-import App from "./App.vue";
+import {createApp} from 'vue'
+import VueGallery from 'vue-gallery';
+import carousel from 'vue-owl-carousel';
 
-//import VueGallery from 'vue-gallery';
-//import carousel from 'vue-owl-carousel2';
+import ContactForm from './components/ContactForm.vue';
+import Socials from './components/Socials.vue';
+import {hasElemClass, deleteClassName} from "./helpers/class-name.js";
+import "../sass/app.scss";
 
-//import ContactForm from './components/ContactForm.vue';
-//import Socials from '@js/components/Socials.vue';
-
-//Vue.use(BootstrapVue);
-
-/*(function (ELEMENT) {
+(function (ELEMENT) {
     ELEMENT.matches = ELEMENT.matches || ELEMENT.mozMatchesSelector || ELEMENT.msMatchesSelector || ELEMENT.oMatchesSelector || ELEMENT.webkitMatchesSelector;
     ELEMENT.closest = ELEMENT.closest || function closest(selector) {
         if (!this) return null;
         if (this.matches(selector)) return this;
         if (!this.parentElement) {
             return null
-        }
-        else return this.parentElement.closest(selector)
+        } else return this.parentElement.closest(selector)
     };
-}(Element.prototype));*/
+}(Element.prototype));
 
-/*window.hasElemClass = function (elem, className) {
-    return elem.className.indexOf(className) > -1;
-};
-
-window.deleteClassName = function (elem, className) {
-    const regExp = new RegExp('\\s*' + className + '\\s*');
-    elem.className = elem.className.replace(regExp, '');
-};*/
-
-new Vue({
-    el: '#app',
+createApp({
     data() {
         return {
             year: '',
@@ -48,8 +34,8 @@ new Vue({
         };
     },
 
-    async mounted() {
-        /*this.year = (new Date()).getFullYear();
+    mounted() {
+        this.year = (new Date()).getFullYear();
 
         const $vm = this;
 
@@ -59,25 +45,23 @@ new Vue({
 
         window.onscroll = function () {
             $vm.checkWindowScrollTop();
-            //$vm.checkInWhatSection();
+            $vm.checkInWhatSection();
         };
 
         document.addEventListener("DOMContentLoaded", function () {
             setTimeout($vm.loadImages, 500);
         });
 
-        const photos = await import('./src/photos.json'),
-            workPhotos = await import('./src/works.json');
-        this.photoGallery = photos.images;
-        this.workGalleryAllImages = workPhotos.images;*/
+        this.photoGallery = require('./src/photos').images;
+        this.workGalleryAllImages = require('./src/works').images;
     },
 
-    updated () {
+    updated() {
         this.checkWindowScrollTop();
     },
 
     methods: {
-        /*loadImages(container) {
+        loadImages(container) {
 
             container = container || document;
 
@@ -136,7 +120,7 @@ new Vue({
             setTimeout(showGallery, 100);
         },
 
-        checkWindowScrollTop () {
+        checkWindowScrollTop() {
             const header = document.querySelector('.header');
 
             if (document.documentElement.scrollTop >= this.scrollTopMax && !hasElemClass(header, 'header_sticky')) {
@@ -146,7 +130,7 @@ new Vue({
             }
         },
 
-        scrollWindow (event, index) {
+        scrollWindow(event, index) {
             event.preventDefault();
 
             const $vm = this;
@@ -160,17 +144,17 @@ new Vue({
             });
         },
 
-        setNavItemActive (navItem) {
+        setNavItemActive(navItem) {
             const activeItems = document.querySelectorAll('.nav-link_active');
 
-            for (var i = 0; i < activeItems.length; i++) {
+            for (let i = 0; i < activeItems.length; i++) {
                 deleteClassName(activeItems[i], 'nav-link_active');
             }
 
             navItem.className += ' nav-link_active';
-        },*/
+        },
 
-        /*checkInWhatSection () {
+        checkInWhatSection() {
 
             const sections = document.querySelectorAll('.section');
 
@@ -184,10 +168,9 @@ new Vue({
                     this.setNavItemActive(document.querySelector('.header__nav').querySelector('[href="#' + section.id + '"]'));
                 }
             }
-        }*/
+        }
 
     },
 
-    components: {App},
-    //components: {VueGallery, carousel, ContactForm, Socials}
-});
+    components: {VueGallery, carousel, ContactForm, Socials}
+}).mount('#app');

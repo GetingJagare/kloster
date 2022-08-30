@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="yandex-verification" content="63e14b14dff3814e"/>
@@ -33,14 +34,60 @@
 
     <link rel="canonical" href="https://vsv-kloster.ru"/>
     
-<script defer src="../dist/app.js?d8c7936c7c7fd181fa40"></script><link href="../dist/app.css?d8c7936c7c7fd181fa40" rel="stylesheet"></head>
-<body class="body">
+<link href="../dist/app.css?1407431a033c274ab08a" rel="stylesheet"></head>
+<body>
 
-<div id="app">
-    <app />
-</div>
+<div id="app" v-bind:style="{paddingTop: bodyPaddingTop + 'px'}" class="body">
+    <header class="header">
+        <div class="container d-flex justify-content-between align-items-center header__wrapper">
+            <div class="container d-flex justify-content-between align-items-center header__wrapper">
+                <a href="#about" class="header__logo text text_futhark d-none d-md-inline-block"
+                   @click="scrollWindow($event, 0)"
+                   title="Ancient Deals Workshop Cloister">
+                    KLOSTER
+                </a>
 
-<!--<div>
+                <b-navbar toggleable="md" class="nav header__nav">
+                    <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
+                    <b-navbar-brand href="#"></b-navbar-brand>
+
+                    <b-collapse is-nav id="nav_collapse">
+                        <b-navbar-nav pills class="d-md-inline-flex">
+                            <b-nav-item href="#about" active active-class="nav-link_active"
+                                        class="nav__item header__nav-item"
+                                        @click="scrollWindow($event, 0)">About us
+                            </b-nav-item>
+                            <b-nav-item href="#photo" active-class="nav-link_active" class="nav__item header__nav-item"
+                                        @click="scrollWindow($event, 1)">Events
+                            </b-nav-item>
+                            <b-nav-item href="#portfolio" active-class="nav-link_active"
+                                        class="nav__item header__nav-item"
+                                        @click="scrollWindow($event, 2)">Craft
+                            </b-nav-item>
+                            <b-nav-item href="#contacts" active-class="nav-link_active"
+                                        class="nav__item header__nav-item"
+                                        @click="scrollWindow($event, 3)">Contacts
+                            </b-nav-item>
+                        </b-navbar-nav>
+                    </b-collapse>
+                </b-navbar>
+
+                <div class="header__socials">
+
+                    <socials></socials>
+
+                    <div class="langs header__langs text-center">
+                        
+                        <a href="/" title="Russian" class="langs__link header__langs-link"><span
+                                class="flag-icon flag-icon-ru langs__icon header__langs-icon"></span></a>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
     <main>
         <h1 class="title text-center">Who we are</h1>
         <section id="about" class="section">
@@ -328,9 +375,9 @@
             </div>
         </div>
     </footer>
-</div>-->
+</div>
 
 <script src="https://www.google.com/recaptcha/api.js?hl=en&onload=vueRecaptchaApiLoaded&render=explicit"
         async defer></script>
-</body>
+<script defer src="../dist/app.js?1407431a033c274ab08a"></script></body>
 </html>
