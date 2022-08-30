@@ -75,7 +75,6 @@ export default {
                     {
                         loader: "css-loader",
                         options: {
-                            url: false,
                             sourceMap: true,
                         },
                     },
@@ -88,7 +87,7 @@ export default {
                     {
                         loader: 'file-loader',
                         options: {
-                            name: 'fonts/[hash].[ext]',
+                            name: '[hash].[ext]',
                             emitFile: true,
                             esModule: false,
                         }

@@ -82,7 +82,7 @@
 }
 
 .blueimp-gallery > .slides > .slide-loading {
-  background: url(../img/loading.gif) center no-repeat;
+  background: url(83cf58654eb7446f73eba10a4ab4112f.gif) center no-repeat;
   background-size: 64px 64px;
 }
 
@@ -91,7 +91,7 @@
 }
 
 .blueimp-gallery > .slides > .slide-error {
-  background: url(../img/error.png) center no-repeat;
+  background: url(6882d08c5d27c51bca2149ee89f1f96a.png) center no-repeat;
 }
 
 .blueimp-gallery > .slides > .slide-error > .slide-content {
@@ -161,7 +161,7 @@
   bottom: 15px;
   width: 15px;
   height: 15px;
-  background: url(../img/play-pause.png) 0 0 no-repeat;
+  background: url(e027461403c8d7e6d1c839b2a99dc23c.png) 0 0 no-repeat;
   cursor: pointer;
   opacity: 0.5;
   display: none;
@@ -198,14 +198,14 @@
 }
 
 body:last-child .blueimp-gallery > .slides > .slide-error {
-  background-image: url(../img/error.svg);
+  background-image: url(0d55c80ebdc58c8829e64162c328c338.svg);
 }
 
 body:last-child .blueimp-gallery > .play-pause {
   width: 20px;
   height: 20px;
   background-size: 40px 20px;
-  background-image: url(../img/play-pause.svg);
+  background-image: url(118dd6d5916118dc1cc148704cce98c9.svg);
 }
 
 body:last-child .blueimp-gallery-playing > .play-pause {
@@ -349,7 +349,7 @@ body:last-child .blueimp-gallery-playing > .play-pause {
   margin: -64px auto 0;
   width: 128px;
   height: 128px;
-  background: url(../img/video-play.png) center no-repeat;
+  background: url(0503bb1106e98783054ea476fcc70e28.png) center no-repeat;
   opacity: 0.8;
   cursor: pointer;
 }
@@ -371,12 +371,12 @@ body:last-child .blueimp-gallery-playing > .play-pause {
 }
 
 .blueimp-gallery > .slides > .slide > .video-loading > a {
-  background: url(../img/loading.gif) center no-repeat;
+  background: url(83cf58654eb7446f73eba10a4ab4112f.gif) center no-repeat;
   background-size: 64px 64px;
 }
 
 body:last-child .blueimp-gallery > .slides > .slide > .video-content:not(.video-loading) > a {
-  background-image: url(../img/video-play.svg);
+  background-image: url(ba5818cf25d112ee34043adee55be364.svg);
 }
 
 * + html .blueimp-gallery > .slides > .slide > .video-content {
@@ -389,10 +389,14 @@ body:last-child .blueimp-gallery > .slides > .slide > .video-content:not(.video-
 }
 
 /*# sourceMappingURL=blueimp-gallery.min.css.map */
-/*!***********************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-1.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/sass-loader/dist/cjs.js!./node_modules/vue-loader/dist/index.js??ruleSet[1].rules[12].use[0]!./src/js/components/ContactForm.vue?vue&type=style&index=0&id=c03d5630&scoped=true&lang=css ***!
-  \***********************************************************************************************************************************************************************************************************************************************************************************************************************************/
-.contact-form__submit .velmld-overlay[data-v-c03d5630] {
+/*!***********************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-1.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/sass-loader/dist/cjs.js!./node_modules/vue-loader/dist/index.js??ruleSet[1].rules[12].use[0]!./src/js/components/ContactForm.vue?vue&type=style&index=0&id=c03d5630&lang=css ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************************************************/
+.contact-form .progress,
+.contact-form .progress-bar {
+  height: 3px;
+}
+.contact-form__submit .velmld-overlay {
   background-color: transparent;
 }
 /*!*************************************************************************************************************************!*\
@@ -11329,1594 +11333,1594 @@ textarea.form-control-lg {
   width: 1em;
 }
 .flag-icon-ad {
-  background-image: url(../flags/4x3/ad.svg);
+  background-image: url(37a18965423bc61856fe6206fe1ad20b.svg);
 }
 .flag-icon-ad.flag-icon-squared {
-  background-image: url(../flags/1x1/ad.svg);
+  background-image: url(5e3907dd7d70c5b99b9abaf70baf1baa.svg);
 }
 .flag-icon-ae {
-  background-image: url(../flags/4x3/ae.svg);
+  background-image: url(8da58425bc952e8097c533a3f98f6267.svg);
 }
 .flag-icon-ae.flag-icon-squared {
-  background-image: url(../flags/1x1/ae.svg);
+  background-image: url(765de9c2ee1e0b32f1aaa0caa1808633.svg);
 }
 .flag-icon-af {
-  background-image: url(../flags/4x3/af.svg);
+  background-image: url(118a956efd0c0558e1ccac9e8d683298.svg);
 }
 .flag-icon-af.flag-icon-squared {
-  background-image: url(../flags/1x1/af.svg);
+  background-image: url(5011647a34d6fdbd7514d9e9a8ee2cbd.svg);
 }
 .flag-icon-ag {
-  background-image: url(../flags/4x3/ag.svg);
+  background-image: url(7a7a86f65bd4320ff71c8816a0162fc5.svg);
 }
 .flag-icon-ag.flag-icon-squared {
-  background-image: url(../flags/1x1/ag.svg);
+  background-image: url(85a0c3669b58d23efeaa31e6c59197b4.svg);
 }
 .flag-icon-ai {
-  background-image: url(../flags/4x3/ai.svg);
+  background-image: url(9f3671fdbeb0f0759b61384610203c3e.svg);
 }
 .flag-icon-ai.flag-icon-squared {
-  background-image: url(../flags/1x1/ai.svg);
+  background-image: url(3d00747859cc3d95c3ab44239279f33e.svg);
 }
 .flag-icon-al {
-  background-image: url(../flags/4x3/al.svg);
+  background-image: url(96a211809fa7d9f5be64d0ff93a37ae5.svg);
 }
 .flag-icon-al.flag-icon-squared {
-  background-image: url(../flags/1x1/al.svg);
+  background-image: url(e3c36112735a329afb4c69959cc919ae.svg);
 }
 .flag-icon-am {
-  background-image: url(../flags/4x3/am.svg);
+  background-image: url(905de93c343bc9d3d31962456e70203a.svg);
 }
 .flag-icon-am.flag-icon-squared {
-  background-image: url(../flags/1x1/am.svg);
+  background-image: url(573b6aaccbd9046451e894ee6866bafd.svg);
 }
 .flag-icon-ao {
-  background-image: url(../flags/4x3/ao.svg);
+  background-image: url(09573342c3c46dde41a85cb7490ca4a7.svg);
 }
 .flag-icon-ao.flag-icon-squared {
-  background-image: url(../flags/1x1/ao.svg);
+  background-image: url(71d4aea515603121bceae1eababfbee3.svg);
 }
 .flag-icon-aq {
-  background-image: url(../flags/4x3/aq.svg);
+  background-image: url(1570942e9913879b24430071c8c56a76.svg);
 }
 .flag-icon-aq.flag-icon-squared {
-  background-image: url(../flags/1x1/aq.svg);
+  background-image: url(3ab1c244f22943076cd728e10ed7d5ea.svg);
 }
 .flag-icon-ar {
-  background-image: url(../flags/4x3/ar.svg);
+  background-image: url(772e1c7dc1fb31fe922d6df12d56c2f1.svg);
 }
 .flag-icon-ar.flag-icon-squared {
-  background-image: url(../flags/1x1/ar.svg);
+  background-image: url(51e4a29bc24bf86ff3e45451dedf9ce9.svg);
 }
 .flag-icon-as {
-  background-image: url(../flags/4x3/as.svg);
+  background-image: url(2787322f42fe06048cf73bc069ef297e.svg);
 }
 .flag-icon-as.flag-icon-squared {
-  background-image: url(../flags/1x1/as.svg);
+  background-image: url(0fedbd0ecaa51ef34379669883128bd8.svg);
 }
 .flag-icon-at {
-  background-image: url(../flags/4x3/at.svg);
+  background-image: url(f939839921ee1774c0cb80c09b281840.svg);
 }
 .flag-icon-at.flag-icon-squared {
-  background-image: url(../flags/1x1/at.svg);
+  background-image: url(2851a292cbe883378f7dd0a7275b7e75.svg);
 }
 .flag-icon-au {
-  background-image: url(../flags/4x3/au.svg);
+  background-image: url(e425dbd9d1241218c0f15b6416bb0ec8.svg);
 }
 .flag-icon-au.flag-icon-squared {
-  background-image: url(../flags/1x1/au.svg);
+  background-image: url(dcc63dac15327036a96ad3873cda590d.svg);
 }
 .flag-icon-aw {
-  background-image: url(../flags/4x3/aw.svg);
+  background-image: url(ca4238c80d6a343e3782074ca9827e8e.svg);
 }
 .flag-icon-aw.flag-icon-squared {
-  background-image: url(../flags/1x1/aw.svg);
+  background-image: url(0202b15b1aa23dce9dcd39d7d1d11c19.svg);
 }
 .flag-icon-ax {
-  background-image: url(../flags/4x3/ax.svg);
+  background-image: url(59d6421f910d5e0e9cec3c117b50c311.svg);
 }
 .flag-icon-ax.flag-icon-squared {
-  background-image: url(../flags/1x1/ax.svg);
+  background-image: url(9dcc2e080cf7f028b9f473532d11d059.svg);
 }
 .flag-icon-az {
-  background-image: url(../flags/4x3/az.svg);
+  background-image: url(9dff02ebdb8498c254abce179bc7a762.svg);
 }
 .flag-icon-az.flag-icon-squared {
-  background-image: url(../flags/1x1/az.svg);
+  background-image: url(460b7905ed8a118d82aed4d6d5874d74.svg);
 }
 .flag-icon-ba {
-  background-image: url(../flags/4x3/ba.svg);
+  background-image: url(2e872b4c6a3eac7f673873d06f62ce76.svg);
 }
 .flag-icon-ba.flag-icon-squared {
-  background-image: url(../flags/1x1/ba.svg);
+  background-image: url(52748be2942c26d9a0282e49cf3b4a46.svg);
 }
 .flag-icon-bb {
-  background-image: url(../flags/4x3/bb.svg);
+  background-image: url(10b24dcb5130c48e0c0e8add21d7cb63.svg);
 }
 .flag-icon-bb.flag-icon-squared {
-  background-image: url(../flags/1x1/bb.svg);
+  background-image: url(12dc73132d2c875d45e8d4d02568ceba.svg);
 }
 .flag-icon-bd {
-  background-image: url(../flags/4x3/bd.svg);
+  background-image: url(a65e714ec9d820bb1c24b44c35d97700.svg);
 }
 .flag-icon-bd.flag-icon-squared {
-  background-image: url(../flags/1x1/bd.svg);
+  background-image: url(3bca15ce73ca970adf263c22e97e2a8b.svg);
 }
 .flag-icon-be {
-  background-image: url(../flags/4x3/be.svg);
+  background-image: url(32147c685f870a0bf64f78637e108cb4.svg);
 }
 .flag-icon-be.flag-icon-squared {
-  background-image: url(../flags/1x1/be.svg);
+  background-image: url(60a5bea98ab9af210c06cedd39c5c89a.svg);
 }
 .flag-icon-bf {
-  background-image: url(../flags/4x3/bf.svg);
+  background-image: url(2f4f643a93fcb39e4caf6c720dee6bc3.svg);
 }
 .flag-icon-bf.flag-icon-squared {
-  background-image: url(../flags/1x1/bf.svg);
+  background-image: url(9423f0e3395148896e98d933aa2b4020.svg);
 }
 .flag-icon-bg {
-  background-image: url(../flags/4x3/bg.svg);
+  background-image: url(bfe48be599c501eda9977fdd5376e582.svg);
 }
 .flag-icon-bg.flag-icon-squared {
-  background-image: url(../flags/1x1/bg.svg);
+  background-image: url(9d43651440840336dc87dd480354dbfa.svg);
 }
 .flag-icon-bh {
-  background-image: url(../flags/4x3/bh.svg);
+  background-image: url(7f6d5458d1eccb322bc77fc6a26cfb6a.svg);
 }
 .flag-icon-bh.flag-icon-squared {
-  background-image: url(../flags/1x1/bh.svg);
+  background-image: url(229a5e34bf0d463108b217c23ce2852f.svg);
 }
 .flag-icon-bi {
-  background-image: url(../flags/4x3/bi.svg);
+  background-image: url(8c235d77ad51731b5bd3f88589328e49.svg);
 }
 .flag-icon-bi.flag-icon-squared {
-  background-image: url(../flags/1x1/bi.svg);
+  background-image: url(1911797771adf24cd7cc5ef729f63307.svg);
 }
 .flag-icon-bj {
-  background-image: url(../flags/4x3/bj.svg);
+  background-image: url(2ce29a45419373f37d19a039cd1cde4e.svg);
 }
 .flag-icon-bj.flag-icon-squared {
-  background-image: url(../flags/1x1/bj.svg);
+  background-image: url(f19ccdbb066e172055b08e211cb4b860.svg);
 }
 .flag-icon-bl {
-  background-image: url(../flags/4x3/bl.svg);
+  background-image: url(582c4b98dbf80035e2f4f54cb0b816b8.svg);
 }
 .flag-icon-bl.flag-icon-squared {
-  background-image: url(../flags/1x1/bl.svg);
+  background-image: url(3cdaee0847675971365d1844688919f0.svg);
 }
 .flag-icon-bm {
-  background-image: url(../flags/4x3/bm.svg);
+  background-image: url(b0b75abfa148263d30fbc598e89df9d8.svg);
 }
 .flag-icon-bm.flag-icon-squared {
-  background-image: url(../flags/1x1/bm.svg);
+  background-image: url(32196156439aece66eb08663da82a17b.svg);
 }
 .flag-icon-bn {
-  background-image: url(../flags/4x3/bn.svg);
+  background-image: url(d21dfedddb82a091d5c59ccb6f9dbfd9.svg);
 }
 .flag-icon-bn.flag-icon-squared {
-  background-image: url(../flags/1x1/bn.svg);
+  background-image: url(675992a16d44f6e3f16f0bffe02a7c8d.svg);
 }
 .flag-icon-bo {
-  background-image: url(../flags/4x3/bo.svg);
+  background-image: url(31096ca5a526bb2728ab323873bf4db4.svg);
 }
 .flag-icon-bo.flag-icon-squared {
-  background-image: url(../flags/1x1/bo.svg);
+  background-image: url(9411394be4d4cfda79a1a86d191ef9ca.svg);
 }
 .flag-icon-bq {
-  background-image: url(../flags/4x3/bq.svg);
+  background-image: url(98c9b0242d9fda142d3461e45c7cb7b7.svg);
 }
 .flag-icon-bq.flag-icon-squared {
-  background-image: url(../flags/1x1/bq.svg);
+  background-image: url(e2d60c397d2b8bf0a5821314e6a72b83.svg);
 }
 .flag-icon-br {
-  background-image: url(../flags/4x3/br.svg);
+  background-image: url(3fbfb2b806c2f25a646a7555e6f5a0d4.svg);
 }
 .flag-icon-br.flag-icon-squared {
-  background-image: url(../flags/1x1/br.svg);
+  background-image: url(c51952ce653d3473181fd459dbd13dc8.svg);
 }
 .flag-icon-bs {
-  background-image: url(../flags/4x3/bs.svg);
+  background-image: url(04b20e42a6aabf3d4a83193415a72141.svg);
 }
 .flag-icon-bs.flag-icon-squared {
-  background-image: url(../flags/1x1/bs.svg);
+  background-image: url(bf3e2664e8388d3bcd2e887e7b4bb3f8.svg);
 }
 .flag-icon-bt {
-  background-image: url(../flags/4x3/bt.svg);
+  background-image: url(9189b6700c2c6a8be705d83c48f54f2e.svg);
 }
 .flag-icon-bt.flag-icon-squared {
-  background-image: url(../flags/1x1/bt.svg);
+  background-image: url(7cb42d7cf0e3d36bbcc92451e8371157.svg);
 }
 .flag-icon-bv {
-  background-image: url(../flags/4x3/bv.svg);
+  background-image: url(f1578764dae0486d7eed53a5ac5ee504.svg);
 }
 .flag-icon-bv.flag-icon-squared {
-  background-image: url(../flags/1x1/bv.svg);
+  background-image: url(29bffdeb7efc4ac20d540d65f2987a95.svg);
 }
 .flag-icon-bw {
-  background-image: url(../flags/4x3/bw.svg);
+  background-image: url(0ec7a66dd3e2a125afba59d16f41089a.svg);
 }
 .flag-icon-bw.flag-icon-squared {
-  background-image: url(../flags/1x1/bw.svg);
+  background-image: url(071a54bf924265c53acb0897b8662e75.svg);
 }
 .flag-icon-by {
-  background-image: url(../flags/4x3/by.svg);
+  background-image: url(07e1b98689d9140a32337c4dd753a857.svg);
 }
 .flag-icon-by.flag-icon-squared {
-  background-image: url(../flags/1x1/by.svg);
+  background-image: url(849469a319053094f777f1aad2eaf071.svg);
 }
 .flag-icon-bz {
-  background-image: url(../flags/4x3/bz.svg);
+  background-image: url(b98aa6950d8dd118a64f36c6853fc180.svg);
 }
 .flag-icon-bz.flag-icon-squared {
-  background-image: url(../flags/1x1/bz.svg);
+  background-image: url(f968bbb38feb185a37b7c13510d5b67e.svg);
 }
 .flag-icon-ca {
-  background-image: url(../flags/4x3/ca.svg);
+  background-image: url(f3567f855a15788d27e6c508fb8bd10f.svg);
 }
 .flag-icon-ca.flag-icon-squared {
-  background-image: url(../flags/1x1/ca.svg);
+  background-image: url(741ac08e82c33267b23cf7e4da5e0e34.svg);
 }
 .flag-icon-cc {
-  background-image: url(../flags/4x3/cc.svg);
+  background-image: url(9c8ebcc5ba1d7734b27585a57bfd524c.svg);
 }
 .flag-icon-cc.flag-icon-squared {
-  background-image: url(../flags/1x1/cc.svg);
+  background-image: url(5fd756debb941bcebb130569d3102b6d.svg);
 }
 .flag-icon-cd {
-  background-image: url(../flags/4x3/cd.svg);
+  background-image: url(095a878005464a608302b12650d412a9.svg);
 }
 .flag-icon-cd.flag-icon-squared {
-  background-image: url(../flags/1x1/cd.svg);
+  background-image: url(f0ddb36d041483f7a8923737236d7a36.svg);
 }
 .flag-icon-cf {
-  background-image: url(../flags/4x3/cf.svg);
+  background-image: url(53d21868698a38ce175e460ad1c17f46.svg);
 }
 .flag-icon-cf.flag-icon-squared {
-  background-image: url(../flags/1x1/cf.svg);
+  background-image: url(96b2aa57db482e4c335d0255c9d99fdf.svg);
 }
 .flag-icon-cg {
-  background-image: url(../flags/4x3/cg.svg);
+  background-image: url(35fd29354bf7c308fc92fd2a6e6c4f9e.svg);
 }
 .flag-icon-cg.flag-icon-squared {
-  background-image: url(../flags/1x1/cg.svg);
+  background-image: url(cf7fbac69c6c2612e0e3743b4f1cb90f.svg);
 }
 .flag-icon-ch {
-  background-image: url(../flags/4x3/ch.svg);
+  background-image: url(ab5b284a3ee4856efa7a0032f0555e0c.svg);
 }
 .flag-icon-ch.flag-icon-squared {
-  background-image: url(../flags/1x1/ch.svg);
+  background-image: url(31d3e0c94023fc622d3a71b80bda07d2.svg);
 }
 .flag-icon-ci {
-  background-image: url(../flags/4x3/ci.svg);
+  background-image: url(482c005b4620c7874be547b3fb94b88b.svg);
 }
 .flag-icon-ci.flag-icon-squared {
-  background-image: url(../flags/1x1/ci.svg);
+  background-image: url(3774afd8c5faaff5197a0804f86fe4f2.svg);
 }
 .flag-icon-ck {
-  background-image: url(../flags/4x3/ck.svg);
+  background-image: url(d93cc27a6b67494c63be0923b744b83f.svg);
 }
 .flag-icon-ck.flag-icon-squared {
-  background-image: url(../flags/1x1/ck.svg);
+  background-image: url(7321d128c638399830174a1fe0093645.svg);
 }
 .flag-icon-cl {
-  background-image: url(../flags/4x3/cl.svg);
+  background-image: url(bcc731c0d464b5a7ad4c8d4b62aaf663.svg);
 }
 .flag-icon-cl.flag-icon-squared {
-  background-image: url(../flags/1x1/cl.svg);
+  background-image: url(820282fea68fbee189537735f9ca57c7.svg);
 }
 .flag-icon-cm {
-  background-image: url(../flags/4x3/cm.svg);
+  background-image: url(6b14123ea06c3492e3f43491853f39b6.svg);
 }
 .flag-icon-cm.flag-icon-squared {
-  background-image: url(../flags/1x1/cm.svg);
+  background-image: url(4d101afcb52dcb48e7d264a65715252e.svg);
 }
 .flag-icon-cn {
-  background-image: url(../flags/4x3/cn.svg);
+  background-image: url(a20b8af5b64dddbdd0a42fc6dda4a501.svg);
 }
 .flag-icon-cn.flag-icon-squared {
-  background-image: url(../flags/1x1/cn.svg);
+  background-image: url(62547992338ed85dfe7831720e52a27b.svg);
 }
 .flag-icon-co {
-  background-image: url(../flags/4x3/co.svg);
+  background-image: url(53f743689c74d25c818a49069ea7f64d.svg);
 }
 .flag-icon-co.flag-icon-squared {
-  background-image: url(../flags/1x1/co.svg);
+  background-image: url(8783d52bdbce0aad59f6182365674422.svg);
 }
 .flag-icon-cr {
-  background-image: url(../flags/4x3/cr.svg);
+  background-image: url(5d5385baaa499e1e195577d7b9d8f1d9.svg);
 }
 .flag-icon-cr.flag-icon-squared {
-  background-image: url(../flags/1x1/cr.svg);
+  background-image: url(c1a943cf19b022c895aa502cfc574fe1.svg);
 }
 .flag-icon-cu {
-  background-image: url(../flags/4x3/cu.svg);
+  background-image: url(9e1a9c3946aa1defd9b54af161a05c3c.svg);
 }
 .flag-icon-cu.flag-icon-squared {
-  background-image: url(../flags/1x1/cu.svg);
+  background-image: url(9f01ac7ee09745fb9e204a20b21fdeba.svg);
 }
 .flag-icon-cv {
-  background-image: url(../flags/4x3/cv.svg);
+  background-image: url(c4282a1384eb35dbe59d5aec1be50074.svg);
 }
 .flag-icon-cv.flag-icon-squared {
-  background-image: url(../flags/1x1/cv.svg);
+  background-image: url(db866b4b1e08dab56eecd21f63e73c6c.svg);
 }
 .flag-icon-cw {
-  background-image: url(../flags/4x3/cw.svg);
+  background-image: url(43bcdd182e233bf3ed71db2f92512f58.svg);
 }
 .flag-icon-cw.flag-icon-squared {
-  background-image: url(../flags/1x1/cw.svg);
+  background-image: url(2e4ff2b9c7f96bbc2a17bd7a6dc70023.svg);
 }
 .flag-icon-cx {
-  background-image: url(../flags/4x3/cx.svg);
+  background-image: url(e3fea148b6e7db71a57a3fe3caa539fc.svg);
 }
 .flag-icon-cx.flag-icon-squared {
-  background-image: url(../flags/1x1/cx.svg);
+  background-image: url(b6f5e2ff7cfccc4245a76772c18dae82.svg);
 }
 .flag-icon-cy {
-  background-image: url(../flags/4x3/cy.svg);
+  background-image: url(4d0a06a0a46c7b9f369fb1568c82ce97.svg);
 }
 .flag-icon-cy.flag-icon-squared {
-  background-image: url(../flags/1x1/cy.svg);
+  background-image: url(29c691380d1b1d573fe3ff16edbf606b.svg);
 }
 .flag-icon-cz {
-  background-image: url(../flags/4x3/cz.svg);
+  background-image: url(d6fe7047e6c956a1a74b795d7861a50d.svg);
 }
 .flag-icon-cz.flag-icon-squared {
-  background-image: url(../flags/1x1/cz.svg);
+  background-image: url(da77c3b80d07916bdc11b8afcb76181e.svg);
 }
 .flag-icon-de {
-  background-image: url(../flags/4x3/de.svg);
+  background-image: url(724ac482cdf5d4870a1b9d64ce572057.svg);
 }
 .flag-icon-de.flag-icon-squared {
-  background-image: url(../flags/1x1/de.svg);
+  background-image: url(1ef5bfbb4ba19a8b7f97115d53e18391.svg);
 }
 .flag-icon-dj {
-  background-image: url(../flags/4x3/dj.svg);
+  background-image: url(150db0c819795db6f8eed43ff3700b8a.svg);
 }
 .flag-icon-dj.flag-icon-squared {
-  background-image: url(../flags/1x1/dj.svg);
+  background-image: url(0727488dde33304f02c444eebe7d4fb3.svg);
 }
 .flag-icon-dk {
-  background-image: url(../flags/4x3/dk.svg);
+  background-image: url(313d188858a12b7ec351e812e144b87b.svg);
 }
 .flag-icon-dk.flag-icon-squared {
-  background-image: url(../flags/1x1/dk.svg);
+  background-image: url(4380889ab97fc7e563e6be7dab2abfee.svg);
 }
 .flag-icon-dm {
-  background-image: url(../flags/4x3/dm.svg);
+  background-image: url(80a2c3313693688daf658d9eec30bcf0.svg);
 }
 .flag-icon-dm.flag-icon-squared {
-  background-image: url(../flags/1x1/dm.svg);
+  background-image: url(13d26503f100caf6369632cd8a477718.svg);
 }
 .flag-icon-do {
-  background-image: url(../flags/4x3/do.svg);
+  background-image: url(49c9116e3a380dae2a537306240f19a2.svg);
 }
 .flag-icon-do.flag-icon-squared {
-  background-image: url(../flags/1x1/do.svg);
+  background-image: url(c2761997c3bcd90c7d1950163b24c3be.svg);
 }
 .flag-icon-dz {
-  background-image: url(../flags/4x3/dz.svg);
+  background-image: url(806015dfa8396fc6fff45639f1989096.svg);
 }
 .flag-icon-dz.flag-icon-squared {
-  background-image: url(../flags/1x1/dz.svg);
+  background-image: url(381242c50be42508252571520895dac2.svg);
 }
 .flag-icon-ec {
-  background-image: url(../flags/4x3/ec.svg);
+  background-image: url(fdff063a36b879b8ba42f91a6e717fe4.svg);
 }
 .flag-icon-ec.flag-icon-squared {
-  background-image: url(../flags/1x1/ec.svg);
+  background-image: url(a89512bef99c250ab98c6f5933f68e32.svg);
 }
 .flag-icon-ee {
-  background-image: url(../flags/4x3/ee.svg);
+  background-image: url(dfddf9901b10756425de201c419c2f0f.svg);
 }
 .flag-icon-ee.flag-icon-squared {
-  background-image: url(../flags/1x1/ee.svg);
+  background-image: url(bc75a2a408e158cff57d7998e6719e57.svg);
 }
 .flag-icon-eg {
-  background-image: url(../flags/4x3/eg.svg);
+  background-image: url(5740c7f604660bebe8f882eed2133ad4.svg);
 }
 .flag-icon-eg.flag-icon-squared {
-  background-image: url(../flags/1x1/eg.svg);
+  background-image: url(2b170f7792e182b2fd06fed96010314e.svg);
 }
 .flag-icon-eh {
-  background-image: url(../flags/4x3/eh.svg);
+  background-image: url(9617e5cfe4558cd984d9c0f2fa2cd934.svg);
 }
 .flag-icon-eh.flag-icon-squared {
-  background-image: url(../flags/1x1/eh.svg);
+  background-image: url(c871d56e6cf372463b9c0470c390ae67.svg);
 }
 .flag-icon-er {
-  background-image: url(../flags/4x3/er.svg);
+  background-image: url(7fe4b1977a1dcb80bfe0661dc7910f03.svg);
 }
 .flag-icon-er.flag-icon-squared {
-  background-image: url(../flags/1x1/er.svg);
+  background-image: url(aeabad6e5c698ddcc80cad0657905e16.svg);
 }
 .flag-icon-es {
-  background-image: url(../flags/4x3/es.svg);
+  background-image: url(8b570f6c87b7f98b4c1992e89c18cd9d.svg);
 }
 .flag-icon-es.flag-icon-squared {
-  background-image: url(../flags/1x1/es.svg);
+  background-image: url(b2ec5bf90903a9c6ceae0d7fbf29ae89.svg);
 }
 .flag-icon-et {
-  background-image: url(../flags/4x3/et.svg);
+  background-image: url(44df4521b22cc71457cbd1d4d4b905df.svg);
 }
 .flag-icon-et.flag-icon-squared {
-  background-image: url(../flags/1x1/et.svg);
+  background-image: url(cddaf1a5263e0e2932d569dbc673bb31.svg);
 }
 .flag-icon-fi {
-  background-image: url(../flags/4x3/fi.svg);
+  background-image: url(509c9ce7fe9ebf2870ee79f6e7056691.svg);
 }
 .flag-icon-fi.flag-icon-squared {
-  background-image: url(../flags/1x1/fi.svg);
+  background-image: url(a556899cf1d3cbb6da454b7d3bec43ae.svg);
 }
 .flag-icon-fj {
-  background-image: url(../flags/4x3/fj.svg);
+  background-image: url(7025d4fe9e021a68c08df8060f06d015.svg);
 }
 .flag-icon-fj.flag-icon-squared {
-  background-image: url(../flags/1x1/fj.svg);
+  background-image: url(a4350cd1a5da80c2752b68e5beb6ad4b.svg);
 }
 .flag-icon-fk {
-  background-image: url(../flags/4x3/fk.svg);
+  background-image: url(76e1a258b5917270a1ac47b40125bcb4.svg);
 }
 .flag-icon-fk.flag-icon-squared {
-  background-image: url(../flags/1x1/fk.svg);
+  background-image: url(a7f290ca7009c9a1fd25c8fc157cf10d.svg);
 }
 .flag-icon-fm {
-  background-image: url(../flags/4x3/fm.svg);
+  background-image: url(7e0df60e9b03a5e06cbeac095ea90dd8.svg);
 }
 .flag-icon-fm.flag-icon-squared {
-  background-image: url(../flags/1x1/fm.svg);
+  background-image: url(d0981328310e9ef1abe167965b3b28f7.svg);
 }
 .flag-icon-fo {
-  background-image: url(../flags/4x3/fo.svg);
+  background-image: url(355b9d498642535c30f9c19d05db49db.svg);
 }
 .flag-icon-fo.flag-icon-squared {
-  background-image: url(../flags/1x1/fo.svg);
+  background-image: url(794dc5c07cd8ab3e31a5ed64e8b5c986.svg);
 }
 .flag-icon-fr {
-  background-image: url(../flags/4x3/fr.svg);
+  background-image: url(582c4b98dbf80035e2f4f54cb0b816b8.svg);
 }
 .flag-icon-fr.flag-icon-squared {
-  background-image: url(../flags/1x1/fr.svg);
+  background-image: url(3cdaee0847675971365d1844688919f0.svg);
 }
 .flag-icon-ga {
-  background-image: url(../flags/4x3/ga.svg);
+  background-image: url(a018ac4cc42c69cb7525de5d9a4ee60b.svg);
 }
 .flag-icon-ga.flag-icon-squared {
-  background-image: url(../flags/1x1/ga.svg);
+  background-image: url(a3c1fc7790b54b62863ab55da2a62674.svg);
 }
 .flag-icon-gb {
-  background-image: url(../flags/4x3/gb.svg);
+  background-image: url(b637225289c3e8d2f2d673f04fc308a9.svg);
 }
 .flag-icon-gb.flag-icon-squared {
-  background-image: url(../flags/1x1/gb.svg);
+  background-image: url(ff24a862955c269bb42ef600a4ae5828.svg);
 }
 .flag-icon-gd {
-  background-image: url(../flags/4x3/gd.svg);
+  background-image: url(36f7ea4aaaac2228270947dfdd032c09.svg);
 }
 .flag-icon-gd.flag-icon-squared {
-  background-image: url(../flags/1x1/gd.svg);
+  background-image: url(6c33370ffca3fa37fa62951128e4b722.svg);
 }
 .flag-icon-ge {
-  background-image: url(../flags/4x3/ge.svg);
+  background-image: url(9be42c97df3cb6f228f59699c53453d0.svg);
 }
 .flag-icon-ge.flag-icon-squared {
-  background-image: url(../flags/1x1/ge.svg);
+  background-image: url(da036e6ffd1955abcdc7b761f9559dbc.svg);
 }
 .flag-icon-gf {
-  background-image: url(../flags/4x3/gf.svg);
+  background-image: url(582c4b98dbf80035e2f4f54cb0b816b8.svg);
 }
 .flag-icon-gf.flag-icon-squared {
-  background-image: url(../flags/1x1/gf.svg);
+  background-image: url(3cdaee0847675971365d1844688919f0.svg);
 }
 .flag-icon-gg {
-  background-image: url(../flags/4x3/gg.svg);
+  background-image: url(3d7723365c3623abe006d6e7c5d678d6.svg);
 }
 .flag-icon-gg.flag-icon-squared {
-  background-image: url(../flags/1x1/gg.svg);
+  background-image: url(0aa5c2d9d6bda23c292bc00a209c2c21.svg);
 }
 .flag-icon-gh {
-  background-image: url(../flags/4x3/gh.svg);
+  background-image: url(a3bcb079e7a689ce163427029e4bc373.svg);
 }
 .flag-icon-gh.flag-icon-squared {
-  background-image: url(../flags/1x1/gh.svg);
+  background-image: url(ad81269e9e75b297cb0204f6b90111af.svg);
 }
 .flag-icon-gi {
-  background-image: url(../flags/4x3/gi.svg);
+  background-image: url(75f955db15205104bf7125f0e9baaafe.svg);
 }
 .flag-icon-gi.flag-icon-squared {
-  background-image: url(../flags/1x1/gi.svg);
+  background-image: url(63099c84ff0191e8726fe035ce22606a.svg);
 }
 .flag-icon-gl {
-  background-image: url(../flags/4x3/gl.svg);
+  background-image: url(3dd26748491019ec2febee94e727bea7.svg);
 }
 .flag-icon-gl.flag-icon-squared {
-  background-image: url(../flags/1x1/gl.svg);
+  background-image: url(fc7be08ee0fe0bbb9209ee87910c81ea.svg);
 }
 .flag-icon-gm {
-  background-image: url(../flags/4x3/gm.svg);
+  background-image: url(0c2f68e77285b3942ad44633ec5c19d0.svg);
 }
 .flag-icon-gm.flag-icon-squared {
-  background-image: url(../flags/1x1/gm.svg);
+  background-image: url(f0bc2a53fb40abfed3690f453c77ec6e.svg);
 }
 .flag-icon-gn {
-  background-image: url(../flags/4x3/gn.svg);
+  background-image: url(653055914f418cdbef5e581740bde2f0.svg);
 }
 .flag-icon-gn.flag-icon-squared {
-  background-image: url(../flags/1x1/gn.svg);
+  background-image: url(702cc467421126071c3b22daeca58a04.svg);
 }
 .flag-icon-gp {
-  background-image: url(../flags/4x3/gp.svg);
+  background-image: url(582c4b98dbf80035e2f4f54cb0b816b8.svg);
 }
 .flag-icon-gp.flag-icon-squared {
-  background-image: url(../flags/1x1/gp.svg);
+  background-image: url(3cdaee0847675971365d1844688919f0.svg);
 }
 .flag-icon-gq {
-  background-image: url(../flags/4x3/gq.svg);
+  background-image: url(d5edbbbe6f55138c77838ab67645b077.svg);
 }
 .flag-icon-gq.flag-icon-squared {
-  background-image: url(../flags/1x1/gq.svg);
+  background-image: url(4f2db47ffb1719a9c8f3915f507442f3.svg);
 }
 .flag-icon-gr {
-  background-image: url(../flags/4x3/gr.svg);
+  background-image: url(8fc02fa36df02db7e4a4882b5b72daab.svg);
 }
 .flag-icon-gr.flag-icon-squared {
-  background-image: url(../flags/1x1/gr.svg);
+  background-image: url(cd556d41b68b40044f8ef646d56f23c0.svg);
 }
 .flag-icon-gs {
-  background-image: url(../flags/4x3/gs.svg);
+  background-image: url(4b0c1a3e2f5a4c93a44a67b3c466e79d.svg);
 }
 .flag-icon-gs.flag-icon-squared {
-  background-image: url(../flags/1x1/gs.svg);
+  background-image: url(a27caca0564a7257bdc472b54e5b5e48.svg);
 }
 .flag-icon-gt {
-  background-image: url(../flags/4x3/gt.svg);
+  background-image: url(1334354287d8dd90f9d04073d98c42c7.svg);
 }
 .flag-icon-gt.flag-icon-squared {
-  background-image: url(../flags/1x1/gt.svg);
+  background-image: url(03b831ba4c6af4dd09ab14744d2b9219.svg);
 }
 .flag-icon-gu {
-  background-image: url(../flags/4x3/gu.svg);
+  background-image: url(56e7baa95cbece0b5e4f121b4c551ba7.svg);
 }
 .flag-icon-gu.flag-icon-squared {
-  background-image: url(../flags/1x1/gu.svg);
+  background-image: url(d54cb03e7761cc0eb6909f025db5f27d.svg);
 }
 .flag-icon-gw {
-  background-image: url(../flags/4x3/gw.svg);
+  background-image: url(d5930badb50ccf9fb118f1973e1f3cfb.svg);
 }
 .flag-icon-gw.flag-icon-squared {
-  background-image: url(../flags/1x1/gw.svg);
+  background-image: url(ff5419bb714527a6152c431689653307.svg);
 }
 .flag-icon-gy {
-  background-image: url(../flags/4x3/gy.svg);
+  background-image: url(c24aef9d27b36fc2ae691ba85cad2698.svg);
 }
 .flag-icon-gy.flag-icon-squared {
-  background-image: url(../flags/1x1/gy.svg);
+  background-image: url(dfd7d67bd4c5726969906d25134ef9dd.svg);
 }
 .flag-icon-hk {
-  background-image: url(../flags/4x3/hk.svg);
+  background-image: url(58b56b2b10bae9cae092e44cde743f9a.svg);
 }
 .flag-icon-hk.flag-icon-squared {
-  background-image: url(../flags/1x1/hk.svg);
+  background-image: url(3972d2e2472a26c3b22181e43d1f05c0.svg);
 }
 .flag-icon-hm {
-  background-image: url(../flags/4x3/hm.svg);
+  background-image: url(e425dbd9d1241218c0f15b6416bb0ec8.svg);
 }
 .flag-icon-hm.flag-icon-squared {
-  background-image: url(../flags/1x1/hm.svg);
+  background-image: url(dcc63dac15327036a96ad3873cda590d.svg);
 }
 .flag-icon-hn {
-  background-image: url(../flags/4x3/hn.svg);
+  background-image: url(4d3b6ae3f3b8fce3c057ffdb7404e8f7.svg);
 }
 .flag-icon-hn.flag-icon-squared {
-  background-image: url(../flags/1x1/hn.svg);
+  background-image: url(9d3489bc53d1e94148f96abc8ce6f905.svg);
 }
 .flag-icon-hr {
-  background-image: url(../flags/4x3/hr.svg);
+  background-image: url(8da0ae9c597489e68885d90724e90ac2.svg);
 }
 .flag-icon-hr.flag-icon-squared {
-  background-image: url(../flags/1x1/hr.svg);
+  background-image: url(2b226bb7bfe16e948054f64eecab87cc.svg);
 }
 .flag-icon-ht {
-  background-image: url(../flags/4x3/ht.svg);
+  background-image: url(d19d72a09340c574de17aaceb53ed9a0.svg);
 }
 .flag-icon-ht.flag-icon-squared {
-  background-image: url(../flags/1x1/ht.svg);
+  background-image: url(a5017a1d5376d3e7b44463b5269d3a00.svg);
 }
 .flag-icon-hu {
-  background-image: url(../flags/4x3/hu.svg);
+  background-image: url(5cf5c8bb2fd220651a132aaaedaded58.svg);
 }
 .flag-icon-hu.flag-icon-squared {
-  background-image: url(../flags/1x1/hu.svg);
+  background-image: url(4e4ee5953ca831f0c378068bd5674f39.svg);
 }
 .flag-icon-id {
-  background-image: url(../flags/4x3/id.svg);
+  background-image: url(ebdcff1b4ed97adf02a518611584819b.svg);
 }
 .flag-icon-id.flag-icon-squared {
-  background-image: url(../flags/1x1/id.svg);
+  background-image: url(48d3a9e25ee20b3defd23766dd460259.svg);
 }
 .flag-icon-ie {
-  background-image: url(../flags/4x3/ie.svg);
+  background-image: url(99c5c80a24429a822772c88bd84cba76.svg);
 }
 .flag-icon-ie.flag-icon-squared {
-  background-image: url(../flags/1x1/ie.svg);
+  background-image: url(b08883d594bcd36c5bc2ab03d93c0c42.svg);
 }
 .flag-icon-il {
-  background-image: url(../flags/4x3/il.svg);
+  background-image: url(8792f694d36c75fa7d3872ec120c1e12.svg);
 }
 .flag-icon-il.flag-icon-squared {
-  background-image: url(../flags/1x1/il.svg);
+  background-image: url(bdd33b3c0336a28ef178ab68ada35a3d.svg);
 }
 .flag-icon-im {
-  background-image: url(../flags/4x3/im.svg);
+  background-image: url(ebe05a55ee0edfa47b12e3ea56badef5.svg);
 }
 .flag-icon-im.flag-icon-squared {
-  background-image: url(../flags/1x1/im.svg);
+  background-image: url(3bf7fe74c362870f9dfa66911d219d65.svg);
 }
 .flag-icon-in {
-  background-image: url(../flags/4x3/in.svg);
+  background-image: url(430f4f00f9beeac3a5fe6bdd4a262abd.svg);
 }
 .flag-icon-in.flag-icon-squared {
-  background-image: url(../flags/1x1/in.svg);
+  background-image: url(27632ec9a7c11456941af5af452f26de.svg);
 }
 .flag-icon-io {
-  background-image: url(../flags/4x3/io.svg);
+  background-image: url(36c45005ea33456cf4416cd7fc02756d.svg);
 }
 .flag-icon-io.flag-icon-squared {
-  background-image: url(../flags/1x1/io.svg);
+  background-image: url(77e00aeee3ad8b3b8112fb3752d17253.svg);
 }
 .flag-icon-iq {
-  background-image: url(../flags/4x3/iq.svg);
+  background-image: url(f2064bd5e378bbd6ad029baffb48a597.svg);
 }
 .flag-icon-iq.flag-icon-squared {
-  background-image: url(../flags/1x1/iq.svg);
+  background-image: url(b5808c10b8565aa8ab79e5163afd58c6.svg);
 }
 .flag-icon-ir {
-  background-image: url(../flags/4x3/ir.svg);
+  background-image: url(5b2aa7d2e7b5bcc936d28160a1acd2fb.svg);
 }
 .flag-icon-ir.flag-icon-squared {
-  background-image: url(../flags/1x1/ir.svg);
+  background-image: url(6e7a8e0bbb30269e10a46d86602e460a.svg);
 }
 .flag-icon-is {
-  background-image: url(../flags/4x3/is.svg);
+  background-image: url(d7eaf09387333388d367a26b1649cbfc.svg);
 }
 .flag-icon-is.flag-icon-squared {
-  background-image: url(../flags/1x1/is.svg);
+  background-image: url(f6217480b10db9459ee37fa256729349.svg);
 }
 .flag-icon-it {
-  background-image: url(../flags/4x3/it.svg);
+  background-image: url(b9dd89aa761e63620aec27e4f66fc7dd.svg);
 }
 .flag-icon-it.flag-icon-squared {
-  background-image: url(../flags/1x1/it.svg);
+  background-image: url(b222f037b2164f92cc3967999c268278.svg);
 }
 .flag-icon-je {
-  background-image: url(../flags/4x3/je.svg);
+  background-image: url(8f034b99a01129b96e48a7eb23e085f2.svg);
 }
 .flag-icon-je.flag-icon-squared {
-  background-image: url(../flags/1x1/je.svg);
+  background-image: url(83703339e4973da176bfd21e74b0c7ac.svg);
 }
 .flag-icon-jm {
-  background-image: url(../flags/4x3/jm.svg);
+  background-image: url(5c94fbc3996cd4ad76469ec7accec5c3.svg);
 }
 .flag-icon-jm.flag-icon-squared {
-  background-image: url(../flags/1x1/jm.svg);
+  background-image: url(f6edb9e9975f122319c80b7ab72e8e8e.svg);
 }
 .flag-icon-jo {
-  background-image: url(../flags/4x3/jo.svg);
+  background-image: url(69d6d22ab619a9e078146cafe45210df.svg);
 }
 .flag-icon-jo.flag-icon-squared {
-  background-image: url(../flags/1x1/jo.svg);
+  background-image: url(979283109f1eb8fa1e0ab591944258c1.svg);
 }
 .flag-icon-jp {
-  background-image: url(../flags/4x3/jp.svg);
+  background-image: url(3f1470441ae2858f1019acec8e4e8fc1.svg);
 }
 .flag-icon-jp.flag-icon-squared {
-  background-image: url(../flags/1x1/jp.svg);
+  background-image: url(d48bd9d937b20370ae82e18f2bbe87e9.svg);
 }
 .flag-icon-ke {
-  background-image: url(../flags/4x3/ke.svg);
+  background-image: url(6d699f37eaa5e4cb0b97fccee6910d40.svg);
 }
 .flag-icon-ke.flag-icon-squared {
-  background-image: url(../flags/1x1/ke.svg);
+  background-image: url(2a188ae370fd7e0ae500b5431f095725.svg);
 }
 .flag-icon-kg {
-  background-image: url(../flags/4x3/kg.svg);
+  background-image: url(242faf6ae3c0da6f2ed9b049c3e4cbc6.svg);
 }
 .flag-icon-kg.flag-icon-squared {
-  background-image: url(../flags/1x1/kg.svg);
+  background-image: url(49c399acd3b845f5bd05561eac902620.svg);
 }
 .flag-icon-kh {
-  background-image: url(../flags/4x3/kh.svg);
+  background-image: url(5b995d2232355feacf41c840e6686d54.svg);
 }
 .flag-icon-kh.flag-icon-squared {
-  background-image: url(../flags/1x1/kh.svg);
+  background-image: url(91c7a7ff60fb09091bc197e1273387b4.svg);
 }
 .flag-icon-ki {
-  background-image: url(../flags/4x3/ki.svg);
+  background-image: url(9c5f97ea773a8a6eadcdda7f0ccaa0a2.svg);
 }
 .flag-icon-ki.flag-icon-squared {
-  background-image: url(../flags/1x1/ki.svg);
+  background-image: url(55e7f7ac21d9394b342a4ba1758766c8.svg);
 }
 .flag-icon-km {
-  background-image: url(../flags/4x3/km.svg);
+  background-image: url(83dd59d6312c826acc13fcd6e99653a1.svg);
 }
 .flag-icon-km.flag-icon-squared {
-  background-image: url(../flags/1x1/km.svg);
+  background-image: url(0b193dae2c5c33387c5e452597caea8b.svg);
 }
 .flag-icon-kn {
-  background-image: url(../flags/4x3/kn.svg);
+  background-image: url(3ecf8e0c0eb303b1353f6b50362dfd44.svg);
 }
 .flag-icon-kn.flag-icon-squared {
-  background-image: url(../flags/1x1/kn.svg);
+  background-image: url(6373158e8e0bc7f996c1a460164aabe3.svg);
 }
 .flag-icon-kp {
-  background-image: url(../flags/4x3/kp.svg);
+  background-image: url(aee8edcf3b977f44e43f03763e0c763b.svg);
 }
 .flag-icon-kp.flag-icon-squared {
-  background-image: url(../flags/1x1/kp.svg);
+  background-image: url(a6fd01ad3c1ee442e44719ff2de1369f.svg);
 }
 .flag-icon-kr {
-  background-image: url(../flags/4x3/kr.svg);
+  background-image: url(3fabe60e347fe007f319b9d5b83ece77.svg);
 }
 .flag-icon-kr.flag-icon-squared {
-  background-image: url(../flags/1x1/kr.svg);
+  background-image: url(77f4044d61af4d2cdb8ff923387a1d6b.svg);
 }
 .flag-icon-kw {
-  background-image: url(../flags/4x3/kw.svg);
+  background-image: url(8aa1bc0f97e26bb8211312a05c05b504.svg);
 }
 .flag-icon-kw.flag-icon-squared {
-  background-image: url(../flags/1x1/kw.svg);
+  background-image: url(18b1af4d8be5cad7590a19c269116a0f.svg);
 }
 .flag-icon-ky {
-  background-image: url(../flags/4x3/ky.svg);
+  background-image: url(90d2ae45c6d6abfa6e5e9c5a1de578f4.svg);
 }
 .flag-icon-ky.flag-icon-squared {
-  background-image: url(../flags/1x1/ky.svg);
+  background-image: url(58aacd56dd345a4ab78f9543f5e6d6c0.svg);
 }
 .flag-icon-kz {
-  background-image: url(../flags/4x3/kz.svg);
+  background-image: url(34a4cf4800b1ac23d1c097856cbe6e9a.svg);
 }
 .flag-icon-kz.flag-icon-squared {
-  background-image: url(../flags/1x1/kz.svg);
+  background-image: url(8ef9b14278a329453163ed639afc68bd.svg);
 }
 .flag-icon-la {
-  background-image: url(../flags/4x3/la.svg);
+  background-image: url(ead1c6c64ccc346efb4382f32f6db04e.svg);
 }
 .flag-icon-la.flag-icon-squared {
-  background-image: url(../flags/1x1/la.svg);
+  background-image: url(f70fbca289247c69bc41c8c163940a96.svg);
 }
 .flag-icon-lb {
-  background-image: url(../flags/4x3/lb.svg);
+  background-image: url(eb95b645f83b29e2dbe4547bd1e5e5b0.svg);
 }
 .flag-icon-lb.flag-icon-squared {
-  background-image: url(../flags/1x1/lb.svg);
+  background-image: url(cb44b2fb708b9f7160bc8445ff9bd519.svg);
 }
 .flag-icon-lc {
-  background-image: url(../flags/4x3/lc.svg);
+  background-image: url(8495f488114a32eb41f4332687341869.svg);
 }
 .flag-icon-lc.flag-icon-squared {
-  background-image: url(../flags/1x1/lc.svg);
+  background-image: url(7ee632a098163836438ccadbfc5bc1ff.svg);
 }
 .flag-icon-li {
-  background-image: url(../flags/4x3/li.svg);
+  background-image: url(af58e25bca150c37d3c9605472fafb0f.svg);
 }
 .flag-icon-li.flag-icon-squared {
-  background-image: url(../flags/1x1/li.svg);
+  background-image: url(0effce135de5c6682079b42c32af5ac9.svg);
 }
 .flag-icon-lk {
-  background-image: url(../flags/4x3/lk.svg);
+  background-image: url(708ace67030150334994c0faa9ca0f0b.svg);
 }
 .flag-icon-lk.flag-icon-squared {
-  background-image: url(../flags/1x1/lk.svg);
+  background-image: url(a7af39b4a3bd86c239b095ece32e0768.svg);
 }
 .flag-icon-lr {
-  background-image: url(../flags/4x3/lr.svg);
+  background-image: url(cf525c8741fa9053974f4c1006cecf35.svg);
 }
 .flag-icon-lr.flag-icon-squared {
-  background-image: url(../flags/1x1/lr.svg);
+  background-image: url(570d6581935d2fc738816143c73a09d1.svg);
 }
 .flag-icon-ls {
-  background-image: url(../flags/4x3/ls.svg);
+  background-image: url(52ede4f6c172f3de77c8fe748c507665.svg);
 }
 .flag-icon-ls.flag-icon-squared {
-  background-image: url(../flags/1x1/ls.svg);
+  background-image: url(7a864886c3adf0fe4a41713cafd5aab8.svg);
 }
 .flag-icon-lt {
-  background-image: url(../flags/4x3/lt.svg);
+  background-image: url(3a996085d46f594a97b5c36723c9f8e5.svg);
 }
 .flag-icon-lt.flag-icon-squared {
-  background-image: url(../flags/1x1/lt.svg);
+  background-image: url(823791cf3a0f78031433ffbac8c16509.svg);
 }
 .flag-icon-lu {
-  background-image: url(../flags/4x3/lu.svg);
+  background-image: url(b509adf3a2482a166c88c24e6e791f2c.svg);
 }
 .flag-icon-lu.flag-icon-squared {
-  background-image: url(../flags/1x1/lu.svg);
+  background-image: url(b11e7d08c46d1439db8c73c684d8c5d5.svg);
 }
 .flag-icon-lv {
-  background-image: url(../flags/4x3/lv.svg);
+  background-image: url(9690e3dce0158170088d773c6c2fd75d.svg);
 }
 .flag-icon-lv.flag-icon-squared {
-  background-image: url(../flags/1x1/lv.svg);
+  background-image: url(fd0b4ee68bc36b3ab8479496337d1aa6.svg);
 }
 .flag-icon-ly {
-  background-image: url(../flags/4x3/ly.svg);
+  background-image: url(c35ef4a26f260fc623731d445acacff8.svg);
 }
 .flag-icon-ly.flag-icon-squared {
-  background-image: url(../flags/1x1/ly.svg);
+  background-image: url(f05b3fce1e695d008488d3d0e53dbf3d.svg);
 }
 .flag-icon-ma {
-  background-image: url(../flags/4x3/ma.svg);
+  background-image: url(4cdf0064acdaa22592f93212e38d0598.svg);
 }
 .flag-icon-ma.flag-icon-squared {
-  background-image: url(../flags/1x1/ma.svg);
+  background-image: url(63093d08b9168d3f489cfa3fb097782e.svg);
 }
 .flag-icon-mc {
-  background-image: url(../flags/4x3/mc.svg);
+  background-image: url(4ce825fa7e26f25dc81a258c6b49aa80.svg);
 }
 .flag-icon-mc.flag-icon-squared {
-  background-image: url(../flags/1x1/mc.svg);
+  background-image: url(ebb294f2c2917df66c685448b4676937.svg);
 }
 .flag-icon-md {
-  background-image: url(../flags/4x3/md.svg);
+  background-image: url(60a8d14f1f1bccc276f9be7f8b58cc83.svg);
 }
 .flag-icon-md.flag-icon-squared {
-  background-image: url(../flags/1x1/md.svg);
+  background-image: url(3a635824b16e5ef7eb69b81c2a739780.svg);
 }
 .flag-icon-me {
-  background-image: url(../flags/4x3/me.svg);
+  background-image: url(4bb5ed1f78bdfcfa9563d0d294cd2655.svg);
 }
 .flag-icon-me.flag-icon-squared {
-  background-image: url(../flags/1x1/me.svg);
+  background-image: url(15f8213deac25c1d2de86a003f53994d.svg);
 }
 .flag-icon-mf {
-  background-image: url(../flags/4x3/mf.svg);
+  background-image: url(582c4b98dbf80035e2f4f54cb0b816b8.svg);
 }
 .flag-icon-mf.flag-icon-squared {
-  background-image: url(../flags/1x1/mf.svg);
+  background-image: url(3cdaee0847675971365d1844688919f0.svg);
 }
 .flag-icon-mg {
-  background-image: url(../flags/4x3/mg.svg);
+  background-image: url(4d866629e967d62c5fcee9e75a7a92a8.svg);
 }
 .flag-icon-mg.flag-icon-squared {
-  background-image: url(../flags/1x1/mg.svg);
+  background-image: url(9481e99b1d4c7e00af38fe7eadc31dfb.svg);
 }
 .flag-icon-mh {
-  background-image: url(../flags/4x3/mh.svg);
+  background-image: url(ed2fedb2ded67884fe3968b1a698dca4.svg);
 }
 .flag-icon-mh.flag-icon-squared {
-  background-image: url(../flags/1x1/mh.svg);
+  background-image: url(c6658dbafc393067e5e5c0e0f5f4e96d.svg);
 }
 .flag-icon-mk {
-  background-image: url(../flags/4x3/mk.svg);
+  background-image: url(48ac116557925e406bf89eaaf0581d10.svg);
 }
 .flag-icon-mk.flag-icon-squared {
-  background-image: url(../flags/1x1/mk.svg);
+  background-image: url(496e92d3da94718d583dc2a57d469e15.svg);
 }
 .flag-icon-ml {
-  background-image: url(../flags/4x3/ml.svg);
+  background-image: url(906479ce7906e5c223a161e4a03d8b0b.svg);
 }
 .flag-icon-ml.flag-icon-squared {
-  background-image: url(../flags/1x1/ml.svg);
+  background-image: url(508a249f6365ecce23e3ebfa8c83417f.svg);
 }
 .flag-icon-mm {
-  background-image: url(../flags/4x3/mm.svg);
+  background-image: url(57ed218f957d2a374f12680e5c1b1a0c.svg);
 }
 .flag-icon-mm.flag-icon-squared {
-  background-image: url(../flags/1x1/mm.svg);
+  background-image: url(b31e4242c5effbd974ac7adc806ae104.svg);
 }
 .flag-icon-mn {
-  background-image: url(../flags/4x3/mn.svg);
+  background-image: url(762381a5cf171dbbe928814074ea7003.svg);
 }
 .flag-icon-mn.flag-icon-squared {
-  background-image: url(../flags/1x1/mn.svg);
+  background-image: url(fb027dcd0f93f830bd5c1ac83387f767.svg);
 }
 .flag-icon-mo {
-  background-image: url(../flags/4x3/mo.svg);
+  background-image: url(ae8af68fb114088ce846d9622cf2314c.svg);
 }
 .flag-icon-mo.flag-icon-squared {
-  background-image: url(../flags/1x1/mo.svg);
+  background-image: url(747e88858a222338e34302ba47dc436b.svg);
 }
 .flag-icon-mp {
-  background-image: url(../flags/4x3/mp.svg);
+  background-image: url(cef07f2800eb368eb61dc72e984bae4b.svg);
 }
 .flag-icon-mp.flag-icon-squared {
-  background-image: url(../flags/1x1/mp.svg);
+  background-image: url(0a2fc63d1fe143d52a4257819ea83430.svg);
 }
 .flag-icon-mq {
-  background-image: url(../flags/4x3/mq.svg);
+  background-image: url(582c4b98dbf80035e2f4f54cb0b816b8.svg);
 }
 .flag-icon-mq.flag-icon-squared {
-  background-image: url(../flags/1x1/mq.svg);
+  background-image: url(3cdaee0847675971365d1844688919f0.svg);
 }
 .flag-icon-mr {
-  background-image: url(../flags/4x3/mr.svg);
+  background-image: url(efa367763cc472445d3fa0b9622b3371.svg);
 }
 .flag-icon-mr.flag-icon-squared {
-  background-image: url(../flags/1x1/mr.svg);
+  background-image: url(fb99a8f70a8d1879da9d380340c2f3c5.svg);
 }
 .flag-icon-ms {
-  background-image: url(../flags/4x3/ms.svg);
+  background-image: url(05aa1802a98dbeed372c435c434bbc4b.svg);
 }
 .flag-icon-ms.flag-icon-squared {
-  background-image: url(../flags/1x1/ms.svg);
+  background-image: url(6b07c29b67685c25637c9097646fb94c.svg);
 }
 .flag-icon-mt {
-  background-image: url(../flags/4x3/mt.svg);
+  background-image: url(ed2fd233536155edab4d91ba6a2b7e1d.svg);
 }
 .flag-icon-mt.flag-icon-squared {
-  background-image: url(../flags/1x1/mt.svg);
+  background-image: url(390fd31762531c4fec4ed92603067fd5.svg);
 }
 .flag-icon-mu {
-  background-image: url(../flags/4x3/mu.svg);
+  background-image: url(b8a674891de9185b78f0c4f13723b86a.svg);
 }
 .flag-icon-mu.flag-icon-squared {
-  background-image: url(../flags/1x1/mu.svg);
+  background-image: url(e7426b5c4e098a890ee71d9164765f81.svg);
 }
 .flag-icon-mv {
-  background-image: url(../flags/4x3/mv.svg);
+  background-image: url(688fae70f2362c39b944a888feed0090.svg);
 }
 .flag-icon-mv.flag-icon-squared {
-  background-image: url(../flags/1x1/mv.svg);
+  background-image: url(9def4e38989db1494d13c2a6cb36dac7.svg);
 }
 .flag-icon-mw {
-  background-image: url(../flags/4x3/mw.svg);
+  background-image: url(78d304a4a8f743d897b7534f36898913.svg);
 }
 .flag-icon-mw.flag-icon-squared {
-  background-image: url(../flags/1x1/mw.svg);
+  background-image: url(f2a90f42da80b5a9595e0de65e7466d8.svg);
 }
 .flag-icon-mx {
-  background-image: url(../flags/4x3/mx.svg);
+  background-image: url(993f7379bfbbb4d94e0a6f0dd1d127e7.svg);
 }
 .flag-icon-mx.flag-icon-squared {
-  background-image: url(../flags/1x1/mx.svg);
+  background-image: url(063d33f66d3ec6423703784b81c799dd.svg);
 }
 .flag-icon-my {
-  background-image: url(../flags/4x3/my.svg);
+  background-image: url(1e79137034bf5e3813f9675cc28f113c.svg);
 }
 .flag-icon-my.flag-icon-squared {
-  background-image: url(../flags/1x1/my.svg);
+  background-image: url(0bd39a41c840eab409296cd4465c9ed7.svg);
 }
 .flag-icon-mz {
-  background-image: url(../flags/4x3/mz.svg);
+  background-image: url(dcc159296236540c02b7ef135672d45d.svg);
 }
 .flag-icon-mz.flag-icon-squared {
-  background-image: url(../flags/1x1/mz.svg);
+  background-image: url(8f99093033818edd791eb97d2e230e1d.svg);
 }
 .flag-icon-na {
-  background-image: url(../flags/4x3/na.svg);
+  background-image: url(5681b6650639cc138bfd0fce51c3d627.svg);
 }
 .flag-icon-na.flag-icon-squared {
-  background-image: url(../flags/1x1/na.svg);
+  background-image: url(a7b8d2583fee6931b3827b7fecce75ee.svg);
 }
 .flag-icon-nc {
-  background-image: url(../flags/4x3/nc.svg);
+  background-image: url(e764c1ae02755764bfeb5dec209d5cde.svg);
 }
 .flag-icon-nc.flag-icon-squared {
-  background-image: url(../flags/1x1/nc.svg);
+  background-image: url(c6fb0ec6fab7791c8fb569534026389f.svg);
 }
 .flag-icon-ne {
-  background-image: url(../flags/4x3/ne.svg);
+  background-image: url(6abac67509da444507f7bf0c0b504c98.svg);
 }
 .flag-icon-ne.flag-icon-squared {
-  background-image: url(../flags/1x1/ne.svg);
+  background-image: url(80f269b7ae64f89e0a9a7d194d830142.svg);
 }
 .flag-icon-nf {
-  background-image: url(../flags/4x3/nf.svg);
+  background-image: url(778e021bf616117d2e3e568c7d0b2992.svg);
 }
 .flag-icon-nf.flag-icon-squared {
-  background-image: url(../flags/1x1/nf.svg);
+  background-image: url(d0a6a1806a581c0e42eb439dad32f8b1.svg);
 }
 .flag-icon-ng {
-  background-image: url(../flags/4x3/ng.svg);
+  background-image: url(22a98d4edc4cb032af53d085fbcb4b47.svg);
 }
 .flag-icon-ng.flag-icon-squared {
-  background-image: url(../flags/1x1/ng.svg);
+  background-image: url(bbb8d5e991ad0b673c66934ea7be08f7.svg);
 }
 .flag-icon-ni {
-  background-image: url(../flags/4x3/ni.svg);
+  background-image: url(b316dc82abdbacd5c42d55f6606364ca.svg);
 }
 .flag-icon-ni.flag-icon-squared {
-  background-image: url(../flags/1x1/ni.svg);
+  background-image: url(85bf0e6a4c4725c0fd135baa2a35fea8.svg);
 }
 .flag-icon-nl {
-  background-image: url(../flags/4x3/nl.svg);
+  background-image: url(98c9b0242d9fda142d3461e45c7cb7b7.svg);
 }
 .flag-icon-nl.flag-icon-squared {
-  background-image: url(../flags/1x1/nl.svg);
+  background-image: url(e2d60c397d2b8bf0a5821314e6a72b83.svg);
 }
 .flag-icon-no {
-  background-image: url(../flags/4x3/no.svg);
+  background-image: url(5c566b9bae47d7d39a2a91669852f73f.svg);
 }
 .flag-icon-no.flag-icon-squared {
-  background-image: url(../flags/1x1/no.svg);
+  background-image: url(7cca6868fb5ba289bb4c9bb94c3017ea.svg);
 }
 .flag-icon-np {
-  background-image: url(../flags/4x3/np.svg);
+  background-image: url(e62996c6d701d58ff7dc1c1aebe6b25c.svg);
 }
 .flag-icon-np.flag-icon-squared {
-  background-image: url(../flags/1x1/np.svg);
+  background-image: url(bbd4a11201610e1be8b054308626c28c.svg);
 }
 .flag-icon-nr {
-  background-image: url(../flags/4x3/nr.svg);
+  background-image: url(2bdf0f73da47201906e6e53550e74638.svg);
 }
 .flag-icon-nr.flag-icon-squared {
-  background-image: url(../flags/1x1/nr.svg);
+  background-image: url(0def405283631aa5ea25648318298c1f.svg);
 }
 .flag-icon-nu {
-  background-image: url(../flags/4x3/nu.svg);
+  background-image: url(055ba4074393e22c10207e585ce68544.svg);
 }
 .flag-icon-nu.flag-icon-squared {
-  background-image: url(../flags/1x1/nu.svg);
+  background-image: url(a592cf0cff12c69fe3ea121362b8d74a.svg);
 }
 .flag-icon-nz {
-  background-image: url(../flags/4x3/nz.svg);
+  background-image: url(5865375bc1ccdeec8f8df67af67c3f0a.svg);
 }
 .flag-icon-nz.flag-icon-squared {
-  background-image: url(../flags/1x1/nz.svg);
+  background-image: url(ba81e2a2b1fd1f3cd45a6151ab7f2a28.svg);
 }
 .flag-icon-om {
-  background-image: url(../flags/4x3/om.svg);
+  background-image: url(ac465ab380b38121c4c79585435b4d88.svg);
 }
 .flag-icon-om.flag-icon-squared {
-  background-image: url(../flags/1x1/om.svg);
+  background-image: url(5b9421fcaabc6d8fd374d1ff69189960.svg);
 }
 .flag-icon-pa {
-  background-image: url(../flags/4x3/pa.svg);
+  background-image: url(dfdd70079013c012941e2200eaf35599.svg);
 }
 .flag-icon-pa.flag-icon-squared {
-  background-image: url(../flags/1x1/pa.svg);
+  background-image: url(93b90334d6e676bb8fb88eaff91dbcf8.svg);
 }
 .flag-icon-pe {
-  background-image: url(../flags/4x3/pe.svg);
+  background-image: url(c6f9a29b8d40f689b759239d2a3ae529.svg);
 }
 .flag-icon-pe.flag-icon-squared {
-  background-image: url(../flags/1x1/pe.svg);
+  background-image: url(84541696a066a79161dac7ad5fc3a8ef.svg);
 }
 .flag-icon-pf {
-  background-image: url(../flags/4x3/pf.svg);
+  background-image: url(99e9b7c4737f0ad15e71e2e2063d522c.svg);
 }
 .flag-icon-pf.flag-icon-squared {
-  background-image: url(../flags/1x1/pf.svg);
+  background-image: url(e31d1fdb42a93857e909894ad8a23df0.svg);
 }
 .flag-icon-pg {
-  background-image: url(../flags/4x3/pg.svg);
+  background-image: url(4510e6c4117e43c650542d295ede0ae2.svg);
 }
 .flag-icon-pg.flag-icon-squared {
-  background-image: url(../flags/1x1/pg.svg);
+  background-image: url(4e063b166b83c3b8bcd409e7737aebcb.svg);
 }
 .flag-icon-ph {
-  background-image: url(../flags/4x3/ph.svg);
+  background-image: url(f578ba6f3e7ea941a3a7dd5be3cd3e49.svg);
 }
 .flag-icon-ph.flag-icon-squared {
-  background-image: url(../flags/1x1/ph.svg);
+  background-image: url(020cf90424fe2dd59ae2db95c6a07318.svg);
 }
 .flag-icon-pk {
-  background-image: url(../flags/4x3/pk.svg);
+  background-image: url(0e5898509e286dc2e6f8bfc95ea1e14f.svg);
 }
 .flag-icon-pk.flag-icon-squared {
-  background-image: url(../flags/1x1/pk.svg);
+  background-image: url(437d382cdb8b9db91487eba63b3a252a.svg);
 }
 .flag-icon-pl {
-  background-image: url(../flags/4x3/pl.svg);
+  background-image: url(6f3b1b9634247546e94e6de707056a99.svg);
 }
 .flag-icon-pl.flag-icon-squared {
-  background-image: url(../flags/1x1/pl.svg);
+  background-image: url(11d42a67101ada00231ac3047c9a1d4f.svg);
 }
 .flag-icon-pm {
-  background-image: url(../flags/4x3/pm.svg);
+  background-image: url(582c4b98dbf80035e2f4f54cb0b816b8.svg);
 }
 .flag-icon-pm.flag-icon-squared {
-  background-image: url(../flags/1x1/pm.svg);
+  background-image: url(3cdaee0847675971365d1844688919f0.svg);
 }
 .flag-icon-pn {
-  background-image: url(../flags/4x3/pn.svg);
+  background-image: url(ba088875329271da351c59dbba883a0c.svg);
 }
 .flag-icon-pn.flag-icon-squared {
-  background-image: url(../flags/1x1/pn.svg);
+  background-image: url(5c94406831c28d0db81095fc00157f96.svg);
 }
 .flag-icon-pr {
-  background-image: url(../flags/4x3/pr.svg);
+  background-image: url(a5246a78e335ba83c9e4083e272db33b.svg);
 }
 .flag-icon-pr.flag-icon-squared {
-  background-image: url(../flags/1x1/pr.svg);
+  background-image: url(581ab66183ec529e4468f499ba93be88.svg);
 }
 .flag-icon-ps {
-  background-image: url(../flags/4x3/ps.svg);
+  background-image: url(304f17d1cdbe9f72b22a4a13543b5675.svg);
 }
 .flag-icon-ps.flag-icon-squared {
-  background-image: url(../flags/1x1/ps.svg);
+  background-image: url(040cf7f62d3e6d9909a61861ea8d649e.svg);
 }
 .flag-icon-pt {
-  background-image: url(../flags/4x3/pt.svg);
+  background-image: url(fc5082ed09cc2b41dc3a5b1214d43250.svg);
 }
 .flag-icon-pt.flag-icon-squared {
-  background-image: url(../flags/1x1/pt.svg);
+  background-image: url(299ca0730878bd8117887a3fd3322e64.svg);
 }
 .flag-icon-pw {
-  background-image: url(../flags/4x3/pw.svg);
+  background-image: url(e078d15bb54325650b6ab00905b00964.svg);
 }
 .flag-icon-pw.flag-icon-squared {
-  background-image: url(../flags/1x1/pw.svg);
+  background-image: url(d07fe449c9e46e360951ab29045f8c9e.svg);
 }
 .flag-icon-py {
-  background-image: url(../flags/4x3/py.svg);
+  background-image: url(306631182cf073bcda5a7256e19ebb3a.svg);
 }
 .flag-icon-py.flag-icon-squared {
-  background-image: url(../flags/1x1/py.svg);
+  background-image: url(bf27939e9d4a8449980df245c580fed2.svg);
 }
 .flag-icon-qa {
-  background-image: url(../flags/4x3/qa.svg);
+  background-image: url(b151da9845924d9906e0d4c046f4aa83.svg);
 }
 .flag-icon-qa.flag-icon-squared {
-  background-image: url(../flags/1x1/qa.svg);
+  background-image: url(ae5c8afc15749fceaad50ee4eddcbced.svg);
 }
 .flag-icon-re {
-  background-image: url(../flags/4x3/re.svg);
+  background-image: url(582c4b98dbf80035e2f4f54cb0b816b8.svg);
 }
 .flag-icon-re.flag-icon-squared {
-  background-image: url(../flags/1x1/re.svg);
+  background-image: url(3cdaee0847675971365d1844688919f0.svg);
 }
 .flag-icon-ro {
-  background-image: url(../flags/4x3/ro.svg);
+  background-image: url(f875500a82cb0bfc613732b206eae675.svg);
 }
 .flag-icon-ro.flag-icon-squared {
-  background-image: url(../flags/1x1/ro.svg);
+  background-image: url(fb0a29220dbc78219d2366f67b570cd8.svg);
 }
 .flag-icon-rs {
-  background-image: url(../flags/4x3/rs.svg);
+  background-image: url(3f5356e4e36bcfe8bf2164b30bfeabad.svg);
 }
 .flag-icon-rs.flag-icon-squared {
-  background-image: url(../flags/1x1/rs.svg);
+  background-image: url(af140fe1031b6164e9465dead839e0ff.svg);
 }
 .flag-icon-ru {
-  background-image: url(../flags/4x3/ru.svg);
+  background-image: url(900c45414e8e05dba0dd11b17098de32.svg);
 }
 .flag-icon-ru.flag-icon-squared {
-  background-image: url(../flags/1x1/ru.svg);
+  background-image: url(8cff3ad2be249df01b6776bf7b2bc598.svg);
 }
 .flag-icon-rw {
-  background-image: url(../flags/4x3/rw.svg);
+  background-image: url(27cb7b71d6a36776b91cdc140ea11112.svg);
 }
 .flag-icon-rw.flag-icon-squared {
-  background-image: url(../flags/1x1/rw.svg);
+  background-image: url(a676008faaafb80787a873d375cc6e57.svg);
 }
 .flag-icon-sa {
-  background-image: url(../flags/4x3/sa.svg);
+  background-image: url(1ae5328616925bac2dbb29a1e23b6606.svg);
 }
 .flag-icon-sa.flag-icon-squared {
-  background-image: url(../flags/1x1/sa.svg);
+  background-image: url(a4c5f9b5ae7706fba2873e4255320ea3.svg);
 }
 .flag-icon-sb {
-  background-image: url(../flags/4x3/sb.svg);
+  background-image: url(c4ff81f548507091731bdf2f5255c05e.svg);
 }
 .flag-icon-sb.flag-icon-squared {
-  background-image: url(../flags/1x1/sb.svg);
+  background-image: url(062ba9d2cbe6f6670b2c2b68a74c476e.svg);
 }
 .flag-icon-sc {
-  background-image: url(../flags/4x3/sc.svg);
+  background-image: url(5240d1470307e30bdf8138e127d5763e.svg);
 }
 .flag-icon-sc.flag-icon-squared {
-  background-image: url(../flags/1x1/sc.svg);
+  background-image: url(758189445bca0bb69bf2ffff13414f26.svg);
 }
 .flag-icon-sd {
-  background-image: url(../flags/4x3/sd.svg);
+  background-image: url(9d58ae8c8ffd64f81980dc974aefb6ab.svg);
 }
 .flag-icon-sd.flag-icon-squared {
-  background-image: url(../flags/1x1/sd.svg);
+  background-image: url(b6d5c199b06450807c0cc8abcc170ccf.svg);
 }
 .flag-icon-se {
-  background-image: url(../flags/4x3/se.svg);
+  background-image: url(343739eef68c6ba7405022968da952b4.svg);
 }
 .flag-icon-se.flag-icon-squared {
-  background-image: url(../flags/1x1/se.svg);
+  background-image: url(500575f89307e391f490f72ab0f13ae9.svg);
 }
 .flag-icon-sg {
-  background-image: url(../flags/4x3/sg.svg);
+  background-image: url(5923e7466f48226453ae70f7f4bb06f0.svg);
 }
 .flag-icon-sg.flag-icon-squared {
-  background-image: url(../flags/1x1/sg.svg);
+  background-image: url(a173dafa25400724ad464bb602715a0a.svg);
 }
 .flag-icon-sh {
-  background-image: url(../flags/4x3/sh.svg);
+  background-image: url(ee84ef60b900ef07b65f54c2ef028d9a.svg);
 }
 .flag-icon-sh.flag-icon-squared {
-  background-image: url(../flags/1x1/sh.svg);
+  background-image: url(44c85b5c0c619e5b079adefc4530c6fc.svg);
 }
 .flag-icon-si {
-  background-image: url(../flags/4x3/si.svg);
+  background-image: url(3853770ecbdfa42337969e1a59db2142.svg);
 }
 .flag-icon-si.flag-icon-squared {
-  background-image: url(../flags/1x1/si.svg);
+  background-image: url(1b344fafa2b8aa6cf25fba9b917b729b.svg);
 }
 .flag-icon-sj {
-  background-image: url(../flags/4x3/sj.svg);
+  background-image: url(782db8b9110e26207a1864d0e0ecf8fc.svg);
 }
 .flag-icon-sj.flag-icon-squared {
-  background-image: url(../flags/1x1/sj.svg);
+  background-image: url(8177a0134a0efbcdc1d61e578453d5d7.svg);
 }
 .flag-icon-sk {
-  background-image: url(../flags/4x3/sk.svg);
+  background-image: url(ca7a07d5196304ab788c8ad0c85e9e8a.svg);
 }
 .flag-icon-sk.flag-icon-squared {
-  background-image: url(../flags/1x1/sk.svg);
+  background-image: url(b6bfe44f13bd098c8379125f52ce37ae.svg);
 }
 .flag-icon-sl {
-  background-image: url(../flags/4x3/sl.svg);
+  background-image: url(81a40314e198a954a903f90991fb5458.svg);
 }
 .flag-icon-sl.flag-icon-squared {
-  background-image: url(../flags/1x1/sl.svg);
+  background-image: url(46cb128d549318767cdde249a0319076.svg);
 }
 .flag-icon-sm {
-  background-image: url(../flags/4x3/sm.svg);
+  background-image: url(44cbeb57334797959b5a493be7539120.svg);
 }
 .flag-icon-sm.flag-icon-squared {
-  background-image: url(../flags/1x1/sm.svg);
+  background-image: url(6a1a108fb8b4f2a00e468c8d2af85929.svg);
 }
 .flag-icon-sn {
-  background-image: url(../flags/4x3/sn.svg);
+  background-image: url(a85f75977cf9acdf2830e43d87b4264b.svg);
 }
 .flag-icon-sn.flag-icon-squared {
-  background-image: url(../flags/1x1/sn.svg);
+  background-image: url(482f6bf90760feb5bce7032a4ad74514.svg);
 }
 .flag-icon-so {
-  background-image: url(../flags/4x3/so.svg);
+  background-image: url(ca48e4becb5439b1626ce38a430ac733.svg);
 }
 .flag-icon-so.flag-icon-squared {
-  background-image: url(../flags/1x1/so.svg);
+  background-image: url(ca370f7c3727f955482ab34583673953.svg);
 }
 .flag-icon-sr {
-  background-image: url(../flags/4x3/sr.svg);
+  background-image: url(166202da7c4c937e24adfabe70ec2c54.svg);
 }
 .flag-icon-sr.flag-icon-squared {
-  background-image: url(../flags/1x1/sr.svg);
+  background-image: url(8104e3c65d71f627ba67bd78657d3157.svg);
 }
 .flag-icon-ss {
-  background-image: url(../flags/4x3/ss.svg);
+  background-image: url(111a60d54e5addf71d0687729fcf23d8.svg);
 }
 .flag-icon-ss.flag-icon-squared {
-  background-image: url(../flags/1x1/ss.svg);
+  background-image: url(f4d309746ac7f3737b7a9dfe34c5a68e.svg);
 }
 .flag-icon-st {
-  background-image: url(../flags/4x3/st.svg);
+  background-image: url(32b163157793f85f046f0304060de22e.svg);
 }
 .flag-icon-st.flag-icon-squared {
-  background-image: url(../flags/1x1/st.svg);
+  background-image: url(60454865593b3aa8657d0ce77e2619ef.svg);
 }
 .flag-icon-sv {
-  background-image: url(../flags/4x3/sv.svg);
+  background-image: url(83dc2e0a3165981cf5f8067892f8bbf7.svg);
 }
 .flag-icon-sv.flag-icon-squared {
-  background-image: url(../flags/1x1/sv.svg);
+  background-image: url(7c54ba19ba755436a075abd04ea376bc.svg);
 }
 .flag-icon-sx {
-  background-image: url(../flags/4x3/sx.svg);
+  background-image: url(9469761d94caae8dd4376050d82787ff.svg);
 }
 .flag-icon-sx.flag-icon-squared {
-  background-image: url(../flags/1x1/sx.svg);
+  background-image: url(1053da7608e72805aafe18e7eecba305.svg);
 }
 .flag-icon-sy {
-  background-image: url(../flags/4x3/sy.svg);
+  background-image: url(cf31a942f3a89381d072153d1482ffc0.svg);
 }
 .flag-icon-sy.flag-icon-squared {
-  background-image: url(../flags/1x1/sy.svg);
+  background-image: url(75211fbc1eb6f342f6ad7c4f5d9f76be.svg);
 }
 .flag-icon-sz {
-  background-image: url(../flags/4x3/sz.svg);
+  background-image: url(dc48795e0052cb8025a18293f4a6f7aa.svg);
 }
 .flag-icon-sz.flag-icon-squared {
-  background-image: url(../flags/1x1/sz.svg);
+  background-image: url(7ef9ea415ea7a6b096001aec6451dc76.svg);
 }
 .flag-icon-tc {
-  background-image: url(../flags/4x3/tc.svg);
+  background-image: url(c1363f94bf9c6cf5c602e506a5a7affc.svg);
 }
 .flag-icon-tc.flag-icon-squared {
-  background-image: url(../flags/1x1/tc.svg);
+  background-image: url(d2638ea5d0ac0c55fb2ca159d9d9fd46.svg);
 }
 .flag-icon-td {
-  background-image: url(../flags/4x3/td.svg);
+  background-image: url(02cfe5503a52c0ebf6c6afda445b214c.svg);
 }
 .flag-icon-td.flag-icon-squared {
-  background-image: url(../flags/1x1/td.svg);
+  background-image: url(c5714e0dd7f94f90eb59bdf92186e2f9.svg);
 }
 .flag-icon-tf {
-  background-image: url(../flags/4x3/tf.svg);
+  background-image: url(e2bea7af396dd876b5cf7acc8f837b0f.svg);
 }
 .flag-icon-tf.flag-icon-squared {
-  background-image: url(../flags/1x1/tf.svg);
+  background-image: url(5ba573c0393cef21473a6103865b3411.svg);
 }
 .flag-icon-tg {
-  background-image: url(../flags/4x3/tg.svg);
+  background-image: url(a30c49cc4020332cc170f817bd9157e8.svg);
 }
 .flag-icon-tg.flag-icon-squared {
-  background-image: url(../flags/1x1/tg.svg);
+  background-image: url(9b417a317fbd155543b9320a2d4348b8.svg);
 }
 .flag-icon-th {
-  background-image: url(../flags/4x3/th.svg);
+  background-image: url(d084f9f62771b36a0cdaeb5e72b37a34.svg);
 }
 .flag-icon-th.flag-icon-squared {
-  background-image: url(../flags/1x1/th.svg);
+  background-image: url(67f11bb04a88fcde8b9daf862da664ef.svg);
 }
 .flag-icon-tj {
-  background-image: url(../flags/4x3/tj.svg);
+  background-image: url(a400ea81a737da01a2f5a220d5da1f5c.svg);
 }
 .flag-icon-tj.flag-icon-squared {
-  background-image: url(../flags/1x1/tj.svg);
+  background-image: url(e64bd7f04218f59e714f9afaafad33eb.svg);
 }
 .flag-icon-tk {
-  background-image: url(../flags/4x3/tk.svg);
+  background-image: url(76e1c2d969db1cb268d6a69b127235f8.svg);
 }
 .flag-icon-tk.flag-icon-squared {
-  background-image: url(../flags/1x1/tk.svg);
+  background-image: url(683c395f524a78f73631cab693ae38b9.svg);
 }
 .flag-icon-tl {
-  background-image: url(../flags/4x3/tl.svg);
+  background-image: url(a8b25e1956a1ce3bb42a0d2b89fc72e4.svg);
 }
 .flag-icon-tl.flag-icon-squared {
-  background-image: url(../flags/1x1/tl.svg);
+  background-image: url(9ef22acdd6137332d8684106bebc9c71.svg);
 }
 .flag-icon-tm {
-  background-image: url(../flags/4x3/tm.svg);
+  background-image: url(0a9f9e9813ec95ec6171d164b85ff9a0.svg);
 }
 .flag-icon-tm.flag-icon-squared {
-  background-image: url(../flags/1x1/tm.svg);
+  background-image: url(8cd632dad31adef97ff960cd88d01dd6.svg);
 }
 .flag-icon-tn {
-  background-image: url(../flags/4x3/tn.svg);
+  background-image: url(7ff9eb2d5490536d65f44008f74b1cf8.svg);
 }
 .flag-icon-tn.flag-icon-squared {
-  background-image: url(../flags/1x1/tn.svg);
+  background-image: url(9f1e3008f910ab0899c190755ee3284f.svg);
 }
 .flag-icon-to {
-  background-image: url(../flags/4x3/to.svg);
+  background-image: url(7fc1a7d7d41541b75d6d8c7e6abbb860.svg);
 }
 .flag-icon-to.flag-icon-squared {
-  background-image: url(../flags/1x1/to.svg);
+  background-image: url(c226163f4ad85e490e486df5abc97a35.svg);
 }
 .flag-icon-tr {
-  background-image: url(../flags/4x3/tr.svg);
+  background-image: url(411ac4c2aab23d7dba7e52ec97fc65bc.svg);
 }
 .flag-icon-tr.flag-icon-squared {
-  background-image: url(../flags/1x1/tr.svg);
+  background-image: url(7841bdfcdbe3aef3cb9289adc54f0667.svg);
 }
 .flag-icon-tt {
-  background-image: url(../flags/4x3/tt.svg);
+  background-image: url(1e8d3282bcf1681db768bc45f7eef4b9.svg);
 }
 .flag-icon-tt.flag-icon-squared {
-  background-image: url(../flags/1x1/tt.svg);
+  background-image: url(d843d215c8fafe4def8dbcf44a78025b.svg);
 }
 .flag-icon-tv {
-  background-image: url(../flags/4x3/tv.svg);
+  background-image: url(3438dbe7cc93b4bd38ff9b9a6467f5f9.svg);
 }
 .flag-icon-tv.flag-icon-squared {
-  background-image: url(../flags/1x1/tv.svg);
+  background-image: url(b727dfef56f2a5e5e93256d7aac8e9ae.svg);
 }
 .flag-icon-tw {
-  background-image: url(../flags/4x3/tw.svg);
+  background-image: url(edb2a93001944cc2de76151707dec97e.svg);
 }
 .flag-icon-tw.flag-icon-squared {
-  background-image: url(../flags/1x1/tw.svg);
+  background-image: url(6dac354b3ff4e47a15ff7a5cc92653f8.svg);
 }
 .flag-icon-tz {
-  background-image: url(../flags/4x3/tz.svg);
+  background-image: url(893701787e7e5af13a555192802e87a7.svg);
 }
 .flag-icon-tz.flag-icon-squared {
-  background-image: url(../flags/1x1/tz.svg);
+  background-image: url(a6bb2de7704335ffafc80593a7d38b6a.svg);
 }
 .flag-icon-ua {
-  background-image: url(../flags/4x3/ua.svg);
+  background-image: url(a9cb5b59959f2faae9181bb35298787b.svg);
 }
 .flag-icon-ua.flag-icon-squared {
-  background-image: url(../flags/1x1/ua.svg);
+  background-image: url(7bbcd46c7f146f15af3188418ae36bec.svg);
 }
 .flag-icon-ug {
-  background-image: url(../flags/4x3/ug.svg);
+  background-image: url(135994708093926e102a2fd9041f7565.svg);
 }
 .flag-icon-ug.flag-icon-squared {
-  background-image: url(../flags/1x1/ug.svg);
+  background-image: url(19ffb3c9204877fd6be41aae05eaabcc.svg);
 }
 .flag-icon-um {
-  background-image: url(../flags/4x3/um.svg);
+  background-image: url(dabd04c6ce835d280527814ef927b188.svg);
 }
 .flag-icon-um.flag-icon-squared {
-  background-image: url(../flags/1x1/um.svg);
+  background-image: url(496964132918b0b432ffda48a708d403.svg);
 }
 .flag-icon-us {
-  background-image: url(../flags/4x3/us.svg);
+  background-image: url(4b71fd9fd72badeb74bf14682bc9e2e5.svg);
 }
 .flag-icon-us.flag-icon-squared {
-  background-image: url(../flags/1x1/us.svg);
+  background-image: url(c7254180503bfa81a219ecaa6cc73d74.svg);
 }
 .flag-icon-uy {
-  background-image: url(../flags/4x3/uy.svg);
+  background-image: url(e994ade7d2d60cd89446f9c98a15a0f2.svg);
 }
 .flag-icon-uy.flag-icon-squared {
-  background-image: url(../flags/1x1/uy.svg);
+  background-image: url(c20444db5ac8da0b0d1d02383b4653c9.svg);
 }
 .flag-icon-uz {
-  background-image: url(../flags/4x3/uz.svg);
+  background-image: url(07a7906b6e0eb04694ada9068176fa0d.svg);
 }
 .flag-icon-uz.flag-icon-squared {
-  background-image: url(../flags/1x1/uz.svg);
+  background-image: url(ff9400652fde13bee651c0855bf746a4.svg);
 }
 .flag-icon-va {
-  background-image: url(../flags/4x3/va.svg);
+  background-image: url(cc8de848239cb35dbbc384d82d76f3f3.svg);
 }
 .flag-icon-va.flag-icon-squared {
-  background-image: url(../flags/1x1/va.svg);
+  background-image: url(9e8e53c54aa2bbe8e32077d1a09b555c.svg);
 }
 .flag-icon-vc {
-  background-image: url(../flags/4x3/vc.svg);
+  background-image: url(bda4339d8009da8bbe172caaf685319d.svg);
 }
 .flag-icon-vc.flag-icon-squared {
-  background-image: url(../flags/1x1/vc.svg);
+  background-image: url(487beb9806ae45e75fc03a00a6d3bb1e.svg);
 }
 .flag-icon-ve {
-  background-image: url(../flags/4x3/ve.svg);
+  background-image: url(910ce11ab72febbaf04fbb21824544bf.svg);
 }
 .flag-icon-ve.flag-icon-squared {
-  background-image: url(../flags/1x1/ve.svg);
+  background-image: url(4b6b8e537d9543b6a1fd57ab0dd02fec.svg);
 }
 .flag-icon-vg {
-  background-image: url(../flags/4x3/vg.svg);
+  background-image: url(2ac0df9b992b33a795bdbe169faa69fd.svg);
 }
 .flag-icon-vg.flag-icon-squared {
-  background-image: url(../flags/1x1/vg.svg);
+  background-image: url(6d4b97de937649f051659b4834671a9f.svg);
 }
 .flag-icon-vi {
-  background-image: url(../flags/4x3/vi.svg);
+  background-image: url(91972e0690a0e9126d9af427427eaf93.svg);
 }
 .flag-icon-vi.flag-icon-squared {
-  background-image: url(../flags/1x1/vi.svg);
+  background-image: url(2706880dc8602aa673747d2e9cdc6d16.svg);
 }
 .flag-icon-vn {
-  background-image: url(../flags/4x3/vn.svg);
+  background-image: url(538cd9172dba88b9d08649b33eb9c99c.svg);
 }
 .flag-icon-vn.flag-icon-squared {
-  background-image: url(../flags/1x1/vn.svg);
+  background-image: url(d5c9c93b2b741f35b0563b365140b4dc.svg);
 }
 .flag-icon-vu {
-  background-image: url(../flags/4x3/vu.svg);
+  background-image: url(7e16da57c724bf3df3abadc15a796b59.svg);
 }
 .flag-icon-vu.flag-icon-squared {
-  background-image: url(../flags/1x1/vu.svg);
+  background-image: url(29b9e465edca6f841260c6e1bb93dcc7.svg);
 }
 .flag-icon-wf {
-  background-image: url(../flags/4x3/wf.svg);
+  background-image: url(582c4b98dbf80035e2f4f54cb0b816b8.svg);
 }
 .flag-icon-wf.flag-icon-squared {
-  background-image: url(../flags/1x1/wf.svg);
+  background-image: url(3cdaee0847675971365d1844688919f0.svg);
 }
 .flag-icon-ws {
-  background-image: url(../flags/4x3/ws.svg);
+  background-image: url(d22410357c8e261dba5534b79f7b4010.svg);
 }
 .flag-icon-ws.flag-icon-squared {
-  background-image: url(../flags/1x1/ws.svg);
+  background-image: url(fc6574f122249d57d76291d14d4d9849.svg);
 }
 .flag-icon-ye {
-  background-image: url(../flags/4x3/ye.svg);
+  background-image: url(b7b65d81ad42b3405262760c16fc1882.svg);
 }
 .flag-icon-ye.flag-icon-squared {
-  background-image: url(../flags/1x1/ye.svg);
+  background-image: url(fbc12f40c17645d35450a68648cd730f.svg);
 }
 .flag-icon-yt {
-  background-image: url(../flags/4x3/yt.svg);
+  background-image: url(582c4b98dbf80035e2f4f54cb0b816b8.svg);
 }
 .flag-icon-yt.flag-icon-squared {
-  background-image: url(../flags/1x1/yt.svg);
+  background-image: url(3cdaee0847675971365d1844688919f0.svg);
 }
 .flag-icon-za {
-  background-image: url(../flags/4x3/za.svg);
+  background-image: url(822bc5d59278db54de2040a934afa563.svg);
 }
 .flag-icon-za.flag-icon-squared {
-  background-image: url(../flags/1x1/za.svg);
+  background-image: url(32fa7d9405190a6460ed199b22979762.svg);
 }
 .flag-icon-zm {
-  background-image: url(../flags/4x3/zm.svg);
+  background-image: url(9e3ff5a997cc1ffed4f8673228bc3c08.svg);
 }
 .flag-icon-zm.flag-icon-squared {
-  background-image: url(../flags/1x1/zm.svg);
+  background-image: url(2ceeeda2b64b85b3bdbc8109841ecdd3.svg);
 }
 .flag-icon-zw {
-  background-image: url(../flags/4x3/zw.svg);
+  background-image: url(05199bb73e36c1d6cb86ef48756729ed.svg);
 }
 .flag-icon-zw.flag-icon-squared {
-  background-image: url(../flags/1x1/zw.svg);
+  background-image: url(da4fc6a0e8eb8ea2adfc13a7726c3850.svg);
 }
 .flag-icon-ac {
-  background-image: url(../flags/4x3/ac.svg);
+  background-image: url(ee84ef60b900ef07b65f54c2ef028d9a.svg);
 }
 .flag-icon-ac.flag-icon-squared {
-  background-image: url(../flags/1x1/ac.svg);
+  background-image: url(44c85b5c0c619e5b079adefc4530c6fc.svg);
 }
 .flag-icon-cp {
-  background-image: url(../flags/4x3/cp.svg);
+  background-image: url(582c4b98dbf80035e2f4f54cb0b816b8.svg);
 }
 .flag-icon-cp.flag-icon-squared {
-  background-image: url(../flags/1x1/cp.svg);
+  background-image: url(3cdaee0847675971365d1844688919f0.svg);
 }
 .flag-icon-dg {
-  background-image: url(../flags/4x3/dg.svg);
+  background-image: url(36c45005ea33456cf4416cd7fc02756d.svg);
 }
 .flag-icon-dg.flag-icon-squared {
-  background-image: url(../flags/1x1/dg.svg);
+  background-image: url(77e00aeee3ad8b3b8112fb3752d17253.svg);
 }
 .flag-icon-ea {
-  background-image: url(../flags/4x3/ea.svg);
+  background-image: url(8b570f6c87b7f98b4c1992e89c18cd9d.svg);
 }
 .flag-icon-ea.flag-icon-squared {
-  background-image: url(../flags/1x1/ea.svg);
+  background-image: url(b2ec5bf90903a9c6ceae0d7fbf29ae89.svg);
 }
 .flag-icon-es-ct {
-  background-image: url(../flags/4x3/es-ct.svg);
+  background-image: url(29df447629db82f4e3f5ff0651a8d8eb.svg);
 }
 .flag-icon-es-ct.flag-icon-squared {
-  background-image: url(../flags/1x1/es-ct.svg);
+  background-image: url(eec21dbb43f6556dbb11913cf3468c65.svg);
 }
 .flag-icon-es-ga {
-  background-image: url(../flags/4x3/es-ga.svg);
+  background-image: url(67878d813f66afd2bca775893de9f4a1.svg);
 }
 .flag-icon-es-ga.flag-icon-squared {
-  background-image: url(../flags/1x1/es-ga.svg);
+  background-image: url(303ff0c0cab99ce5edab4a7a7ae27f3a.svg);
 }
 .flag-icon-eu {
-  background-image: url(../flags/4x3/eu.svg);
+  background-image: url(e2c4e34493c9b6ee675d07739ef8b4ea.svg);
 }
 .flag-icon-eu.flag-icon-squared {
-  background-image: url(../flags/1x1/eu.svg);
+  background-image: url(223ec454f3a8f62c50f18e3e5f674363.svg);
 }
 .flag-icon-gb-eng {
-  background-image: url(../flags/4x3/gb-eng.svg);
+  background-image: url(c64459da04065a03da5b004fc289b976.svg);
 }
 .flag-icon-gb-eng.flag-icon-squared {
-  background-image: url(../flags/1x1/gb-eng.svg);
+  background-image: url(3337473b5421209539121e0b09e0b76a.svg);
 }
 .flag-icon-gb-nir {
-  background-image: url(../flags/4x3/gb-nir.svg);
+  background-image: url(dbf4e4754845b1d0a1fe2a4390484b5e.svg);
 }
 .flag-icon-gb-nir.flag-icon-squared {
-  background-image: url(../flags/1x1/gb-nir.svg);
+  background-image: url(c8d31a832da21b38b97af3fdd96ca367.svg);
 }
 .flag-icon-gb-sct {
-  background-image: url(../flags/4x3/gb-sct.svg);
+  background-image: url(a32c8fe6f9214a9e4d1d52a3f98b87ac.svg);
 }
 .flag-icon-gb-sct.flag-icon-squared {
-  background-image: url(../flags/1x1/gb-sct.svg);
+  background-image: url(f133a2f653b0a78352224c7b055afc05.svg);
 }
 .flag-icon-gb-wls {
-  background-image: url(../flags/4x3/gb-wls.svg);
+  background-image: url(dcee5469c9ce7d71f0d49bd70e5df354.svg);
 }
 .flag-icon-gb-wls.flag-icon-squared {
-  background-image: url(../flags/1x1/gb-wls.svg);
+  background-image: url(f72cbfbb5216d55b8f7e50c6ceec10d8.svg);
 }
 .flag-icon-ic {
-  background-image: url(../flags/4x3/ic.svg);
+  background-image: url(0c27d29cf5bc12eca66465b5ae12a9a5.svg);
 }
 .flag-icon-ic.flag-icon-squared {
-  background-image: url(../flags/1x1/ic.svg);
+  background-image: url(30c1fe7b46e6b714e3d46533cddf69ee.svg);
 }
 .flag-icon-ta {
-  background-image: url(../flags/4x3/ta.svg);
+  background-image: url(ee84ef60b900ef07b65f54c2ef028d9a.svg);
 }
 .flag-icon-ta.flag-icon-squared {
-  background-image: url(../flags/1x1/ta.svg);
+  background-image: url(44c85b5c0c619e5b079adefc4530c6fc.svg);
 }
 .flag-icon-un {
-  background-image: url(../flags/4x3/un.svg);
+  background-image: url(8db2ab8e9b145e36b32f4fa3888cac1a.svg);
 }
 .flag-icon-un.flag-icon-squared {
-  background-image: url(../flags/1x1/un.svg);
+  background-image: url(1e68543e964f9c26a5835ead2b7c221a.svg);
 }
 .flag-icon-xk {
-  background-image: url(../flags/4x3/xk.svg);
+  background-image: url(a588c0a3a26bc0cc699e82ea506416b0.svg);
 }
 .flag-icon-xk.flag-icon-squared {
-  background-image: url(../flags/1x1/xk.svg);
+  background-image: url(15caf16a5563dd79bb49485df9514613.svg);
 }
 .flag-icon-xx {
-  background-image: url(../flags/4x3/xx.svg);
+  background-image: url(d75479a37394032395acb8c446f1abf8.svg);
 }
 .flag-icon-xx.flag-icon-squared {
-  background-image: url(../flags/1x1/xx.svg);
+  background-image: url(c6337ec753c1a4adf6f924519527354d.svg);
 }
 
 /*!**************************************************************************************************************************!*\
@@ -12930,8 +12934,8 @@ textarea.form-control-lg {
  * -------------------------- */
 @font-face {
   font-family: 'FontAwesome';
-  src: url('../fonts/fontawesome-webfont.eot?v=4.7.0');
-  src: url('../fonts/fontawesome-webfont.eot?#iefix&v=4.7.0') format('embedded-opentype'), url('../fonts/fontawesome-webfont.woff2?v=4.7.0') format('woff2'), url('../fonts/fontawesome-webfont.woff?v=4.7.0') format('woff'), url('../fonts/fontawesome-webfont.ttf?v=4.7.0') format('truetype'), url('../fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular') format('svg');
+  src: url(8b43027f47b20503057dfbbaa9401fef.eot);
+  src: url(8b43027f47b20503057dfbbaa9401fef.eot?#iefix&v=4.7.0) format('embedded-opentype'), url(20fd1704ea223900efa9fd4e869efb08.woff2) format('woff2'), url(f691f37e57f04c152e2315ab7dbad881.woff) format('woff'), url(1e59d2330b4c6deb84b340635ed36249.ttf) format('truetype'), url(0e266bf6f9d07469ad718c96058f9fbb.svg#fontawesomeregular) format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -15265,8 +15269,8 @@ textarea.form-control-lg {
   \****************************************************************************************************************************************/
 @font-face {
   font-family: "Futhark";
-  src: url("./fonts/FutharkRegular.eot");
-  src: url("./fonts/FutharkRegular.eot?#iefix") format("embedded-opentype"), url("./fonts/FutharkRegular.ttf") format("truetype"), url("./fonts/FutharkRegular.otf") format("opentype"), url("./fonts/FutharkRegular.woff") format("woff"), url("./fonts/FutharkRegular.woff2") format("woff2");
+  src: url(40227216cbab9457ddfa269e196ae77b.eot);
+  src: url(40227216cbab9457ddfa269e196ae77b.eot?#iefix) format("embedded-opentype"), url(6c70dc9f6034940ca01b1e31752b1534.ttf) format("truetype"), url(f7dc8cfd399f8c13043f4a474224c398.otf) format("opentype"), url(db4c2b5eeb200d339ec37431138e5997.woff) format("woff"), url(85c1cb3322ec45a26e9a09fbb78d0bd3.woff2) format("woff2");
   font-weight: 600;
   font-display: swap;
 }
@@ -15324,7 +15328,7 @@ body {
   font-size: 3em;
   letter-spacing: 4px;
 }
-.header__logo:hover, .header__logo:visited, .header__logo:visited {
+.header__logo:link, .header__logo:hover, .header__logo:visited, .header__logo:visited {
   color: #895e29;
   text-decoration: none;
 }

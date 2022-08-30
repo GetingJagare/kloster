@@ -44,7 +44,7 @@
     </script>
     <% } %>
 </head>
-<body id="app" v-bind:style="{paddingTop: bodyPaddingTop + 'px'}" class="body">
+<body id="app" class="body">
 
 <header class="header">
     <div class="container d-flex justify-content-between align-items-center header__wrapper">
@@ -104,11 +104,12 @@
     </div>
 </header>
 
-<main>
+<main :style="{paddingTop: `${bodyPaddingTop}px`}">
     <h1 class="title text-center"><%= htmlWebpackPlugin.options.t('Кто мы есть') %></h1>
     <section id="about" class="section">
         <div class="container d-md-flex justify-content-between align-items-start">
             <div class="section__image" data-image-src="/images/main.jpg"
+                 loading="lazy"
                  data-image-alt="<%= htmlWebpackPlugin.options.t('Фотография исторического лагеря') %>"
                  data-dimensions="{&quot;1024&quot;: 1024, &quot;1280&quot;: 1280}">
             </div>
@@ -394,8 +395,5 @@
         </div>
     </div>
 </footer>
-
-<!--<script src="https://www.google.com/recaptcha/api.js?hl=<%= htmlWebpackPlugin.options.lang %>&onload=vueRecaptchaApiLoaded&render=explicit"
-        async defer></script>-->
 </body>
 </html>

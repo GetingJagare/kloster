@@ -1,41 +1,46 @@
 <template>
-  <b-form class="contact-form" @submit.prevent="submit">
-    <div class="message" v-bind:class="{'message_error': !success, 'message_success': success}"
+  <form class="contact-form" @submit.prevent="submit">
+    <div class="message mb-3" v-bind:class="{'message_error': !success, 'message_success': success}"
          v-if="message.length && messageProgress > 0">
       <p>
         {{ message }}
       </p>
-      <b-progress :value="messageProgress" :max="maxProgress" class="mb-3" :variant="success ? 'success' : 'danger'"
-                  height="3px"></b-progress>
+      <div class="progress">
+        <div class="progress-bar" :class="{'bg-danger': !success, 'bg-success': success}" role="progressbar"
+             :aria-valuenow="messageProgress" aria-valuemin="0" :aria-valuemax="maxProgress"
+             :style="{'width': `${messageProgress}%`}"></div>
+      </div>
     </div>
-    <b-form-group class="contact-form__field">
-      <b-form-input :placeholder="nameText" v-model="form.name" class="contact-form__input"
-                    autocomplete="off" :title="fillText"></b-form-input>
-    </b-form-group>
-    <b-form-group class="contact-form__field">
-      <b-form-input placeholder="E-mail" type="email" v-model="form.email"
-                    class="contact-form__input" autocomplete="off" :title="fillText"></b-form-input>
-    </b-form-group>
-    <b-form-group class="contact-form__field">
-      <b-form-textarea v-model="form.text" :placeholder="messageText" :rows="3" :max-rows="6"
-                       class="contact-form__input" autocomplete="off" :title="fillText"></b-form-textarea>
-    </b-form-group>
-    <b-form-group class="contact-form__field contact-form__field_left">
-<!--      <vue-recaptcha sitekey="6LdVSq4ZAAAAABiCNnPDs5ZsSz_F68BpDfilV8Rt" size="compact" @expired="resetCaptcha">
+    <div class="mb-3 contact-form__field">
+      <input :placeholder="nameText" v-model="form.name" class="form-control contact-form__input" autocomplete="off"
+             :title="fillText"/>
+    </div>
+    <div class="mb-3 contact-form__field">
+      <input placeholder="E-mail" type="email" v-model="form.email" class="form-control contact-form__input"
+             autocomplete="off"
+             :title="fillText"/>
+    </div>
+    <div class="mb-3 contact-form__field">
+      <textarea v-model="form.text" :placeholder="messageText" :rows="3" :max-rows="6"
+                class="form-control contact-form__input"
+                autocomplete="off" :title="fillText"></textarea>
+    </div>
+    <div class="mb-3 contact-form__field contact-form__field_left">
+      <vue-recaptcha sitekey="6LdVSq4ZAAAAABiCNnPDs5ZsSz_F68BpDfilV8Rt" size="compact" @expired="resetCaptcha">
         <button type="submit" class="btn btn-secondary contact-form__submit">
-          <span v-bind:class="{'contact-form__submit-text': true, 'contact-form__submit-text_pale': submitted}">{{
-              sendText
-            }}</span>
-          <vue-loading :active="submitted" color="#fff" spinner="ring"></vue-loading>
+        <span v-bind:class="{'contact-form__submit-text': true, 'contact-form__submit-text_pale': submitted}">
+          {{ sendText }}
+        </span>
+          <vue-element-loading :active="submitted" color="#fff" spinner="ring"></vue-element-loading>
         </button>
-      </vue-recaptcha>-->
-    </b-form-group>
-  </b-form>
+      </vue-recaptcha>
+    </div>
+  </form>
 </template>
 
 <script>
-import VueLoading from 'vue-element-loading';
-import {VueReCaptcha, useReCaptcha} from 'vue-recaptcha-v3';
+import VueElementLoading from "vue-element-loading";
+import {VueRecaptcha} from 'vue-recaptcha';
 import axios from 'axios';
 
 export default {
@@ -158,11 +163,15 @@ export default {
     }
   },
 
-  components: {VueLoading}
+  components: {VueElementLoading, VueRecaptcha}
 }
 </script>
 
-<style scoped>
+<style>
+.contact-form .progress,
+.contact-form .progress-bar {
+  height: 3px;
+}
 .contact-form__submit .velmld-overlay {
   background-color: transparent;
 }

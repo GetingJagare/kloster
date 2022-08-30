@@ -7,6 +7,8 @@ import Socials from './components/Socials.vue';
 import {hasElemClass, deleteClassName} from "./helpers/class-name.js";
 import photos from './src/photos.js';
 import works from './src/works.js';
+import "bootstrap";
+
 import "../scss/app.scss";
 
 createApp({
