@@ -33,7 +33,8 @@
 
 <script>
     import VueLoading from 'vue-element-loading';
-    import VueRecaptcha from 'vue-recaptcha';
+    import {VueRecaptcha} from 'vue-recaptcha/dist/vue-recaptcha.es.js';
+    import axios from 'axios';
 
     export default {
         name: "ContactForm",

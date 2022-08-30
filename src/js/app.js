@@ -1,13 +1,12 @@
-window.Vue = process.env.NODE_ENV === 'production' ? require('vue/dist/vue.min.js') : require('vue/dist/vue.js');
-window.BootstrapVue = require('bootstrap-vue/dist/bootstrap-vue');
-window.axios = require('axios');
-window.appVersion = require('../../package.json').version;
-
+import Vue from "vue";
+import BootstrapVue from "bootstrap-vue";
 import VueGallery from 'vue-gallery';
 import carousel from 'vue-owl-carousel';
 
 import ContactForm from './components/ContactForm.vue';
 import Socials from './components/Socials.vue';
+import {hasElemClass, deleteClassName} from "./helpers/class-name.js";
+import "../sass/app.scss";
 
 Vue.use(BootstrapVue);
 
@@ -23,16 +22,7 @@ Vue.use(BootstrapVue);
     };
 }(Element.prototype));
 
-window.hasElemClass = function (elem, className) {
-    return elem.className.indexOf(className) > -1;
-};
-
-window.deleteClassName = function (elem, className) {
-    const regExp = new RegExp('\\s*' + className + '\\s*');
-    elem.className = elem.className.replace(regExp, '');
-};
-
-var app = new Vue({
+new Vue({
     el: '#app',
     data() {
         return {
@@ -162,7 +152,7 @@ var app = new Vue({
         setNavItemActive (navItem) {
             const activeItems = document.querySelectorAll('.nav-link_active');
 
-            for (var i = 0; i < activeItems.length; i++) {
+            for (let i = 0; i < activeItems.length; i++) {
                 deleteClassName(activeItems[i], 'nav-link_active');
             }
 
