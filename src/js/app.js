@@ -1,8 +1,5 @@
-window.Vue = process.env.NODE_ENV === 'production' ? require('vue/dist/vue.min.js') : require('vue/dist/vue.js');
-window.BootstrapVue = require('bootstrap-vue/dist/bootstrap-vue');
-window.axios = require('axios');
-window.appVersion = require('../../package.json').version;
-
+import {BootstrapVue} from 'bootstrap-vue';
+import Vue from 'vue';
 import VueGallery from 'vue-gallery';
 import carousel from 'vue-owl-carousel';
 
@@ -58,6 +55,7 @@ var app = new Vue({
 
         $vm.bodyPaddingTop = document.querySelector('.header').offsetHeight;
 
+        this.setNavItemActive(document.querySelector('.header__nav').querySelector('[href="#about"]'));
         window.onscroll = function () {
             $vm.checkWindowScrollTop();
             $vm.checkInWhatSection();
@@ -180,7 +178,7 @@ var app = new Vue({
                 const minScrollTop = i > 0 ? section.offsetTop : 0;
 
                 if (scrollTop >= minScrollTop && scrollTop < section.offsetTop + section.offsetHeight) {
-                    this.setNavItemActive(document.querySelector('.header__nav').querySelector('[href="#' + section.id + '"]'));
+                    this.setNavItemActive(document.querySelector('.header__nav').querySelector(`[href="#${section.id}"]`));
                 }
             }
         }

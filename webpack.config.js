@@ -67,6 +67,11 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),
         filename: 'app.js'
     },
+    resolve: {
+        alias: {
+            vue: 'vue/dist/vue.js'
+        },
+    },
     module: {
         rules: [
             {
@@ -127,7 +132,7 @@ module.exports = {
                                 enabled: true,
                             },
                             pngquant: {
-                                quality: '65-90',
+                                quality: [0.65, 0.9],
                                 speed: 4
                             },
                             gifsicle: {
