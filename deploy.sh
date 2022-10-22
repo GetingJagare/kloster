@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 git fetch
-git checkout -b old
+git checkout old
 git merge origin/old
 
 npm install --only-prod
