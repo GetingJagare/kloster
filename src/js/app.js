@@ -2,34 +2,12 @@ import {BootstrapVue} from 'bootstrap-vue';
 import Vue from 'vue';
 import VueGallery from 'vue-gallery';
 import carousel from 'vue-owl-carousel';
-
 import ContactForm from './components/ContactForm.vue';
 import Socials from './components/Socials.vue';
 
 Vue.use(BootstrapVue);
 
-(function (ELEMENT) {
-    ELEMENT.matches = ELEMENT.matches || ELEMENT.mozMatchesSelector || ELEMENT.msMatchesSelector || ELEMENT.oMatchesSelector || ELEMENT.webkitMatchesSelector;
-    ELEMENT.closest = ELEMENT.closest || function closest(selector) {
-        if (!this) return null;
-        if (this.matches(selector)) return this;
-        if (!this.parentElement) {
-            return null
-        }
-        else return this.parentElement.closest(selector)
-    };
-}(Element.prototype));
-
-window.hasElemClass = function (elem, className) {
-    return elem.className.indexOf(className) > -1;
-};
-
-window.deleteClassName = function (elem, className) {
-    const regExp = new RegExp('\\s*' + className + '\\s*');
-    elem.className = elem.className.replace(regExp, '');
-};
-
-var app = new Vue({
+new Vue({
     el: '#app',
     data() {
         return {
@@ -136,7 +114,7 @@ var app = new Vue({
         checkWindowScrollTop () {
             const header = document.querySelector('.header');
 
-            if (document.documentElement.scrollTop >= this.scrollTopMax && !hasElemClass(header, 'header_sticky')) {
+            if (document.documentElement.scrollTop >= this.scrollTopMax && !header.classList.contains('header_sticky')) {
                 header.className += ' header_sticky';
             } else if (document.documentElement.scrollTop < this.scrollTopMax) {
                 header.className = header.className.replace(/\s*header_sticky/g, '');
@@ -161,7 +139,7 @@ var app = new Vue({
             const activeItems = document.querySelectorAll('.nav-link_active');
 
             for (var i = 0; i < activeItems.length; i++) {
-                deleteClassName(activeItems[i], 'nav-link_active');
+                activeItems[i].classList.remove('nav-link_active');
             }
 
             navItem.className += ' nav-link_active';

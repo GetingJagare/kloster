@@ -57,7 +57,8 @@
   &__nav-btn {
     position: absolute;
     font-size: 3em !important;
-    top: 35%;
+    top: 50%;
+    transform: translateY(-50%);
     cursor: pointer;
     color: $brown;
     z-index: 1;
