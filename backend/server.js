@@ -1,4 +1,4 @@
-const setup = {port: 8000}
+const setup = {port: 8000};
 
 const express = require('express');
 const bodyParser = require("body-parser");
@@ -17,7 +17,7 @@ app.post('/mail', function (req, res) {
             res.write(JSON.stringify({success: 0, errorCode: 2}));
         } else {
             const shell = require('shelljs');
-            const from = 'noreply@black-freak-society.ru';
+            const from = 'noreply@vsv-kloster.ru';
             const to = 'mbd.kloster@yandex.ru,getingjagare@gmail.com';
             const subject = 'Сообщение с сайта';
             shell.exec('echo "From: ' + from + '\r\nSubject: ' + subject + '\r\nTo: ' + to + '\r\n\r\nИмя: ' + name + '\r\n' +
