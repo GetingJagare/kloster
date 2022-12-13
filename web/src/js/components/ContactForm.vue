@@ -83,7 +83,7 @@ export default {
         return;
       }
 
-      if (!gRecaptchaValue) {
+      if (!gRecaptchaValue && !this.isDev) {
         this.showResult(0, this.captchaNotPassed);
         return;
       }
@@ -158,6 +158,12 @@ export default {
     }
   },
 
+  computed: {
+    isDev() {
+      return window.location.host !== 'vsv-kloster.ru';
+    }
+  },
+
   components: {VueLoading, VueRecaptcha}
 }
 </script>
@@ -165,5 +171,6 @@ export default {
 <style scoped>
 .contact-form__submit .velmld-overlay {
   background-color: transparent;
+  border-radius: 0.2rem;
 }
 </style>
