@@ -4,7 +4,7 @@ git fetch
 git checkout old
 git merge origin/old
 
-npm install --only-prod
+#npm install --only-prod
 
-pm2 stop server.js
-pm2 start server.js --watch
+#pm2 stop server.js
+#pm2 start server.js --watch

@@ -8,6 +8,11 @@ const app = express();
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
+app.get('/', (req, res) => {
+    res.write('Hello world!');
+    res.end();
+});
+
 app.post('/mail', function (req, res) {
     if (!req.body['g-recaptcha-response'].length) {
         res.write(JSON.stringify({success: 0, errorCode: 1}));
