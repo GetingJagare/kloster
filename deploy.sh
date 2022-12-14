@@ -4,7 +4,6 @@ git fetch
 git checkout old
 git merge origin/old
 
-#npm install --only-prod
-
-#pm2 stop server.js
-#pm2 start server.js --watch
+sudo docker compose down
+sudo docker image rm kloster2-backend:latest --force
+sudo docker compose up -d
