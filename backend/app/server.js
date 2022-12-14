@@ -18,12 +18,10 @@ app.get('/', (req, res) => {
 app.post('/mail', function (req, res) {
     if (!req.body['g-recaptcha-response'].length && (process.env.IS_DEV === 'false' || process.env.IS_DEV === undefined)) {
         res.write(JSON.stringify({success: 0, errorCode: 1}));
-        res.end();
     } else {
         const {name, email, text} = req.body;
         if (!name || !email || !text) {
             res.write(JSON.stringify({success: 0, errorCode: 2}));
-            res.end();
         } else {
             const nodemailer = require('nodemailer'),
                 plainText = `Имя: ${name}\r\nEmail: ${email}\r\nСообщение: ${text}`,
@@ -57,10 +55,10 @@ app.post('/mail', function (req, res) {
                 } else {
                     res.write(JSON.stringify({success: 1, message: 'Сообщение отправлено'}));
                 }
-                res.end();
             });
         }
     }
+    res.end();
 });
 
 app.listen(setup.port, function () {
