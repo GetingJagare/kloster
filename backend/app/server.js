@@ -51,11 +51,12 @@ app.post('/mail', function (req, res) {
 
             transporter.sendMail(mailData, (err, info) => {
                 if (err) {
-                    res.write(JSON.stringify({success: 0, message: err}));
+                    console.log(err);
                 } else {
-                    res.write(JSON.stringify({success: 1, message: 'Сообщение отправлено'}));
+                    console.log(info);
                 }
             });
+            res.write(JSON.stringify({success: 1, message: 'Сообщение отправлено'}));
         }
     }
     res.end();
