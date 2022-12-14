@@ -1,7 +1,9 @@
 FROM node:16.18.1
 
-WORKDIR ${BACKEND_WORKDIR}
-RUN apt-get update && apt-get install -y postfix
+WORKDIR /opt/kloster_backend
+#RUN apt-get update
+#RUN apt-get install -y --no-install-recommends sendmail
+#RUN rm -rf /var/lib/apt/lists/*
 
 COPY ./app/package.json ./
 RUN npm install

@@ -18,25 +18,49 @@ app.get('/', (req, res) => {
 app.post('/mail', function (req, res) {
     if (!req.body['g-recaptcha-response'].length && (process.env.IS_DEV === 'false' || process.env.IS_DEV === undefined)) {
         res.write(JSON.stringify({success: 0, errorCode: 1}));
+        res.end();
     } else {
         const {name, email, text} = req.body;
         if (!name || !email || !text) {
             res.write(JSON.stringify({success: 0, errorCode: 2}));
+            res.end();
         } else {
-            const shell = require('shelljs');
-            const from = 'noreply@vsv-kloster.ru';
-            const to = 'mbd.kloster@yandex.ru,getingjagare@gmail.com';
-            const subject = 'Сообщение с сайта';
-            shell.exec('echo "From: ' + from + '\r\nSubject: ' + subject + '\r\nTo: ' + to + '\r\n\r\nИмя: ' + name + '\r\n' +
-                'Email: ' + email + '\r\nСообщение: ' + text + '" | sendmail -f ' + from + ' ' + to);
+            const nodemailer = require('nodemailer'),
+                plainText = `Имя: ${name}\r\nEmail: ${email}\r\nСообщение: ${text}`,
+                html = `<b>Имя:</b> ${name}<br><b>Email:</b> ${email}<br><b>Сообщение:</b> ${text}`;
+
+            const transporter = nodemailer.createTransport({
+                port: 465,
+                host: process.env.SMTP_SERVER,
+                auth: {
+                    user: process.env.SMTP_MAILBOX,
+                    pass: process.env.SMTP_PASSWORD,
+                },
+                secure: true,
+            });
+
+            const mailData = {
+                from: process.env.SMTP_FROM,
+                to: 'mbd.kloster@yandex.ru',
+                subject: 'Сообщение с сайта vsv-kloster.ru',
+                text: plainText,
+                html,
+            };
+
             /**
              * echo "From: noreply@vsv-kloster.ru\r\nSubject: Сообщение с сайта\r\nTo: mbd.kloster@yandex.ru,getingjagare@gmail.com\r\n\r\nИмя: test\r\nEmail: test@test.com\r\nСообщение: test text" | sendmail -f noreply@vsv-kloster.ru mbd.kloster@yandex.ru,getingjagare@gmail.com
              */
 
-            res.write(JSON.stringify({success: 1, message: 'Сообщение отправлено'}));
+            transporter.sendMail(mailData, (err, info) => {
+                if (err) {
+                    res.write(JSON.stringify({success: 0, message: err}));
+                } else {
+                    res.write(JSON.stringify({success: 1, message: 'Сообщение отправлено'}));
+                }
+                res.end();
+            });
         }
     }
-    res.end();
 });
 
 app.listen(setup.port, function () {
