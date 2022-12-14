@@ -23,39 +23,20 @@ app.post('/mail', function (req, res) {
         if (!name || !email || !text) {
             res.write(JSON.stringify({success: 0, errorCode: 2}));
         } else {
-            const nodemailer = require('nodemailer'),
-                plainText = `Имя: ${name}\r\nEmail: ${email}\r\nСообщение: ${text}`,
-                html = `<b>Имя:</b> ${name}<br><b>Email:</b> ${email}<br><b>Сообщение:</b> ${text}`;
-
-            const transporter = nodemailer.createTransport({
-                port: 465,
-                host: process.env.SMTP_SERVER,
-                auth: {
-                    user: process.env.SMTP_MAILBOX,
-                    pass: process.env.SMTP_PASSWORD,
-                },
-                secure: true,
-            });
-
-            const mailData = {
-                from: process.env.SMTP_FROM,
-                to: 'mbd.kloster@yandex.ru',
-                subject: 'Сообщение с сайта vsv-kloster.ru',
-                text: plainText,
-                html,
-            };
-
+            const shell = require('shelljs'),
+                from = 'noreply@vsv-kloster.ru',
+                to = 'mbd.kloster@yandex.ru,getingjagare@gmail.com',
+                subject = 'Сообщение с сайта',
+                date = new Date();
+            shell.exec(`echo "Date: ${date.getDate()}.${date.getMonth() + 1}.${date.getFullYear()} ${date.getHours()}:${date.getMinutes()}\r\n` +
+                `---------------------------\r\n` +
+                `From: ${from}\r\nSubject: ${subject}\r\nTo: ${to}\r\n\r\nИмя: ${name}\r\n` +
+                `Email: ${email}\r\nСообщение: ${text}\r\n` +
+                `---------------------------\r\n" >> mail/mail.txt`);
             /**
              * echo "From: noreply@vsv-kloster.ru\r\nSubject: Сообщение с сайта\r\nTo: mbd.kloster@yandex.ru,getingjagare@gmail.com\r\n\r\nИмя: test\r\nEmail: test@test.com\r\nСообщение: test text" | sendmail -f noreply@vsv-kloster.ru mbd.kloster@yandex.ru,getingjagare@gmail.com
              */
 
-            transporter.sendMail(mailData, (err, info) => {
-                if (err) {
-                    console.log(err);
-                } else {
-                    console.log(info);
-                }
-            });
             res.write(JSON.stringify({success: 1, message: 'Сообщение отправлено'}));
         }
     }
