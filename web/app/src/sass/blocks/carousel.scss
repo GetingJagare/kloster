@@ -1,0 +1,93 @@
+.carousel {
+  margin: 60px 0;
+  position: relative;
+  width: 100%;
+
+  .owl-item {
+    cursor: pointer;
+
+    @media screen and (max-width: 639.98px) {
+      padding: 0 16px;
+    }
+  }
+
+  &_works {
+    .owl-item {
+      @media screen and (max-width: 639.98px) {
+        padding: 0 24px;
+      }
+    }
+  }
+
+  &__item {
+    position: relative;
+
+    &-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      height: 0;
+      opacity: 0;
+      transition: height 0.4s ease-in-out, opacity 0.2s ease-in-out;
+      overflow: hidden;
+      background-color: rgba(0, 0, 0, 0.3);
+
+      > span {
+        display: inline-block;
+        padding: 10px;
+        color: $light-begie;
+      }
+    }
+
+    &:hover &-caption {
+      opacity: 1;
+      height: auto;
+    }
+  }
+
+  &_photo &__item-caption {
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    width: auto;
+  }
+
+  &__nav-btn {
+    position: absolute;
+    font-size: 3em !important;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: $brown;
+    z-index: 1;
+
+    &:hover {
+      color: $light-brown;
+    }
+
+    &_prev {
+      left: -30px;
+    }
+
+    &_next {
+      right: -30px;
+    }
+
+    @media screen and (max-width: 639.98px) {
+      &_prev {
+        left: 0;
+      }
+
+      &_next {
+        right: 0;
+      }
+    }
+  }
+}
+
+.vue-lb-info {
+  display: block !important;
+  height: auto !important;
+}

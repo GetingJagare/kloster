@@ -6,4 +6,5 @@ git merge origin/old
 
 sudo docker compose down
 sudo docker image rm kloster-backend:latest --force
-sudo docker compose up -d
+sudo docker image rm kloster-nginx:latest --force
+sudo docker compose run --rm certbot certonly --webroot --webroot-path /var/www/certbot/ -d vsv-kloster.ru

@@ -1,0 +1,54 @@
+.section {
+  padding: 40px 0;
+
+  &__image {
+    width: 40%;
+    background-color: rgba(0, 0, 0, 0.1);
+
+    img {
+      max-width: 100%;
+    }
+  }
+
+  &__desc {
+    padding-left: 40px;
+  }
+
+  &_even {
+    background-color: $light-begie;
+  }
+
+  @media screen and (min-width: 1600px) {
+    padding: 80px 0;
+  }
+
+  @media screen and (max-width: 767.98px) {
+    &__image {
+      max-width: 50%;
+      float: left;
+      margin-right: 20px;
+    }
+
+    &__desc {
+      padding-left: 0;
+    }
+  }
+
+  @media screen and (max-width: 479.98px) {
+    &__image {
+      display: none;
+    }
+  }
+
+  .blueimp-gallery {
+    .prev, .next, .close {
+      color: $brown;
+      border-color: $brown;
+
+      &:hover {
+        color: $light-brown;
+        border-color: $light-brown;
+      }
+    }
+  }
+}

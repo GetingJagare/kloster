@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="yandex-verification" content="63e14b14dff3814e"/>
+    <meta name="google-site-verification" content="prOntO91fYE0omPl_SC7iQSMVFhy0UaJmDwZN39woJE"/>
+
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <meta name="title"
+          content="Ancient Deals Workshop Cloister | Moscow"/>
+    <meta name="description"
+          content="Ancient Deals Workshop Cloister, also historical reconstruction club Cloister, is engaged in recreation of ancient craft and products of natural materials. Located in Moscow"/>
+
+    <meta property="twitter:card" content="summary" />
+    <meta property="og:type" content="website" />
+
+    <meta name="og:title"
+          content="Ancient Deals Workshop Cloister | Moscow"/>
+    <meta name="twitter:title"
+          content="Ancient Deals Workshop Cloister | Moscow"/>
+
+    <meta name="og:image" content="https://vsv-kloster.ru/images/logo.jpg"/>
+    <meta name="keywords"
+          content="historical reconstruction, ancient craft, handmade, handmade moscow, craft handmade, craft handmade moscow, handmade products moscow, products of natural materials moscow"/>
+    <meta name="og:description"
+          content="Ancient Deals Workshop Cloister, also historical reconstruction club Cloister, is engaged in recreation of ancient craft and products of natural materials. Located in Moscow"/>
+    <meta name="twitter:description"
+          content="Ancient Deals Workshop Cloister, also historical reconstruction club Cloister, is engaged in recreation of ancient craft and products of natural materials. Located in Moscow"/>
+    <title>Ancient Deals Workshop "Cloister"</title>
+
+    <link rel="canonical" href="https://vsv-kloster.ru"/>
+    
+<link href="../dist/app.css?310c83635430a2ed91f6" rel="stylesheet"></head>
+<body>
+
+<div id="app" v-bind:style="{paddingTop: bodyPaddingTop + 'px'}" class="body">
+    <header class="header">
+        <div class="container d-flex justify-content-between align-items-center header__wrapper">
+            <div class="container d-flex justify-content-between align-items-center header__wrapper">
+                <a href="#about" class="header__logo text text_futhark d-none d-md-inline-block"
+                   @click="scrollWindow($event, 0)"
+                   title="Ancient Deals Workshop Cloister">
+                    KLOSTER
+                </a>
+
+                <b-navbar toggleable="md" class="nav header__nav">
+                    <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
+                    <b-navbar-brand href="#"></b-navbar-brand>
+
+                    <b-collapse is-nav id="nav_collapse">
+                        <b-navbar-nav pills class="d-md-inline-flex">
+                            <b-nav-item href="#about" active active-class="nav-link_active"
+                                        class="nav__item header__nav-item"
+                                        @click="scrollWindow($event, 0)">About us
+                            </b-nav-item>
+                            <b-nav-item href="#photo" active-class="nav-link_active" class="nav__item header__nav-item"
+                                        @click="scrollWindow($event, 1)">Events
+                            </b-nav-item>
+                            <b-nav-item href="#portfolio" active-class="nav-link_active"
+                                        class="nav__item header__nav-item"
+                                        @click="scrollWindow($event, 2)">Craft
+                            </b-nav-item>
+                            <b-nav-item href="#contacts" active-class="nav-link_active"
+                                        class="nav__item header__nav-item"
+                                        @click="scrollWindow($event, 3)">Contacts
+                            </b-nav-item>
+                        </b-navbar-nav>
+                    </b-collapse>
+                </b-navbar>
+
+                <div class="header__socials">
+
+                    <socials></socials>
+
+                    <div class="langs header__langs text-center">
+                        
+                        <a href="/" title="Russian" class="langs__link header__langs-link"><span
+                                class="flag-icon flag-icon-ru langs__icon header__langs-icon"></span></a>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <h1 class="title text-center">Who we are</h1>
+        <section id="about" class="section">
+            <div class="container d-md-flex justify-content-between align-items-start">
+                <div class="section__image" data-image-src="/images/main.jpg"
+                     data-image-alt="Historical camp photo"
+                     data-dimensions="{&quot;1024&quot;: 1024, &quot;1280&quot;: 1280}">
+                </div>
+
+                <div class="section__desc">
+                    <p>
+                        Gardarika, Scandinavia, IX-XI centuries.<br>
+                        Yes, it's recontruction, yes, it's not usual. We just do what we must do.<br>
+                        Unity of system, individuality of person.<br>
+                        We create and recreate, lighten and enlighten.<br>
+                        We have targets and aspiration in moving towards unusual direction.<br>
+                        D'you know Cloister? D'you do the best? Not doing the best you don't know Cloister...
+                    </p>
+                    <p class="text-right">
+                        <cite>If the spirit needs, you must bring the feeds </cite> (c)
+                    </p>
+                </div>
+            </div>
+        </section>
+        <section id="photo" class="section section_even gallery">
+            <div class="container d-md-flex flex-wrap align-items-start">
+                <h2 class="title title_smaller text-center">
+                    Some photos from fests...
+                </h2>
+
+                <div class="section__content"></div>
+
+                <vue-gallery :images="photoGallery" :index="photoGalleryIndex" :options="{startSlideshow: true}"
+                             @close="photoGalleryIndex = null"></vue-gallery>
+                <carousel :autoHeight="true" :autoWidth="true" :dots="false" :margin="10"
+                          class="carousel carousel_photo"
+                          :nav="false" :mouseDrag="false" :touchDrag="false"
+                          :responsive="{0:{items:1, margin: 0}, 768:{items:2}}">
+                    <div class="carousel__item">
+                        <div data-image-src="/images/photo/1-1280.jpg" data-image-alt="" data-class="gallery__image"
+                             data-dimensions="{&quot;1024&quot;: 1024, &quot;1280&quot;: 1280}"
+                             @click="photoGalleryIndex = 0" :key="0">
+                        </div>
+                        <div class="carousel__item-caption">
+                            <span>Voinovo Pole, 2018</span>
+                        </div>
+                    </div>
+                    <div class="carousel__item">
+                        <div data-image-src="/images/photo/11-1280.jpg" data-image-alt="" data-class="gallery__image"
+                             data-dimensions="{&quot;1024&quot;: 1024, &quot;1280&quot;: 1280}"
+                             @click="photoGalleryIndex = 1" :key="1">
+                        </div>
+                        <div class="carousel__item-caption">
+                            <span>Cloister maneuvers, 2017</span>
+                        </div>
+                    </div>
+                    <div class="carousel__item">
+                        <div data-image-src="/images/photo/2-1280.jpg" data-image-alt="" data-class="gallery__image"
+                             data-dimensions="{&quot;1024&quot;: 1024, &quot;1280&quot;: 1280}"
+                             @click="photoGalleryIndex = 2" :key="2">
+                        </div>
+                        <div class="carousel__item-caption">
+                            <span>Voinovo Pole, 2018</span>
+                        </div>
+                    </div>
+                    <div class="carousel__item">
+                        <div data-image-src="/images/photo/3-1280.jpg" data-image-alt="" data-class="gallery__image"
+                             data-dimensions="{&quot;1024&quot;: 1024, &quot;1280&quot;: 1280}"
+                             @click="photoGalleryIndex = 3" :key="3">
+                        </div>
+                        <div class="carousel__item-caption">
+                            <span>Voinovo Pole, 2018</span>
+                        </div>
+                    </div>
+                    <div class="carousel__item">
+                        <div data-image-src="/images/photo/4-1280.jpg" data-image-alt="" data-class="gallery__image"
+                             data-dimensions="{&quot;1024&quot;: 1024, &quot;1280&quot;: 1280}"
+                             @click="photoGalleryIndex = 4" :key="4">
+                        </div>
+                        <div class="carousel__item-caption">
+                            <span>Voinovo Pole, 2018</span>
+                        </div>
+                    </div>
+                    <div class="carousel__item">
+                        <div data-image-src="/images/photo/5-1280.jpg" data-image-alt="" data-class="gallery__image"
+                             data-dimensions="{&quot;1024&quot;: 1024, &quot;1280&quot;: 1280}"
+                             @click="photoGalleryIndex = 5" :key="5">
+                        </div>
+                        <div class="carousel__item-caption">
+                            <span>Voinovo Pole, 2018</span>
+                        </div>
+                    </div>
+                    <div class="carousel__item">
+                        <div data-image-src="/images/photo/6-1280.jpg" data-image-alt="" data-class="gallery__image"
+                             data-dimensions="{&quot;1024&quot;: 1024, &quot;1280&quot;: 1280}"
+                             @click="photoGalleryIndex = 6" :key="6">
+                        </div>
+                        <div class="carousel__item-caption">
+                            <span>Voinovo Pole, 2018</span>
+                        </div>
+                    </div>
+                    <div class="carousel__item">
+                        <div data-image-src="/images/photo/7-1280.jpg" data-image-alt="" data-class="gallery__image"
+                             data-dimensions="{&quot;1024&quot;: 1024, &quot;1280&quot;: 1280}"
+                             @click="photoGalleryIndex = 7" :key="7">
+                        </div>
+                        <div class="carousel__item-caption">
+                            <span>Voinovo Pole, 2018</span>
+                        </div>
+                    </div>
+                    <div class="carousel__item">
+                        <div data-image-src="/images/photo/8-1280.jpg" data-image-alt="" data-class="gallery__image"
+                             data-dimensions="{&quot;1024&quot;: 1024, &quot;1280&quot;: 1280}"
+                             @click="photoGalleryIndex = 8" :key="8">
+                        </div>
+                        <div class="carousel__item-caption">
+                            <span>Nasledie predkov, 2017</span>
+                        </div>
+                    </div>
+                    <div class="carousel__item">
+                        <div data-image-src="/images/photo/9-1280.jpg" data-image-alt="" data-class="gallery__image"
+                             data-dimensions="{&quot;1024&quot;: 1024, &quot;1280&quot;: 1280}"
+                             @click="photoGalleryIndex = 9" :key="9">
+                        </div>
+                        <div class="carousel__item-caption">
+                            <span>Nasledie predkov, 2017</span>
+                        </div>
+                    </div>
+                    <div class="carousel__item">
+                        <div data-image-src="/images/photo/10-1280.jpg" data-image-alt="" data-class="gallery__image"
+                             data-dimensions="{&quot;1024&quot;: 1024, &quot;1280&quot;: 1280}"
+                             @click="photoGalleryIndex = 10" :key="10">
+                        </div>
+                        <div class="carousel__item-caption">
+                            <span>Nasledie predkov, 2017</span>
+                        </div>
+                    </div>
+                    <template slot="prev"><span
+                            class="fa fa-angle-left carousel__nav-btn carousel__nav-btn_prev"></span></template>
+                    <template slot="next"><span
+                            class="fa fa-angle-right carousel__nav-btn carousel__nav-btn_next"></span></template>
+                </carousel>
+            </div>
+        </section>
+
+        <section id="portfolio" class="section">
+            <div class="container">
+                <h3 class="title title_smaller text-center">
+                    Some pull of photos with works</h3>
+
+                <div class="section__content"></div>
+
+                <carousel :autoHeight="true" :dots="false" :margin="10" class="carousel carousel_works" :nav="false"
+                          :responsive="{0:{items:1, margin: 0},640:{items:2}, 768:{items:3}}">
+                    <div class="carousel__item" @click.stop="showWorkGallery"
+                         title="Click to watch all photos">
+                        <div data-image-src="/images/portfolio/1-1024.jpg" data-image-alt=""
+                             data-dimensions="{&quot;768&quot;: 768, &quot;1024&quot;: 1024}"></div>
+                        <div class="carousel__item-caption">
+                            <span>Scandinavian game "Daldose"</span>
+                        </div>
+                    </div>
+                    <div class="carousel__item" @click.stop="showWorkGallery"
+                         title="Click to watch all photos">
+                        <div data-image-src="/images/portfolio/3-1024.jpg" data-image-alt=""
+                             data-dimensions="{&quot;768&quot;: 768, &quot;1024&quot;: 1024}"></div>
+                        <div class="carousel__item-caption">
+                            <span>Passport cover. Made of natural leather
+                                <br>Pyrography.</span>
+                        </div>
+                    </div>
+                    <div class="carousel__item" @click.stop="showWorkGallery"
+                         title="Click to watch all photos">
+                        <div data-image-src="/images/portfolio/2-1024.jpg" data-image-alt=""
+                             data-dimensions="{&quot;768&quot;: 768, &quot;1024&quot;: 1024}"></div>
+                        <div class="carousel__item-caption">
+            <span>
+                Scandinavian game "Khnefatafl"<br>
+                Materials - leather, oak acorn, chestnut. Pyrography.
+            </span>
+                        </div>
+                    </div>
+                    <div class="carousel__item" @click.stop="showWorkGallery"
+                         title="Click to watch all photos">
+                        <div data-image-src="/images/portfolio/7-1024.jpg" data-image-alt=""
+                             data-dimensions="{&quot;768&quot;: 768, &quot;1024&quot;: 1024}"></div>
+                        <div class="carousel__item-caption">
+            <span>
+                Magnets on fridge. Pyrography
+            </span>
+                        </div>
+                    </div>
+                    <div class="carousel__item" @click.stop="showWorkGallery"
+                         title="Click to watch all photos">
+                        <div data-image-src="/images/portfolio/8-1024.jpg" data-image-alt=""
+                             data-dimensions="{&quot;768&quot;: 768, &quot;1024&quot;: 1024}"></div>
+                        <div class="carousel__item-caption">
+            <span>
+                Scandinavian pouch of leather.<br>
+                Casting of brass
+            </span>
+                        </div>
+                    </div>
+                    <div class="carousel__item" @click.stop="showWorkGallery"
+                         title="Click to watch all photos">
+                        <div data-image-src="/images/portfolio/9-1024.jpg" data-image-alt=""
+                             data-dimensions="{&quot;768&quot;: 768, &quot;1024&quot;: 1024}"></div>
+                        <div class="carousel__item-caption">
+            <span>
+                Scandinavian shoes of natural leather, 9 - 11 centuries.<br>
+                Soaked with wax and fat.
+            </span>
+                        </div>
+                    </div>
+                    <div class="carousel__item" @click.stop="showWorkGallery"
+                         title="Click to watch all photos">
+                        <div data-image-src="/images/portfolio/10-1024.jpg" data-image-alt=""
+                             data-dimensions="{&quot;768&quot;: 768, &quot;1024&quot;: 1024}"></div>
+                        <div class="carousel__item-caption">
+            <span>
+                Forged knife, steel of 65-G type. Handle of beech.<br>
+                Handle soaked with linseed oil
+            </span>
+                        </div>
+                    </div>
+
+                    <template slot="prev"><span
+                            class="fa fa-angle-left carousel__nav-btn carousel__nav-btn_prev"></span></template>
+                    <template slot="next"><span
+                            class="fa fa-angle-right carousel__nav-btn carousel__nav-btn_next"></span></template>
+                </carousel>
+
+                <div class="gallery gallery_hidden" v-if="workGallery.length">
+                    <img class="gallery__image" v-for="(workImage, imageIndex) in workGallery"
+                         @click="workGalleryIndex = imageIndex"
+                         :src="workImage"/>
+                </div>
+                <vue-gallery :images="workGallery" :index="workGalleryIndex" :options="{container: '#work-gallery'}"
+                             id="work-gallery"
+                             @close="workGalleryIndex = null"></vue-gallery>
+            </div>
+        </section>
+
+        <section id="contacts" class="section section_even">
+            <div class="container">
+                <h4 class="title title_smaller text-center">Contacts</h4>
+                <p>
+                    Current location is Moscow, Russia.
+                </p>
+                <p>
+                    If you have any questions write here on our e-mail
+                    <a href="mailto:mbd.kloster@yandex.ru" class="link link_dotted">mbd.kloster@yandex.ru</a>,
+                    ask them via the form below or one of our accounts in social networks.
+                </p>
+
+                <contact-form name-text="Name"
+                              message-text="Your message"
+                              send-text="Send"
+                              fill-text="Fill this field"
+                              captcha-not-passed="Captcha not passed!"
+                              fields-not-filled="Not all required fields are filled!"
+                              message-sent="Message sent"
+                              sending-error="Message sending error has occured!"></contact-form>
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="d-md-flex footer">
+        <div class="container d-md-flex justify-content-between align-items-center">
+            <div class="footer__socials">
+                <socials></socials>
+
+                <div class="langs text-left text-md-center">
+                    
+                    <a href="/" title="Russian"><span
+                            class="flag-icon flag-icon-ru langs__icon"></span></a>
+                    
+                    
+                </div>
+            </div>
+
+            <div class="footer__copyright">
+                Ancient Deals Workshop &copy;, {{ year }}
+            </div>
+        </div>
+    </footer>
+</div>
+
+<script src="https://www.google.com/recaptcha/api.js?hl=en&onload=vueRecaptchaApiLoaded&render=explicit"
+        async defer></script>
+<script src="../dist/app.js?310c83635430a2ed91f6"></script></body>
+</html>
