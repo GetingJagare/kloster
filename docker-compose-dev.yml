@@ -21,6 +21,5 @@ services:
     volumes:
       - ./web/app:/var/www/kloster/:rw
       - ./nginx-conf-dev:/etc/nginx/conf.d/:ro
-      - ./dev-certs:/etc/nginx/certs/:ro
 
 
