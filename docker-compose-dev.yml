@@ -13,7 +13,7 @@ services:
     container_name: kloster_nginx
     build:
       context: ./web
-      dockerfile: ./build/Dockerfile
+      dockerfile: ./build/Dockerfile-dev
     ports:
       - '80:80'
       - '443:443'
@@ -21,11 +21,4 @@ services:
     volumes:
       - ./web/app:/var/www/kloster/:rw
       - ./nginx-conf-dev:/etc/nginx/conf.d/:ro
-      - ./certbot/www:/var/www/certbot/:ro
-      - ./certbot/conf/:/etc/nginx/ssl/:ro
-  certbot:
-    image: certbot/certbot:latest
-    volumes:
-      - ./certbot/www/:/var/www/certbot/:rw
-      - ./certbot/conf/:/etc/letsencrypt/:rw
 
