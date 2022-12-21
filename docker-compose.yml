@@ -9,17 +9,5 @@ services:
     env_file: .env
     ports:
       - '8000:8000'
-  nginx:
-    container_name: kloster_nginx
-    build:
-      context: ./web
-      dockerfile: ./build/Dockerfile
-    ports:
-      - '80:80'
-      - '443:443'
-    restart: always
-    volumes:
-      - ./web/app:/var/www/kloster/:rw
-      - ./nginx-conf:/etc/nginx/conf.d/:ro
 
 
