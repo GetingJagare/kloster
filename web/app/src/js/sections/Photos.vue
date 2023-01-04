@@ -14,10 +14,10 @@
                 :responsive="{0:{items:1, margin: 0}, 768:{items:2}}">
         <div class="carousel__item" v-for="(photo, index) in photoGallery">
           <div @click="photoGalleryIndex = index" :key="`photo_${index}`">
-            <img :src="photo.main" alt="" :srcset="srcSet(photo)" :sizes="sizes(photo)" class="gallery__image" />
+            <img :src="photo.main" alt="" :srcset="srcSet(photo)" :sizes="sizes(photo)" class="gallery__image"/>
           </div>
           <div class="carousel__item-caption">
-            <span>{{ photo.caption }}</span>
+            <span v-html="`${photo.caption.map((str) => $root.__t(str)).join(' ')}`"></span>
           </div>
         </div>
         <template #prev>
@@ -45,57 +45,90 @@ export default {
         {
           main: "/images/photo/1-1280.jpg",
           dimensions: {"1024": 1024, "1280": 1280},
-          caption: `${this.$root.__t('Воиново Поле')}, 2018`,
+          caption: [
+            'Воиново Поле',
+            '2018',
+          ],
         },
         {
           main: "/images/photo/11-1280.jpg",
           dimensions: {"1024": 1024, "1280": 1280},
-          caption: `${this.$root.__t('Монастырские маневры')}, 2017`,
+          caption: [
+            'Монастырские маневры',
+            '2017',
+          ],
         },
         {
           main: "/images/photo/2-1280.jpg",
           dimensions: {"1024": 1024, "1280": 1280},
-          caption: `${this.$root.__t('Воиново Поле')}, 2018`,
+          caption: [
+            'Воиново Поле',
+            '2018',
+          ],
         },
         {
           main: "/images/photo/3-1280.jpg",
           dimensions: {"1024": 1024, "1280": 1280},
-          caption: `${this.$root.__t('Воиново Поле')}, 2018`,
+          caption: [
+            'Воиново Поле',
+            '2018',
+          ],
         },
         {
           main: "/images/photo/4-1280.jpg",
           dimensions: {"1024": 1024, "1280": 1280},
-          caption: `${this.$root.__t('Воиново Поле')}, 2018`,
+          caption: [
+            'Воиново Поле',
+            '2018',
+          ],
         },
         {
           main: "/images/photo/5-1280.jpg",
           dimensions: {"1024": 1024, "1280": 1280},
-          caption: `${this.$root.__t('Воиново Поле')}, 2018`,
+          caption: [
+            'Воиново Поле',
+            '2018',
+          ],
         },
         {
           main: "/images/photo/6-1280.jpg",
           dimensions: {"1024": 1024, "1280": 1280},
-          caption: `${this.$root.__t('Воиново Поле')}, 2018`,
+          caption: [
+            'Воиново Поле',
+            '2018',
+          ],
         },
         {
           main: "/images/photo/7-1280.jpg",
           dimensions: {"1024": 1024, "1280": 1280},
-          caption: `${this.$root.__t('Воиново Поле')}, 2018`,
+          caption: [
+            'Воиново Поле',
+            '2018',
+          ],
         },
         {
           main: "/images/photo/8-1280.jpg",
           dimensions: {"1024": 1024, "1280": 1280},
-          caption: `${this.$root.__t('Наследие предков')}, 2017`,
+          caption: [
+            'Наследие предков',
+            '2017',
+          ],
         },
         {
           main: "/images/photo/9-1280.jpg",
           dimensions: {"1024": 1024, "1280": 1280},
-          caption: `${this.$root.__t('Наследие предков')}, 2017`,
+          caption: [
+            'Наследие предков',
+            '2017',
+          ],
         },
         {
           main: "/images/photo/10-1280.jpg",
           dimensions: {"1024": 1024, "1280": 1280},
-          caption: `${this.$root.__t('Наследие предков')}, 2017`,
+          caption: [
+            'Наследие предков',
+            '2017',
+          ],
         },
       ],
       photoGalleryIndex: null,
