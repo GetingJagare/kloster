@@ -2,4 +2,37 @@
   transition: all 0.4s ease-in-out;
   user-select: none;
   font-family: Montserrat, sans-serif;
+  padding-top: 80px;
+}
+
+.spinner-wrapper {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.spinner {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 10px solid #895e29;
+  border-right-color: transparent;
+  animation-name: spin;
+  animation-iteration-count: infinite;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

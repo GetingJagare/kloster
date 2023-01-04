@@ -1,8 +1,8 @@
 <template>
-  <header class="header">
+  <header class="header" :class="navbarClass">
     <div class="container d-flex justify-content-between align-items-center header__wrapper">
       <a href="#about" class="header__logo text text_futhark d-none d-md-inline-block"
-         @click="itemClicked(0)" :title="$root.__t('Мастерская Былых Дел Монастырь')">
+         @click.prevent="itemClicked($event, 0)" :title="$root.__t('Мастерская Былых Дел Монастырь')">
         KLOSTER
       </a>
 
@@ -13,16 +13,16 @@
         <b-collapse is-nav id="nav_collapse">
           <b-navbar-nav pills class="d-md-inline-flex">
             <b-nav-item href="#about" :class="navItemClass(0)"
-                        @click="itemClicked(0)">{{ $root.__t('О нас') }}
+                        @click.prevent="itemClicked($event, 0)">{{ $root.__t('О нас') }}
             </b-nav-item>
             <b-nav-item href="#photo" :class="navItemClass(1)"
-                        @click="itemClicked(1)">{{ $root.__t('Фотогалерея') }}
+                        @click.prevent="itemClicked($event, 1)">{{ $root.__t('Фотогалерея') }}
             </b-nav-item>
             <b-nav-item href="#portfolio" :class="navItemClass(2)"
-                        @click="itemClicked(2)">{{ $root.__t('Что делаем') }}
+                        @click.prevent="itemClicked($event, 2)">{{ $root.__t('Что делаем') }}
             </b-nav-item>
             <b-nav-item href="#contacts" :class="navItemClass(3)"
-                        @click="itemClicked(3)">{{ $root.__t('Контакты') }}
+                        @click.prevent="itemClicked($event, 3)">{{ $root.__t('Контакты') }}
             </b-nav-item>
           </b-navbar-nav>
         </b-collapse>
@@ -45,6 +45,7 @@ export default {
   data() {
     return {
       activeItemIndex: 0,
+      sticky: false,
     };
   },
   components: {
@@ -52,9 +53,9 @@ export default {
     Lang,
   },
   methods: {
-    itemClicked(index) {
+    itemClicked(event, index) {
       this.activeItemIndex = index;
-      this.$emit('nav-item:clicked', index);
+      this.$emit('nav-item:clicked', event, index);
     },
     navItemClass(itemIndex) {
       return {
@@ -63,9 +64,16 @@ export default {
       };
     }
   },
+  computed: {
+    navbarClass() {
+      return {
+        'header_sticky': this.sticky,
+      }
+    }
+  }
 }
 </script>
 
-<style scoped>
+<style>
 
 </style>
