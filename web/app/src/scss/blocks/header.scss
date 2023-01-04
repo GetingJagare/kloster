@@ -14,18 +14,14 @@
   }
 
   &__logo {
-    &:link {
+    &:link, &:hover, &:visited, &:visited {
       color: $brown;
       font-size: 3em;
-      letter-spacing: 4px;
-    }
-    &:hover, &:visited, &:visited {
-      color: $brown;
       text-decoration: none;
     }
 
     @media screen and (min-width: 768px) and (max-width: 1023.98px) {
-      &:link {
+      &:link, &:hover, &:visited, &:visited {
         font-size: 2em;
       }
     }
