@@ -5,7 +5,7 @@ import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import TerserPlugin from "terser-webpack-plugin";
 import htmlWebpackPlugin from 'html-webpack-plugin';
 import {VueLoaderPlugin} from 'vue-loader';
-import {CleanWebpackPlugin} from "clean-webpack-plugin";
+import {htmlDecode} from "./src/js/helper/string.js";
 
 const devMode = process.env.NODE_ENV === 'development';
 
@@ -26,15 +26,7 @@ const htmlPluginOptions = {
         useShortDoctype: true,
     }
 };
-let langHtmlPlugins = [];
-
-let htmlDecode = str => {
-    return str.replace(/&quot;/g, '"').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&')
-};
-
-let __t = (phrase) => {
-    return htmlDecode(phrase);
-};
+const langHtmlPlugins = [];
 
 fs.readdirSync(langPath).forEach(file => {
     let langTranslations = JSON.parse(fs.readFileSync(langPath + '/' + file));
@@ -55,7 +47,9 @@ fs.readdirSync(langPath).forEach(file => {
         filename: langDir + '/index.html',
         template: './src/html/index.html',
         t: __t,
-        lang: langName
+        lang: langName,
+        defaultLang: config.defaultLanguage,
+        translations: encodeURIComponent(JSON.stringify(langTranslations || {})),
     }, htmlPluginOptions)));
 });
 
@@ -64,11 +58,12 @@ export default {
     entry: './src/js/app.js',
     output: {
         path: path.resolve(process.env.PWD, 'dist'),
-        filename: 'app.js'
+        filename: 'app.js',
+        clean: true,
     },
     resolve: {
         alias: {
-            vue: 'vue/dist/vue.js',
+            vue: '@vue/compat',
             '@js': path.resolve(process.env.PWD, 'src/js'),
             '@scss': path.resolve(process.env.PWD, 'src/scss'),
         },
@@ -95,7 +90,6 @@ export default {
                         loader: 'file-loader',
                         options: {
                             name: '[hash].[ext]',
-                            emitFile: true,
                             esModule: false,
                         }
                     }
@@ -135,7 +129,14 @@ export default {
             },
             {
                 test: /\.vue$/,
-                use: ['vue-loader']
+                loader: 'vue-loader',
+                options: {
+                    compilerOptions: {
+                        compatConfig: {
+                            MODE: 2
+                        }
+                    }
+                },
             },
             {
                 test: /\.html$/,
@@ -151,15 +152,16 @@ export default {
     },
     plugins: [
         new VueLoaderPlugin(),
-        new CleanWebpackPlugin(),
         new MiniCssExtractPlugin({
             filename: 'app.css',
         }),
         new htmlWebpackPlugin(Object.assign({}, {
             filename: '../index.html',
             template: './src/html/index.html',
-            t: __t,
-            lang: config.defaultLanguage
+            t: (phrase) => htmlDecode(phrase),
+            defaultLang: config.defaultLanguage,
+            lang: config.defaultLanguage,
+            translations: "{}",
         }, htmlPluginOptions))
     ].concat(langHtmlPlugins),
     optimization: {
