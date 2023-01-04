@@ -68,7 +68,9 @@ export default {
     },
     resolve: {
         alias: {
-            vue: 'vue/dist/vue.js'
+            vue: 'vue/dist/vue.js',
+            '@js': path.resolve(process.env.PWD, 'src/js'),
+            '@scss': path.resolve(process.env.PWD, 'src/scss'),
         },
     },
     module: {

@@ -1,6 +1,7 @@
 {
   "name": "kloster",
   "version": "1.0.2",
+  "type": "module",
   "scripts": {
     "dev": "NODE_ENV=development webpack -w",
     "prod": "NODE_ENV=production webpack"

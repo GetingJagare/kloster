@@ -5,6 +5,8 @@ import carousel from 'vue-owl-carousel';
 import ContactForm from './components/ContactForm.vue';
 import Socials from './components/Socials.vue';
 
+import "@scss/app.scss";
+
 Vue.use(BootstrapVue);
 
 new Vue({
@@ -82,6 +84,7 @@ new Vue({
 
                 image.srcset = srcSet;
                 image.sizes = imageSizes;
+                image.loading = 'lazy';
                 image.className = el.dataset.class && el.dataset.class.length ? el.dataset.class : '';
 
                 el.appendChild(image);
