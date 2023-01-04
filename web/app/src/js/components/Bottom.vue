@@ -1,13 +1,12 @@
 <template>
   <footer class="d-md-flex footer">
     <div class="container d-md-flex justify-content-between align-items-center">
-      <div class="footer__socials">
+      <div class="footer__socials d-flex d-md-block align-items-center">
         <socials/>
         <lang/>
-
-        <div class="footer__copyright">
-          {{ $root.__t('Мастерская Былых Дел') }} &copy;, {{ year }}
-        </div>
+      </div>
+      <div class="footer__copyright">
+        {{ $root.__t('Мастерская Былых Дел') }} &copy;, {{ year }}
       </div>
     </div>
   </footer>

@@ -1,34 +1,39 @@
 <template>
   <header class="header" :class="navbarClass">
-    <div class="container d-flex justify-content-between align-items-center header__wrapper">
+    <div class="container d-flex justify-content-between align-items-start align-items-md-center header__wrapper">
       <a href="#about" class="header__logo text text_futhark d-none d-md-inline-block"
          @click.prevent="itemClicked($event, 0)" :title="$root.__t('Мастерская Былых Дел Монастырь')">
         KLOSTER
       </a>
 
-      <b-navbar toggleable="md" class="nav header__nav">
-        <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
-        <b-navbar-brand href="#"></b-navbar-brand>
+      <nav class="navbar navbar-light navbar-expand-md nav header__nav">
+        <button class="navbar-toggler collapsed" type="button" @click="menuToggled = !menuToggled">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="#" target="_self"></a>
+        <div class="navbar-collapse collapse" id="nav_collapse" :class="{'show': menuToggled}">
+          <ul class="navbar-nav d-md-inline-flex">
+            <li class="nav-item nav__item header__nav-item" :class="navItemClass(0)"
+                @click.prevent="itemClicked($event, 0)">
+              <a class="nav-link" href="#about" target="_self">{{ $root.__t('О нас') }}</a>
+            </li>
+            <li class="nav-item nav__item header__nav-item" :class="navItemClass(1)"
+                @click.prevent="itemClicked($event, 1)">
+              <a class="nav-link" href="#photo" target="_self">{{ $root.__t('Фотогалерея') }}</a>
+            </li>
+            <li class="nav-item nav__item header__nav-item" :class="navItemClass(2)"
+                @click.prevent="itemClicked($event, 2)">
+              <a class="nav-link" href="#portfolio" target="_self">{{ $root.__t('Что делаем') }}</a>
+            </li>
+            <li class="nav-item nav__item header__nav-item" :class="navItemClass(3)"
+                @click.prevent="itemClicked($event, 3)">
+              <a class="nav-link" href="#contacts" target="_self">{{ $root.__t('Контакты') }}</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
 
-        <b-collapse is-nav id="nav_collapse">
-          <b-navbar-nav pills class="d-md-inline-flex">
-            <b-nav-item href="#about" :class="navItemClass(0)"
-                        @click.prevent="itemClicked($event, 0)">{{ $root.__t('О нас') }}
-            </b-nav-item>
-            <b-nav-item href="#photo" :class="navItemClass(1)"
-                        @click.prevent="itemClicked($event, 1)">{{ $root.__t('Фотогалерея') }}
-            </b-nav-item>
-            <b-nav-item href="#portfolio" :class="navItemClass(2)"
-                        @click.prevent="itemClicked($event, 2)">{{ $root.__t('Что делаем') }}
-            </b-nav-item>
-            <b-nav-item href="#contacts" :class="navItemClass(3)"
-                        @click.prevent="itemClicked($event, 3)">{{ $root.__t('Контакты') }}
-            </b-nav-item>
-          </b-navbar-nav>
-        </b-collapse>
-      </b-navbar>
-
-      <div class="header__socials">
+      <div class="header__socials d-flex d-md-block align-items-center">
         <socials />
         <lang />
       </div>
@@ -46,6 +51,7 @@ export default {
     return {
       activeItemIndex: 0,
       sticky: false,
+      menuToggled: false,
     };
   },
   components: {

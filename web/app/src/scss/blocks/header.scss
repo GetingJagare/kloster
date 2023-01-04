@@ -28,15 +28,16 @@
   }
 
   @media screen and (max-width: 767.98px) {
-    &__socials {
-      position: absolute;
-      right: 20px;
-      top: 12px;
-      transition: top 0.4s ease-in-out;
-    }
+    padding: 8px 0;
 
-    &_sticky &__socials {
-      top: 4px;
+    .navbar-collapse {
+      opacity: 0;
+      transition: all 0.4s ease-in-out;
+
+      &.show {
+        display: block;
+        opacity: 1;
+      }
     }
   }
 
