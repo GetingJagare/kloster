@@ -2,5 +2,9 @@
   &__icon {
     width: 1.5em;
     height: 1.2em;
+
+    &:before {
+      content: normal;
+    }
   }
 }

@@ -1,7 +1,7 @@
 <template>
   <footer class="d-md-flex footer">
     <div class="container d-md-flex justify-content-between align-items-center">
-      <div class="footer__socials d-flex d-md-block align-items-center">
+      <div class="footer__socials d-flex align-items-center">
         <socials/>
         <lang/>
       </div>

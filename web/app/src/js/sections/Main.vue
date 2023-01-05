@@ -1,7 +1,7 @@
 <template>
   <common-section section-class="section section_about" id="about">
     <template #title>
-      <h1 class="title text-center">{{ $root.__t('Кто мы есть') }}</h1>
+      <h1 class="title text-center mb-5">{{ $root.__t('Кто мы есть') }}</h1>
     </template>
     <template #description>
       <div class="d-md-flex justify-content-between align-items-start">

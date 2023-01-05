@@ -7,33 +7,21 @@
       </a>
 
       <nav class="navbar navbar-light navbar-expand-md nav header__nav">
-        <button class="navbar-toggler collapsed" type="button" @click="menuToggled = !menuToggled">
-          <span class="navbar-toggler-icon"></span>
+        <button class="navbar-toggler" type="button" @click="menuOpened = !menuOpened"
+                :class="{'collapsed': menuOpened}">
+          <span class="navbar-toggler-icon d-flex flex-column justify-content-between">
+            <span class="navbar-toggler-icon-line" :class="{'collapsed': menuOpened}"></span>
+            <span class="navbar-toggler-icon-line" :class="{'collapsed': menuOpened}"></span>
+            <span class="navbar-toggler-icon-line" :class="{'collapsed': menuOpened}"></span>
+          </span>
         </button>
-        <a class="navbar-brand" href="#" target="_self"></a>
-        <div class="navbar-collapse collapse" id="nav_collapse" :class="{'show': menuToggled}">
-          <ul class="navbar-nav d-md-inline-flex">
-            <li class="nav-item nav__item header__nav-item" :class="navItemClass(0)"
-                @click.prevent="itemClicked($event, 0)">
-              <a class="nav-link" href="#about" target="_self">{{ $root.__t('О нас') }}</a>
-            </li>
-            <li class="nav-item nav__item header__nav-item" :class="navItemClass(1)"
-                @click.prevent="itemClicked($event, 1)">
-              <a class="nav-link" href="#photo" target="_self">{{ $root.__t('Фотогалерея') }}</a>
-            </li>
-            <li class="nav-item nav__item header__nav-item" :class="navItemClass(2)"
-                @click.prevent="itemClicked($event, 2)">
-              <a class="nav-link" href="#portfolio" target="_self">{{ $root.__t('Что делаем') }}</a>
-            </li>
-            <li class="nav-item nav__item header__nav-item" :class="navItemClass(3)"
-                @click.prevent="itemClicked($event, 3)">
-              <a class="nav-link" href="#contacts" target="_self">{{ $root.__t('Контакты') }}</a>
-            </li>
-          </ul>
-        </div>
+        <Transition>
+          <navigation ref="nav" @nav-item:clicked="itemClicked" :menu-opened="($root.isMobile && menuOpened) || !$root.isMobile"
+                      v-show="($root.isMobile && menuOpened) || !$root.isMobile" />
+        </Transition>
       </nav>
 
-      <div class="header__socials d-flex d-md-block align-items-center">
+      <div class="header__socials d-flex align-items-center">
         <socials />
         <lang />
       </div>
@@ -44,6 +32,7 @@
 <script>
 import Socials from "./Socials.vue";
 import Lang from "./Lang.vue";
+import Navigation from "./Nav.vue";
 
 export default {
   name: "Header",
@@ -51,24 +40,19 @@ export default {
     return {
       activeItemIndex: 0,
       sticky: false,
-      menuToggled: false,
+      menuOpened: false,
     };
   },
   components: {
     Socials,
     Lang,
+    Navigation,
   },
   methods: {
     itemClicked(event, index) {
       this.activeItemIndex = index;
       this.$emit('nav-item:clicked', event, index);
     },
-    navItemClass(itemIndex) {
-      return {
-        'nav__item header__nav-item': true,
-        'nav__item_active': itemIndex === this.activeItemIndex,
-      };
-    }
   },
   computed: {
     navbarClass() {
@@ -76,10 +60,23 @@ export default {
         'header_sticky': this.sticky,
       }
     }
+  },
+  watch: {
+    activeItemIndex(newIndex) {
+      this.$refs.nav.activeItemIndex = newIndex;
+    }
   }
 }
 </script>
 
-<style>
+<style scoped>
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.4s ease-in-out;
+}
 
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
+}
 </style>

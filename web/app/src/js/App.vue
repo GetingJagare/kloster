@@ -1,7 +1,7 @@
 <template>
   <navbar ref="navbar" @nav-item:clicked="navItemClicked"/>
-  <content />
-  <bottom />
+  <content ref="content"/>
+  <bottom ref="footer"/>
 </template>
 
 <script>
@@ -18,16 +18,22 @@ export default {
       translations: {},
       defaultLang: '',
       lang: '',
+      isMobile: false,
     };
   },
   mounted() {
     this.translations = JSON.parse(decodeURIComponent(window.translations));
     this.defaultLang = window.defaultLang;
     this.lang = window.lang;
+    this.isMobile = window.innerWidth < 768;
 
     window.onscroll = () => {
       this.checkWindowScrollTop();
       this.checkInWhatSection();
+    };
+
+    window.onresize = () => {
+      this.isMobile = window.innerWidth < 768;
     };
   },
   updated () {
@@ -41,7 +47,7 @@ export default {
       this.$refs.navbar.sticky = window.scrollY >= this.scrollTopMax;
     },
     navItemClicked(event, index) {
-      this.scrollTop = document.querySelector(event.target.hash).offsetTop + (window.width >= 768 ? -this.$refs.navbar.$el.offsetHeight : 0);
+      this.scrollTop = this.$refs.content.$el.querySelector(event.target.hash).offsetTop;
 
       window.scrollTo({
         top: index > 0 ? this.scrollTop : index,
@@ -49,7 +55,7 @@ export default {
       });
     },
     checkInWhatSection () {
-      document.querySelectorAll('.section').forEach((s, i) => {
+      this.$refs.content.$el.querySelectorAll('.section').forEach((s, i) => {
         const scrollTop = window.scrollY,
             minScrollTop = i > 0 ? s.offsetTop : 0;
 

@@ -24,8 +24,13 @@
         width: 100%;
       }
 
-      @media screen and (min-width: 768px) and (max-width: 1023.98px) {
+      @media screen and (max-width: 1023.98px) {
         margin: 0;
+      }
+
+      @media screen and (max-width: 767.98px) {
+        padding-left: 0;
+        padding-right: 0;
       }
     }
 
@@ -38,7 +43,34 @@
     }
   }
 
-  .navbar-collapse {
+  .navbar-toggler {
+    &:focus {
+      box-shadow: none;
+    }
 
+    &-icon {
+      background-image: none;
+      padding-top: 2px;
+      padding-bottom: 2px;
+
+      &-line {
+        height: 4px;
+        background-color: $brown;
+        transition: all 0.4s ease-in-out;
+
+        &:nth-child(2) {
+          width: calc(200% / 3);
+        }
+
+        &:nth-child(3) {
+          width: calc(100% / 3);
+        }
+
+        &.collapsed {
+          width: 100%;
+          background: $light-brown;
+        }
+      }
+    }
   }
 }
