@@ -37,7 +37,14 @@ export default {
     menuOpened: {
       type: Boolean,
       default: false,
+    },
+    activeIndex: {
+      type: Number,
+      default: 0,
     }
+  },
+  mounted() {
+    this.activeItemIndex = this.activeIndex;
   },
   methods: {
     itemClicked(event, index) {

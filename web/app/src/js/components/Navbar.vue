@@ -16,9 +16,11 @@
           </span>
         </button>
         <Transition>
-          <navigation ref="nav" @nav-item:clicked="itemClicked" :menu-opened="($root.isMobile && menuOpened) || !$root.isMobile"
-                      v-show="($root.isMobile && menuOpened) || !$root.isMobile" />
+          <navigation ref="nav" @nav-item:clicked="itemClicked" :active-index="activeItemIndex"
+                      :menu-opened="$root.isMobile && menuOpened" v-if="$root.isMobile && menuOpened" />
         </Transition>
+        <navigation ref="nav" @nav-item:clicked="itemClicked" :active-index="activeItemIndex"
+                    :menu-opened="!$root.isMobile" v-if="!$root.isMobile" />
       </nav>
 
       <div class="header__socials d-flex align-items-center">
@@ -63,7 +65,9 @@ export default {
   },
   watch: {
     activeItemIndex(newIndex) {
-      this.$refs.nav.activeItemIndex = newIndex;
+      if (this.$refs.nav) {
+        this.$refs.nav.activeItemIndex = newIndex;
+      }
     }
   }
 }
